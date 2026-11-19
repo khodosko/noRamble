@@ -1,8 +1,8 @@
 # NR-000: Project foundation
 
-- **Status:** In progress
+- **Status:** In review
 - **Task:** [NR-000 in TASKS.md](../../TASKS.md#nr-000--project-foundation)
-- **Pull request:** Pending initial commit and push
+- **Pull request:** [#1 — Establish No Ramble project foundation](https://github.com/khodosko/noRamble/pull/1)
 
 ## Goal
 
@@ -131,7 +131,7 @@ This slice creates the complete initial documentation set. Final verification re
 
 - **Files:** All required Markdown documents are present, including ADR-0002 recording public repository visibility.
 - **Tests:** No executable application tests apply. Repository-relative Markdown links resolve, and artifact checks found no Swift source, Xcode project, or Xcode workspace.
-- **Git:** Current branch is `chore/project-foundation`; the expected documentation files are untracked for review; remote connection and initial commits are pending.
+- **Git:** `main` contains the repository bootstrap commit. `chore/project-foundation` is connected to its remote tracking branch and contains the documentation changes.
 - **CI:** Deferred until NR-001 because no Xcode project or known test command exists.
 - **GitHub:** `khodosko/noRamble` is verified as public, empty, unarchived, and writable by the connected owner account. Public visibility is an explicit owner decision recorded in ADR-0002.
-- **Pull request:** Pending initial commits and branch push.
+- **Pull request:** [#1](https://github.com/khodosko/noRamble/pull/1) is open for review.

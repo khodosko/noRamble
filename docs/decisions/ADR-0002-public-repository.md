@@ -3,7 +3,7 @@
 - **Date:** 2026-11-19
 - **Status:** Accepted
 - **Related slice:** [NR-000](../plans/NR-000-project-foundation.md)
-- **Pull request:** Pending
+- **Pull request:** [#1](https://github.com/khodosko/noRamble/pull/1)
 
 ## Context
 

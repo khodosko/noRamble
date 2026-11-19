@@ -16,7 +16,7 @@ Speaking practice is easy to postpone when the next action is unclear or the pro
 
 ## Status
 
-**Project foundation only.** Product, engineering, testing, architecture, planning, and Git policies are being established. No application or Xcode project has been created yet.
+**Project foundation in review.** Product, engineering, testing, architecture, planning, and Git policies are proposed in [pull request #1](https://github.com/khodosko/noRamble/pull/1). No application or Xcode project has been created yet.
 
 ## Technology direction
 
