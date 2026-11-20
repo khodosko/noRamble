@@ -1,6 +1,7 @@
 import SwiftUI
 
 struct RecordingView: View {
+    let prompt: DailyPrompt
     @Bindable var model: RecordingViewModel
     @Environment(\.dismiss) private var dismiss
     @Environment(\.openURL) private var openURL
@@ -81,7 +82,7 @@ struct RecordingView: View {
     }
 
     private var activeRecording: some View {
-        VStack(spacing: 48) {
+        VStack(spacing: 28) {
             HStack(spacing: 8) {
                 Circle()
                     .fill(recordingRed)
@@ -100,6 +101,14 @@ struct RecordingView: View {
                 Capsule()
                     .stroke(recordingRed.opacity(0.4), lineWidth: 2)
             }
+
+            Text(prompt.title)
+                .font(.title2.bold())
+                .multilineTextAlignment(.center)
+                .fixedSize(horizontal: false, vertical: true)
+                .frame(maxWidth: 340)
+                .accessibilityAddTraits(.isHeader)
+                .accessibilityIdentifier("recording-prompt-title")
 
             Button {
                 model.stop()
@@ -120,6 +129,16 @@ struct RecordingView: View {
             .accessibilityLabel("Stop recording")
             .accessibilityHint("Stops and saves this daily rep.")
             .accessibilityIdentifier("recording-stop")
+
+            if let recordingStartedAt = model.recordingStartedAt {
+                TimelineView(.periodic(from: recordingStartedAt, by: 1)) { context in
+                    let elapsed = context.date.timeIntervalSince(recordingStartedAt)
+                    Text(RecordingElapsedTimeFormatter.string(for: elapsed))
+                        .font(.footnote.weight(.semibold).monospacedDigit())
+                        .foregroundStyle(.secondary)
+                        .accessibilityIdentifier("recording-elapsed-time")
+                }
+            }
         }
     }
 
