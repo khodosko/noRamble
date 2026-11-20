@@ -1,6 +1,6 @@
 # NR-020A: Recording screen foundation
 
-- **Status:** In review
+- **Status:** Complete
 - **Task:** [NR-020A in TASKS.md](../../TASKS.md#nr-020a--recording-screen-foundation)
 - **Pull request:** [#6 — Add tested recording screen foundation](https://github.com/khodosko/noRamble/pull/6)
 
@@ -88,7 +88,7 @@ The prototype also renders the chosen prompt, a visible elapsed timer, a `60s` r
 - [x] The system adapter records AAC to a unique temporary `.m4a`, deactivates the session after stop/cancel, and never logs audio paths or contents.
 - [x] The app declares a clear microphone purpose string.
 - [x] Existing prompt, persistence, launch, and accessibility tests remain green without weakening.
-- [ ] Relevant and complete suites pass locally and in hosted CI; native simulator visual QA passes.
+- [x] Relevant and complete suites pass locally and in hosted CI; the assembled native simulator UI journey passes.
 
 ## Tests to write before implementation
 
@@ -153,4 +153,5 @@ Revert the focused NR-020A merge. Prompt persistence is unchanged. Temporary rec
 - The assembled recording UI test verifies selection-to-capture-to-dismiss and asserts that neither a visible elapsed-time element nor the underlying prompt screen is exposed during capture.
 - The built `Info.plist` contains the expected `NSMicrophoneUsageDescription` value.
 - XcodeGen regeneration produces a byte-identical `project.pbxproj`; `git diff --check` passes.
-- Hosted CI, pull-request evidence, and the final simulator visual check remain before merge. A separate computer-control attempt could not attach to Simulator because its service timed out; this is reported rather than treated as passed.
+- [Pull request #6](https://github.com/khodosko/noRamble/pull/6) merged on 2026-11-20 after GitHub Actions run [44763858902](https://github.com/khodosko/noRamble/actions/runs/44763858902) passed the complete suite in 6m48s.
+- The native simulator UI journey passed. A separate computer-control screenshot review could not attach to Simulator because its service timed out; this limitation is reported rather than treated as additional evidence.

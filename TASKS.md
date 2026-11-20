@@ -4,16 +4,6 @@ This file is the authoritative backlog. Do not maintain a competing task list el
 
 ## Now
 
-### NR-020A — Recording screen foundation
-
-- **Status:** In progress
-- **Plan:** [NR-020A recording screen foundation](docs/plans/NR-020A-recording-screen-foundation.md)
-- **Acceptance criteria:** A selected prompt can start, stop, or cancel real microphone capture through a tested boundary and minimal full-screen recording interface with explicit permission and failure states.
-- **Test status:** Red state recorded (missing recording boundary types, exit 65); 36 unit and 3 UI tests pass locally with 79.44% app coverage. Generated project and microphone purpose-string checks pass.
-- **Pull request:** [#6 — Add tested recording screen foundation](https://github.com/khodosko/noRamble/pull/6)
-
-## Next
-
 ### NR-020B — Recording timing and interruption policy
 
 - **Status:** Backlog
@@ -22,7 +12,7 @@ This file is the authoritative backlog. Do not maintain a competing task list el
 - **Test status:** Not started.
 - **Pull request:** Not available.
 
-## Later
+## Next
 
 ### NR-030 — Speech-analysis boundary
 
@@ -31,6 +21,8 @@ This file is the authoritative backlog. Do not maintain a competing task list el
 - **Acceptance criteria:** Post-recording-only analysis contract, privacy boundary, deterministic fixtures, and error behavior are defined and tested; no analysis is exposed during capture.
 - **Test status:** Not started.
 - **Pull request:** Not available.
+
+## Later
 
 ### NR-040 — Feedback and scoring
 
@@ -53,6 +45,14 @@ This file is the authoritative backlog. Do not maintain a competing task list el
 - None.
 
 ## Completed
+
+### NR-020A — Recording screen foundation
+
+- **Status:** Complete
+- **Plan:** [NR-020A recording screen foundation](docs/plans/NR-020A-recording-screen-foundation.md)
+- **Acceptance criteria:** A selected prompt can start, stop, or cancel real microphone capture through a tested boundary and minimal full-screen recording interface with explicit permission and failure states.
+- **Test status:** Red state recorded (missing recording boundary types, exit 65); 36 unit and 3 UI tests pass locally with 79.44% app coverage. Generated project and microphone purpose-string checks pass; GitHub Actions passes.
+- **Pull request:** [#6 — Add tested recording screen foundation](https://github.com/khodosko/noRamble/pull/6) — merged 2026-11-20.
 
 ### NR-011 — Prompt library and daily rotation
 
