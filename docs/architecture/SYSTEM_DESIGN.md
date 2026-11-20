@@ -11,7 +11,7 @@ This document distinguishes **accepted**, **proposed**, and **open** decisions. 
 - The app is a directed daily ritual, not an open-ended toolbox.
 - The owner-provided Stitch export is the visual reference; its prototype behaviors remain provisional unless accepted by the product specification and a slice plan.
 - Each local day deterministically rotates three choices from a bundled original prompt library; the user's selected prompt remains fixed for retries in that session.
-- Recording uses a minimal red recording/microphone presentation, a two-minute soft ceiling without an abrupt `2:00` cutoff, and no visible timer, live transcript, coaching, or metrics.
+- Recording keeps the selected prompt visible, shows elapsed time in small numerals, uses a prominent red recording/microphone presentation, and retains a two-minute soft ceiling without an abrupt `2:00` cutoff or any live transcript, coaching, or metrics.
 - Analysis and feedback begin only after recording ends.
 - Streaks are the MVP motivational mechanism; XP/points are excluded.
 - Business behavior must be testable independently of SwiftUI and concrete Apple services.
@@ -55,7 +55,7 @@ The concrete adapter stores one encoded prompt identifier and local date in name
 
 **Accepted for NR-020A:** `AudioRecordingService` is a main-actor feature boundary for permission, request, start, stop, cancel, and discard. `RecordingViewModel` maps it into preparing, recording, denied, captured, and failed presentation states without importing AVFoundation. The system adapter uses `AVAudioApplication`, `AVAudioSession`, and `AVAudioRecorder` to write a unique mono AAC temporary `.m4a`; cancellation and captured-route dismissal delete the owned file. A debug-only simulated adapter makes the assembled UI journey deterministic without bypassing the production composition.
 
-The full-screen SwiftUI route begins only after **Start Daily Rep**, exposes a close action and one large red microphone control, and hides the prompt picker, visible time, transcript, coaching, and metrics during capture.
+The full-screen SwiftUI route begins only after the large green **Start Daily Rep** action and exposes a close action, the selected prompt, small elapsed-time numerals, and one large red microphone control. It continues to exclude live transcript, coaching, and metrics during capture. NR-021 intentionally supersedes NR-020A's earlier decision to hide the prompt and elapsed time after owner review.
 
 **Proposed for NR-020B:** An injected scheduler and explicit audio lifecycle inputs will define the two-minute soft ceiling, warning/grace behavior, interruptions, route changes, app backgrounding, and recovery. These behaviors are not implied by NR-020A.
 

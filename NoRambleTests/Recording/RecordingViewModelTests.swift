@@ -6,13 +6,15 @@ import XCTest
 final class RecordingViewModelTests: XCTestCase {
     func testBegin_grantedPermission_startsRecording() async {
         let service = RecordingServiceSpy(permission: .granted)
-        let model = RecordingViewModel(service: service)
+        let startedAt = Date(timeIntervalSince1970: 1_795_219_200)
+        let model = RecordingViewModel(service: service, now: { startedAt })
 
         await model.begin()
 
         XCTAssertEqual(service.requestPermissionCallCount, 0)
         XCTAssertEqual(service.startCallCount, 1)
         XCTAssertEqual(model.state, .recording)
+        XCTAssertEqual(model.recordingStartedAt, startedAt)
     }
 
     func testBegin_undeterminedThenGranted_requestsAndStarts() async {
@@ -64,6 +66,7 @@ final class RecordingViewModelTests: XCTestCase {
         await model.begin()
 
         XCTAssertEqual(model.state, .failed(.couldNotStart))
+        XCTAssertNil(model.recordingStartedAt)
     }
 
     func testStop_activeRecording_returnsCapturedArtifact() async {

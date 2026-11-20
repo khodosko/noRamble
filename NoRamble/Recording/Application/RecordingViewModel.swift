@@ -20,11 +20,17 @@ final class RecordingViewModel: Identifiable {
     let id = UUID()
     private(set) var state: RecordingViewState = .preparing
     private(set) var shouldDismiss = false
+    private(set) var recordingStartedAt: Date?
 
     private let service: any AudioRecordingService
+    private let now: () -> Date
 
-    init(service: any AudioRecordingService) {
+    init(
+        service: any AudioRecordingService,
+        now: @escaping () -> Date = Date.init
+    ) {
         self.service = service
+        self.now = now
     }
 
     func begin() async {
@@ -48,6 +54,7 @@ final class RecordingViewModel: Identifiable {
 
         do {
             try service.start()
+            recordingStartedAt = now()
             state = .recording
         } catch {
             state = .failed(.couldNotStart)

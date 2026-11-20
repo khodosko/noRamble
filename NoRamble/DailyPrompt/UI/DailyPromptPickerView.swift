@@ -2,11 +2,11 @@ import SwiftUI
 
 struct DailyPromptPickerView: View {
     @Bindable var model: DailyPromptViewModel
-    let onStartDailyRep: () -> Void
+    let onStartDailyRep: (DailyPrompt) -> Void
 
     init(
         model: DailyPromptViewModel,
-        onStartDailyRep: @escaping () -> Void = {}
+        onStartDailyRep: @escaping (DailyPrompt) -> Void = { _ in }
     ) {
         self.model = model
         self.onStartDailyRep = onStartDailyRep
@@ -39,13 +39,14 @@ struct DailyPromptPickerView: View {
                     .accessibilityIdentifier("daily-prompt-error")
             }
 
-            if model.selectedPromptID != nil {
-                Button("Start Daily Rep", action: onStartDailyRep)
-                    .font(.headline)
-                    .frame(maxWidth: .infinity)
-                    .padding(.vertical, 14)
-                    .buttonStyle(.borderedProminent)
-                    .tint(Color(red: 0.35, green: 0.80, blue: 0.01))
+            if let selectedPromptID = model.selectedPromptID,
+               let selectedPrompt = model.prompts.first(where: { $0.id == selectedPromptID }) {
+                Button {
+                    onStartDailyRep(selectedPrompt)
+                } label: {
+                    Label("Start Daily Rep", systemImage: "mic.fill")
+                }
+                    .buttonStyle(FitnessPrimaryButtonStyle())
                     .accessibilityHint("Opens the microphone recording screen.")
                     .accessibilityIdentifier("start-daily-rep")
                     .padding(.top, 8)

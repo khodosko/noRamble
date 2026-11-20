@@ -18,17 +18,31 @@ final class RecordingFlowUITests: XCTestCase {
         XCTAssertTrue(app.staticTexts["daily-prompt-heading"].waitForExistence(timeout: 5))
         XCTAssertFalse(startButton.exists)
 
-        promptButtons.element(boundBy: 0).tap()
+        let selectedPromptButton = promptButtons.element(boundBy: 0)
+        let selectedPromptLabel = selectedPromptButton.label
+        selectedPromptButton.tap()
 
         XCTAssertTrue(startButton.waitForExistence(timeout: 2))
+        XCTAssertGreaterThanOrEqual(startButton.frame.height, 60)
         startButton.tap()
 
         let recordingStatus = app.staticTexts["recording-status"]
+        let recordingPrompt = app.staticTexts["recording-prompt-title"]
+        let elapsedTime = app.staticTexts["recording-elapsed-time"]
         let stopButton = app.buttons["recording-stop"]
         XCTAssertTrue(recordingStatus.waitForExistence(timeout: 5))
         XCTAssertEqual(recordingStatus.label, "Recording")
+        XCTAssertTrue(recordingPrompt.exists)
+        XCTAssertTrue(selectedPromptLabel.contains(recordingPrompt.label))
+        XCTAssertTrue(elapsedTime.exists)
+        XCTAssertNotNil(
+            elapsedTime.label.range(
+                of: #"^[0-9]+:[0-5][0-9]$"#,
+                options: .regularExpression
+            )
+        )
+        XCTAssertLessThan(elapsedTime.frame.height, 30)
         XCTAssertTrue(stopButton.exists)
-        XCTAssertFalse(app.staticTexts["recording-elapsed-time"].exists)
         XCTAssertFalse(app.staticTexts["daily-prompt-heading"].exists)
 
         stopButton.tap()

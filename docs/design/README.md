@@ -59,10 +59,10 @@ The owner resolved the prototype differences on 2026-11-19:
 |---|---|
 | User picks one of three prompts | Rotate three choices from the bundled original library for one daily session; the user selects one prompt and retries use that same prompt |
 | Per-prompt 45/60-second limits | Use a two-minute soft ceiling with no abrupt cutoff at exactly `2:00`; specify warning/grace behavior in the recording slice |
-| Live timer, transcript, metrics, and coaching nudge | Do not show these while recording; use a minimal red recording/microphone state with no visible timer and reveal analysis only after capture ends |
+| Large timer, transcript, metrics, and coaching nudge | Keep only a small elapsed timer; continue to exclude transcript, coaching, and metrics until capture ends |
 | XP plus streak celebration | Keep streaks and remove XP/points |
 
-The prompt-picker, feedback, and streak visuals remain useful after applying these behavior decisions. Both exported recording screens are sources of visual tokens rather than executable behavior. The 2026-11-20 revision is the preferred recording layout reference, adapted to remove its prompt, visible timer, and 60-second state.
+The prompt-picker, feedback, and streak visuals remain useful after applying these behavior decisions. Both exported recording screens are sources of visual tokens rather than executable behavior. After owner review on 2026-11-20, the preferred recording layout retains its selected prompt and elapsed time, with the timer reduced to small numerals and the 60-second target removed.
 
 ## Native implementation guidance
 

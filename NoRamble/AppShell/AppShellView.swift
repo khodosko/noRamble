@@ -1,10 +1,16 @@
 import SwiftUI
 
+private struct RecordingRoute: Identifiable {
+    let id = UUID()
+    let prompt: DailyPrompt
+    let model: RecordingViewModel
+}
+
 struct AppShellView: View {
     private let content: AppShellContent
     private let dailyPromptModel: DailyPromptViewModel
     private let makeRecordingModel: @MainActor () -> RecordingViewModel
-    @State private var recordingModel: RecordingViewModel?
+    @State private var recordingRoute: RecordingRoute?
 
     init(
         content: AppShellContent = .foundation,
@@ -37,17 +43,20 @@ struct AppShellView: View {
 
                 DailyPromptPickerView(
                     model: dailyPromptModel,
-                    onStartDailyRep: {
-                        recordingModel = makeRecordingModel()
+                    onStartDailyRep: { prompt in
+                        recordingRoute = RecordingRoute(
+                            prompt: prompt,
+                            model: makeRecordingModel()
+                        )
                     }
                 )
                     .padding(.top, 8)
             }
             .padding(24)
         }
-        .accessibilityHidden(recordingModel != nil)
-        .fullScreenCover(item: $recordingModel) { model in
-            RecordingView(model: model)
+        .accessibilityHidden(recordingRoute != nil)
+        .fullScreenCover(item: $recordingRoute) { route in
+            RecordingView(prompt: route.prompt, model: route.model)
         }
     }
 }

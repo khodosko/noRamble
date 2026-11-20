@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0FA1B0EC8FDC00B48D8256C5 /* NoRambleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16C055833EE4CA4658F9134 /* NoRambleApp.swift */; };
+		16349B584E998532554A2ED2 /* RecordingElapsedTimeFormatterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588977204B17C0C1613E0ACD /* RecordingElapsedTimeFormatterTests.swift */; };
 		22E120B735477B85E79ADF47 /* DailyPromptViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D088FB31FAA779CADB946DD9 /* DailyPromptViewModel.swift */; };
 		293584B0983A344B2BF78BF3 /* DailyPromptRotationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F59C750434A1486CA0E63D /* DailyPromptRotationTests.swift */; };
 		29FE638595AD3C6FB929366B /* DailyPromptCatalogTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BE8A6EF238A9E03B45BBB3 /* DailyPromptCatalogTests.swift */; };
@@ -28,6 +29,8 @@
 		AEF5A14C0FF9F72C82A79AD0 /* DailyPrompt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23AAD1F36364DA1C815E767D /* DailyPrompt.swift */; };
 		B5B8B9AD7CC8BB525FBA01F6 /* AppShellContentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5ACFA89A121847ED0414C5 /* AppShellContentTests.swift */; };
 		B78C1C904A0C0287A852387E /* RecordingViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4576DAA6A55FDA8B60F35938 /* RecordingViewModelTests.swift */; };
+		C7D295ED46A84C86E6DDCD51 /* FitnessPrimaryButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A601EB0F3E943B6F20A94F /* FitnessPrimaryButtonStyle.swift */; };
+		D1E09237B087F8EEE6575322 /* RecordingElapsedTimeFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93210C71C0757A67C3236762 /* RecordingElapsedTimeFormatter.swift */; };
 		DE27A553171479CE3B1D2C1C /* UserDefaultsDailyPromptSelectionStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68EA493934C9877E440B127 /* UserDefaultsDailyPromptSelectionStoreTests.swift */; };
 		E0B33EF9905B96560FC20372 /* UserDefaultsDailyPromptSelectionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C3DFEF28B43CE8AA6D13CD /* UserDefaultsDailyPromptSelectionStore.swift */; };
 		ECE8CED308A10B8C96EC6603 /* AppShellContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3FB504BB7941D0887C688D /* AppShellContent.swift */; };
@@ -62,12 +65,15 @@
 		3A998574F7F481DB6A380B5A /* NoRambleUITests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = NoRambleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4576DAA6A55FDA8B60F35938 /* RecordingViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingViewModelTests.swift; sourceTree = "<group>"; };
 		4A5ACFA89A121847ED0414C5 /* AppShellContentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppShellContentTests.swift; sourceTree = "<group>"; };
+		588977204B17C0C1613E0ACD /* RecordingElapsedTimeFormatterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingElapsedTimeFormatterTests.swift; sourceTree = "<group>"; };
 		66AA2F10FDC88B4FDEDDD084 /* SystemAudioRecordingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemAudioRecordingService.swift; sourceTree = "<group>"; };
 		73C1737242D239DF4D946301 /* NoRambleTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = NoRambleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		75AF56892BEAF8BA8C503362 /* DailyPromptPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyPromptPickerView.swift; sourceTree = "<group>"; };
 		7AD396A080F8D510F3A4A7F1 /* DailyPromptSelectionUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyPromptSelectionUITests.swift; sourceTree = "<group>"; };
 		883EDBFD32AF79DC9BC5A5C4 /* NoRamble.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = NoRamble.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		93210C71C0757A67C3236762 /* RecordingElapsedTimeFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingElapsedTimeFormatter.swift; sourceTree = "<group>"; };
 		9BD9FA7A36A69088963EE0A9 /* AppLaunchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLaunchUITests.swift; sourceTree = "<group>"; };
+		A2A601EB0F3E943B6F20A94F /* FitnessPrimaryButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitnessPrimaryButtonStyle.swift; sourceTree = "<group>"; };
 		A4A0ABB3D6DFE3E72DE66B38 /* RecordingFlowUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingFlowUITests.swift; sourceTree = "<group>"; };
 		A987FFA6B485AD4D83FE51CF /* DailyPromptViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyPromptViewModelTests.swift; sourceTree = "<group>"; };
 		B393561EB9D24C54F7C9ECE4 /* RecordingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingView.swift; sourceTree = "<group>"; };
@@ -120,6 +126,7 @@
 		68209701AF1E5DEF57A50960 /* Recording */ = {
 			isa = PBXGroup;
 			children = (
+				588977204B17C0C1613E0ACD /* RecordingElapsedTimeFormatterTests.swift */,
 				4576DAA6A55FDA8B60F35938 /* RecordingViewModelTests.swift */,
 			);
 			path = Recording;
@@ -131,6 +138,7 @@
 				37746DEB73BDFAB38E042E33 /* App */,
 				A99D7613B7088D1385E5032C /* AppShell */,
 				7CC6626933EFFAA24C48526D /* DailyPrompt */,
+				85FEFC0AA79AC41778F60F9C /* DesignSystem */,
 				E53A1FE275169DD41240593F /* Recording */,
 			);
 			path = NoRamble;
@@ -174,6 +182,14 @@
 				333834DBB220C501D86D0E8F /* DailyPromptSession.swift */,
 			);
 			path = Domain;
+			sourceTree = "<group>";
+		};
+		85FEFC0AA79AC41778F60F9C /* DesignSystem */ = {
+			isa = PBXGroup;
+			children = (
+				A2A601EB0F3E943B6F20A94F /* FitnessPrimaryButtonStyle.swift */,
+			);
+			path = DesignSystem;
 			sourceTree = "<group>";
 		};
 		886DC4040B371B1C3AB3A08D /* DailyPrompt */ = {
@@ -229,6 +245,7 @@
 		CE96B3675E978CCA8998AEF0 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				93210C71C0757A67C3236762 /* RecordingElapsedTimeFormatter.swift */,
 				B393561EB9D24C54F7C9ECE4 /* RecordingView.swift */,
 			);
 			path = UI;
@@ -366,7 +383,9 @@
 				7A430EE9047CC55B45320389 /* DailyPromptSelection.swift in Sources */,
 				FA252C975E9B39533F7AF48C /* DailyPromptSession.swift in Sources */,
 				22E120B735477B85E79ADF47 /* DailyPromptViewModel.swift in Sources */,
+				C7D295ED46A84C86E6DDCD51 /* FitnessPrimaryButtonStyle.swift in Sources */,
 				0FA1B0EC8FDC00B48D8256C5 /* NoRambleApp.swift in Sources */,
+				D1E09237B087F8EEE6575322 /* RecordingElapsedTimeFormatter.swift in Sources */,
 				5419B19DA8D9C571B66C8A56 /* RecordingView.swift in Sources */,
 				A0D29CAE8E8649CFFE2A2789 /* RecordingViewModel.swift in Sources */,
 				945DE28A66FC8A4DB9DB2B86 /* SimulatedAudioRecordingService.swift in Sources */,
@@ -394,6 +413,7 @@
 				293584B0983A344B2BF78BF3 /* DailyPromptRotationTests.swift in Sources */,
 				650228AFD4225EEA5547DA10 /* DailyPromptSessionTests.swift in Sources */,
 				32BB108978E31354E5AFC7AB /* DailyPromptViewModelTests.swift in Sources */,
+				16349B584E998532554A2ED2 /* RecordingElapsedTimeFormatterTests.swift in Sources */,
 				B78C1C904A0C0287A852387E /* RecordingViewModelTests.swift in Sources */,
 				DE27A553171479CE3B1D2C1C /* UserDefaultsDailyPromptSelectionStoreTests.swift in Sources */,
 			);
