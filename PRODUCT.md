@@ -18,7 +18,7 @@ Core promise: **One chosen prompt. One recording. One improvement. Every day.**
 
 1. A notification opens today's three rotated prompt choices.
 2. The user selects one prompt for the daily session. The limited choice prevents a blank-mind blocker without becoming a content browser.
-3. **Start Daily Rep** begins a minimal recording state: a prominent red recording indicator and microphone treatment, with no visible timer, live transcript, coaching, metrics, or analysis.
+3. A large bright-green **Start Daily Rep** action begins a focused recording state that keeps the selected prompt visible, shows elapsed time in small numerals, and uses a prominent red recording/microphone treatment without live transcript, coaching, metrics, or analysis.
 4. The user records naturally. Two minutes is the soft ceiling; the app must not cut speech off abruptly at exactly `2:00`.
 5. After recording ends, the app analyzes the attempt.
 6. The app shows an overall score, focused feedback, a few observations, and one primary improvement.
@@ -39,7 +39,7 @@ Core promise: **One chosen prompt. One recording. One improvement. Every day.**
 ## MVP scope
 
 - A bundled original prompt library that rotates three daily choices, one selected prompt per daily session, and notification deep linking
-- Minimal audio-recording screen with a prominent red recording/microphone state, a two-minute soft ceiling, and permission/error handling
+- Minimal audio-recording screen with the selected prompt, a small elapsed timer, a prominent red recording/microphone state, a two-minute soft ceiling, and permission/error handling
 - Analysis of filler words, pace, pauses/hesitation, conciseness, and structure
 - Overall score, concise observations, and one prioritized improvement
 - Retry of the same prompt with attempt comparison

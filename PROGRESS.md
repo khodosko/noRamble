@@ -2,13 +2,19 @@
 
 ## Current state
 
-NR-000, NR-001, NR-010, NR-011, and NR-020A are merged. A selected prompt now leads to tested real microphone capture and a distraction-free recording route.
+NR-000, NR-001, NR-010, NR-011, and NR-020A are merged. NR-021 is in progress to align the reviewed recording journey with the supplied prompt and recording references.
 
 ## Next recommended action
 
-Plan NR-020B's injected two-minute soft-limit scheduler and explicit interruption, route-change, background, and recovery policies without changing NR-020A's locked tests.
+Write the changed NR-021 UI contract and elapsed-time specifications red, then implement the tactile green start action plus selected-prompt and small-timer recording context. NR-020B remains next.
 
 ## Journal
+
+### 2026-11-20 — NR-021 Recording context refinement
+
+- **Requirement change:** After reviewing NR-020A in Simulator, the owner explicitly requested the selected prompt and a small elapsed timer during recording and called out the start action's deviation from the large green supplied reference.
+- **Test-policy impact:** The locked NR-020A UI assertion that elapsed time must be absent is now invalid. NR-021 documents the changed requirement before replacing only that assertion with positive prompt/timer coverage; unrelated tests remain locked.
+- **Immediate next action:** Commit this plan, write the revised UI and timer specifications, and record their intended red state before production edits.
 
 ### 2026-11-20 — NR-020A Recording screen foundation
 

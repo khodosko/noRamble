@@ -4,6 +4,16 @@ This file is the authoritative backlog. Do not maintain a competing task list el
 
 ## Now
 
+### NR-021 — Recording context refinement
+
+- **Status:** In progress
+- **Plan:** [NR-021 recording context refinement](docs/plans/NR-021-recording-context-refinement.md)
+- **Acceptance criteria:** The start action matches the supplied tactile green design, and active recording retains the selected prompt plus a small deterministic elapsed timer without adding live coaching or cutoff behavior.
+- **Test status:** Requirement change documented; red specifications pending.
+- **Pull request:** Not available.
+
+## Next
+
 ### NR-020B — Recording timing and interruption policy
 
 - **Status:** Backlog
@@ -12,7 +22,7 @@ This file is the authoritative backlog. Do not maintain a competing task list el
 - **Test status:** Not started.
 - **Pull request:** Not available.
 
-## Next
+## Later
 
 ### NR-030 — Speech-analysis boundary
 
@@ -21,8 +31,6 @@ This file is the authoritative backlog. Do not maintain a competing task list el
 - **Acceptance criteria:** Post-recording-only analysis contract, privacy boundary, deterministic fixtures, and error behavior are defined and tested; no analysis is exposed during capture.
 - **Test status:** Not started.
 - **Pull request:** Not available.
-
-## Later
 
 ### NR-040 — Feedback and scoring
 

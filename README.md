@@ -10,7 +10,7 @@ Speaking practice is easy to postpone when the next action is unclear or the pro
 
 1. A daily notification opens three rotating choices from an original bundled prompt library.
 2. The user chooses one prompt for that daily session.
-3. A minimal recording screen shows only an unmistakable red recording/microphone state—no visible timer, transcript, coaching, or metrics.
+3. A focused recording screen keeps the selected prompt visible, shows elapsed time in small numerals, and uses an unmistakable red recording/microphone state without transcript, coaching, or metrics.
 4. The user speaks naturally toward a two-minute soft ceiling without an abrupt cutoff at exactly two minutes.
 5. After recording ends, the app evaluates delivery, pace, pauses, filler words, conciseness, and structure.
 6. The user receives a score, a few observations, and one primary improvement.
