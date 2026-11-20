@@ -14,6 +14,7 @@
 		328F9CD953D031C02159EC77 /* DailyPromptSelectionUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD396A080F8D510F3A4A7F1 /* DailyPromptSelectionUITests.swift */; };
 		32BB108978E31354E5AFC7AB /* DailyPromptViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A987FFA6B485AD4D83FE51CF /* DailyPromptViewModelTests.swift */; };
 		650228AFD4225EEA5547DA10 /* DailyPromptSessionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B6A777386F36D614C045F0C /* DailyPromptSessionTests.swift */; };
+		65B4606326EB7DD7E3B50CF4 /* RecordingFlowUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A0ABB3D6DFE3E72DE66B38 /* RecordingFlowUITests.swift */; };
 		671CE4CD2C727A0BAEFBD24B /* DailyPromptRotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0A60F41DE1C9ADD14697F1 /* DailyPromptRotation.swift */; };
 		79EA41F2938DB545D039B9F5 /* AppLaunchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD9FA7A36A69088963EE0A9 /* AppLaunchUITests.swift */; };
 		7A430EE9047CC55B45320389 /* DailyPromptSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288A924C23503A017848B835 /* DailyPromptSelection.swift */; };
@@ -21,6 +22,7 @@
 		AE0FCF8B8BBB1D665B14088E /* AppShellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79AC50A5BE7A8383CDA0A50 /* AppShellView.swift */; };
 		AEF5A14C0FF9F72C82A79AD0 /* DailyPrompt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23AAD1F36364DA1C815E767D /* DailyPrompt.swift */; };
 		B5B8B9AD7CC8BB525FBA01F6 /* AppShellContentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5ACFA89A121847ED0414C5 /* AppShellContentTests.swift */; };
+		B78C1C904A0C0287A852387E /* RecordingViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4576DAA6A55FDA8B60F35938 /* RecordingViewModelTests.swift */; };
 		DE27A553171479CE3B1D2C1C /* UserDefaultsDailyPromptSelectionStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68EA493934C9877E440B127 /* UserDefaultsDailyPromptSelectionStoreTests.swift */; };
 		E0B33EF9905B96560FC20372 /* UserDefaultsDailyPromptSelectionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C3DFEF28B43CE8AA6D13CD /* UserDefaultsDailyPromptSelectionStore.swift */; };
 		ECE8CED308A10B8C96EC6603 /* AppShellContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3FB504BB7941D0887C688D /* AppShellContent.swift */; };
@@ -52,12 +54,14 @@
 		2B6A777386F36D614C045F0C /* DailyPromptSessionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyPromptSessionTests.swift; sourceTree = "<group>"; };
 		333834DBB220C501D86D0E8F /* DailyPromptSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyPromptSession.swift; sourceTree = "<group>"; };
 		3A998574F7F481DB6A380B5A /* NoRambleUITests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = NoRambleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4576DAA6A55FDA8B60F35938 /* RecordingViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingViewModelTests.swift; sourceTree = "<group>"; };
 		4A5ACFA89A121847ED0414C5 /* AppShellContentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppShellContentTests.swift; sourceTree = "<group>"; };
 		73C1737242D239DF4D946301 /* NoRambleTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = NoRambleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		75AF56892BEAF8BA8C503362 /* DailyPromptPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyPromptPickerView.swift; sourceTree = "<group>"; };
 		7AD396A080F8D510F3A4A7F1 /* DailyPromptSelectionUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyPromptSelectionUITests.swift; sourceTree = "<group>"; };
 		883EDBFD32AF79DC9BC5A5C4 /* NoRamble.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = NoRamble.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BD9FA7A36A69088963EE0A9 /* AppLaunchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLaunchUITests.swift; sourceTree = "<group>"; };
+		A4A0ABB3D6DFE3E72DE66B38 /* RecordingFlowUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingFlowUITests.swift; sourceTree = "<group>"; };
 		A987FFA6B485AD4D83FE51CF /* DailyPromptViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyPromptViewModelTests.swift; sourceTree = "<group>"; };
 		C1BE8A6EF238A9E03B45BBB3 /* DailyPromptCatalogTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyPromptCatalogTests.swift; sourceTree = "<group>"; };
 		D088FB31FAA779CADB946DD9 /* DailyPromptViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyPromptViewModel.swift; sourceTree = "<group>"; };
@@ -95,6 +99,14 @@
 			path = Application;
 			sourceTree = "<group>";
 		};
+		68209701AF1E5DEF57A50960 /* Recording */ = {
+			isa = PBXGroup;
+			children = (
+				4576DAA6A55FDA8B60F35938 /* RecordingViewModelTests.swift */,
+			);
+			path = Recording;
+			sourceTree = "<group>";
+		};
 		6CC7F2F6F58401A4E81A07D5 /* NoRamble */ = {
 			isa = PBXGroup;
 			children = (
@@ -110,6 +122,7 @@
 			children = (
 				4A5ACFA89A121847ED0414C5 /* AppShellContentTests.swift */,
 				886DC4040B371B1C3AB3A08D /* DailyPrompt */,
+				68209701AF1E5DEF57A50960 /* Recording */,
 			);
 			path = NoRambleTests;
 			sourceTree = "<group>";
@@ -171,6 +184,7 @@
 			children = (
 				9BD9FA7A36A69088963EE0A9 /* AppLaunchUITests.swift */,
 				7AD396A080F8D510F3A4A7F1 /* DailyPromptSelectionUITests.swift */,
+				A4A0ABB3D6DFE3E72DE66B38 /* RecordingFlowUITests.swift */,
 			);
 			path = NoRambleUITests;
 			sourceTree = "<group>";
@@ -307,6 +321,7 @@
 			files = (
 				79EA41F2938DB545D039B9F5 /* AppLaunchUITests.swift in Sources */,
 				328F9CD953D031C02159EC77 /* DailyPromptSelectionUITests.swift in Sources */,
+				65B4606326EB7DD7E3B50CF4 /* RecordingFlowUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -319,6 +334,7 @@
 				293584B0983A344B2BF78BF3 /* DailyPromptRotationTests.swift in Sources */,
 				650228AFD4225EEA5547DA10 /* DailyPromptSessionTests.swift in Sources */,
 				32BB108978E31354E5AFC7AB /* DailyPromptViewModelTests.swift in Sources */,
+				B78C1C904A0C0287A852387E /* RecordingViewModelTests.swift in Sources */,
 				DE27A553171479CE3B1D2C1C /* UserDefaultsDailyPromptSelectionStoreTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
