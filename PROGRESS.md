@@ -2,11 +2,11 @@
 
 ## Current state
 
-NR-000, NR-001, NR-010, NR-011, and NR-020A are merged. NR-021 is implemented and locally verified on its focused branch; hosted review remains before merge.
+NR-000, NR-001, NR-010, NR-011, NR-020A, and NR-021 are merged. The recording journey now matches the reviewed green-action, selected-prompt, and small-timer direction.
 
 ## Next recommended action
 
-Open NR-021 for review, verify hosted CI, and merge it. NR-020B remains next.
+Plan NR-020B's two-minute soft-limit scheduler and explicit interruption, route-change, background, and recovery behavior test-first.
 
 ## Journal
 
@@ -16,9 +16,9 @@ Open NR-021 for review, verify hosted CI, and merge it. NR-020B remains next.
 - **Test-policy impact:** The locked NR-020A UI assertion that elapsed time must be absent is now invalid. NR-021 documents the changed requirement before replacing only that assertion with positive prompt/timer coverage; unrelated tests remain locked.
 - **Work completed:** Added a reusable native primary-button style using the reference `#58CC02`/`#46A302` palette, four-point tactile depth, and heavy rounded Dynamic Type typography; routed the exact selected prompt into the full-screen recording presentation; recorded the successful capture start instant through an injected clock; added a small monospaced `m:ss` elapsed timer.
 - **Tests added or intentionally changed:** Added deterministic negative/zero/second/minute elapsed-format cases and start-instant/failure coverage. The assembled UI contract now requires a 60-point-or-taller start action, exact selected-prompt continuity, a small valid elapsed timer, and the unchanged stop/capture/return flow. Only the obsolete timer-absence assertion was replaced because of the documented requirement change.
-- **Verification:** Red—the focused command exited 65 because `RecordingElapsedTimeFormatter` and recording-start state did not exist. Green—37 unit and 3 UI tests pass on iPhone 17 Pro / iOS 26.2 with 0 failures. App coverage is 81.22% (1055/1299); unit and UI test bundles report 99.31% and 100%. XcodeGen regeneration is byte-identical and `git diff --check` passes. A separate computer-control screenshot pass still cannot attach to Simulator because that service times out; the native simulator UI journey itself passes.
-- **Problems or blockers:** Hosted CI and pull-request review remain. No product defect is known.
-- **Immediate next action:** Open the NR-021 pull request, verify GitHub Actions, and merge after review.
+- **Verification:** Red—the focused command exited 65 because `RecordingElapsedTimeFormatter` and recording-start state did not exist. Green—37 unit and 3 UI tests pass on iPhone 17 Pro / iOS 26.2 with 0 failures. App coverage is 81.22% (1055/1299); unit and UI test bundles report 99.31% and 100%. XcodeGen regeneration is byte-identical and `git diff --check` passes. GitHub Actions run [44770267181](https://github.com/khodosko/noRamble/actions/runs/44770267181) passed the full suite in 8m28s. A separate computer-control screenshot pass still cannot attach to Simulator because that service times out; the native simulator UI journey itself passes.
+- **Problems or blockers:** None for NR-021. The two-minute soft limit and interruption behavior remain deliberately deferred to NR-020B.
+- **Immediate next action:** Plan NR-020B test-first.
 
 ### 2026-11-20 — NR-020A Recording screen foundation
 

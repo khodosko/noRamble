@@ -18,7 +18,7 @@ Speaking practice is easy to postpone when the next action is unclear or the pro
 
 ## Status
 
-**Recording context refinement in review.** The selected prompt now follows the user into recording, a small elapsed timer starts with successful capture, and **Start Daily Rep** uses the supplied bright-green tactile treatment. Permission, capture, cancellation, temporary-file cleanup, and the captured seam remain tested. Timing limits and interruption policy remain the next small slice.
+**Recording context refinement complete.** [Pull request #8](https://github.com/khodosko/noRamble/pull/8) keeps the selected prompt visible during recording, starts a small elapsed timer with successful capture, and gives **Start Daily Rep** the supplied bright-green tactile treatment. Permission, capture, cancellation, temporary-file cleanup, and the captured seam remain tested. Timing limits and interruption policy remain the next small slice.
 
 ## Technology direction
 
