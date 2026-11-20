@@ -1,8 +1,8 @@
 # NR-011: Prompt library and daily rotation
 
-- **Status:** Complete locally; pull request pending
+- **Status:** Complete locally; hosted CI pending
 - **Task:** [NR-011 in TASKS.md](../../TASKS.md#nr-011--prompt-library-and-daily-rotation)
-- **Pull request:** Pending
+- **Pull request:** [#4 — Rotate a better daily prompt library](https://github.com/khodosko/noRamble/pull/4)
 
 ## Goal
 
@@ -182,4 +182,4 @@ Revert the focused NR-011 merge. NR-010’s persisted selection schema does not 
 - Coverage: 97.86% app coverage (503/514); `DailyPromptSession`, `DailyPromptViewModel`, and `NoRambleApp` are 100%. The rotation gaps are defensive construction/calendar/hash-collision branches; the SwiftUI gap is a non-rendered result-builder branch.
 - Visual QA: simulator inspection confirmed the new copy renders as three readable, scrollable cards without clipping and displays **Daily Rep**.
 - XcodeGen regeneration completed successfully and includes the new production and test sources.
-- Pull request and hosted CI: pending.
+- Pull request: [#4 — Rotate a better daily prompt library](https://github.com/khodosko/noRamble/pull/4). Hosted CI is pending.
