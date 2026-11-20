@@ -18,7 +18,7 @@ Speaking practice is easy to postpone when the next action is unclear or the pro
 
 ## Status
 
-**Recording foundation complete.** [Pull request #6](https://github.com/khodosko/noRamble/pull/6) connects the daily prompt to a focused full-screen recording flow backed by real `AVAudioRecorder` capture. Permission denial, start/stop failure, cancellation, temporary-file cleanup, and the captured seam are explicit and tested. Timing and interruption policy remain the next small slice.
+**Recording context refinement in review.** The selected prompt now follows the user into recording, a small elapsed timer starts with successful capture, and **Start Daily Rep** uses the supplied bright-green tactile treatment. Permission, capture, cancellation, temporary-file cleanup, and the captured seam remain tested. Timing limits and interruption policy remain the next small slice.
 
 ## Technology direction
 

@@ -1,6 +1,6 @@
 # NR-021: Recording context refinement
 
-- **Status:** In progress
+- **Status:** In review
 - **Task:** [NR-021 in TASKS.md](../../TASKS.md#nr-021--recording-context-refinement)
 - **Pull request:** Pending
 
@@ -50,13 +50,13 @@ The timer is informational only. It does not introduce a cutoff, progress target
 
 ## Acceptance criteria
 
-- [ ] **Start Daily Rep** is a full-width, at least 60-point-high, heavy rounded white-on-`#58CC02` control with `#46A302` tactile depth.
-- [ ] Starting a rep carries the exact selected prompt into the recording route.
-- [ ] The active recording screen visibly and accessibly presents that prompt.
-- [ ] A small monospaced elapsed timer appears during recording and advances from the successful capture start instant.
-- [ ] Elapsed formatting clamps negative intervals to `0:00` and formats minute/second boundaries deterministically.
-- [ ] The timer remains informational and does not alter stop/cancel or the future two-minute policy.
-- [ ] Existing permission, failure, cleanup, prompt-persistence, and accessibility behavior remains green.
+- [x] **Start Daily Rep** is a full-width, at least 60-point-high, heavy rounded white-on-`#58CC02` control with `#46A302` tactile depth.
+- [x] Starting a rep carries the exact selected prompt into the recording route.
+- [x] The active recording screen visibly and accessibly presents that prompt.
+- [x] A small monospaced elapsed timer appears during recording and advances from the successful capture start instant.
+- [x] Elapsed formatting clamps negative intervals to `0:00` and formats minute/second boundaries deterministically.
+- [x] The timer remains informational and does not alter stop/cancel or the future two-minute policy.
+- [x] Existing permission, failure, cleanup, prompt-persistence, and accessibility behavior remains green.
 - [ ] Relevant and complete suites pass locally and in hosted CI.
 
 ## Test-first plan
@@ -75,3 +75,11 @@ The prompt and elapsed time are already local session data and are not logged, u
 ## Rollback strategy
 
 Revert the focused NR-021 merge. Audio files, permission state, and prompt persistence require no migration.
+
+## Completion evidence
+
+- Red: focused unit command exited 65 because the elapsed formatter and recording-start state did not exist.
+- Green: 37 unit and 3 UI tests pass on iPhone 17 Pro / iOS 26.2; app coverage is 81.22% (1055/1299).
+- The assembled UI journey verifies the large start target, exact prompt continuity, small valid `m:ss` timer, stop, captured state, and return.
+- XcodeGen regeneration produces a byte-identical `project.pbxproj`; `git diff --check` passes.
+- Hosted CI and pull-request evidence remain before merge. A separate computer-control screenshot pass timed out attaching to Simulator; this is reported rather than treated as visual evidence.
