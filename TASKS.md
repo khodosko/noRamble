@@ -4,10 +4,6 @@ This file is the authoritative backlog. Do not maintain a competing task list el
 
 ## Now
 
-- None. The next slice has not started.
-
-## Next
-
 ### NR-020 — Audio recording boundary
 
 - **Status:** Backlog
@@ -16,7 +12,7 @@ This file is the authoritative backlog. Do not maintain a competing task list el
 - **Test status:** Not started.
 - **Pull request:** Not available.
 
-## Later
+## Next
 
 ### NR-030 — Speech-analysis boundary
 
@@ -25,6 +21,8 @@ This file is the authoritative backlog. Do not maintain a competing task list el
 - **Acceptance criteria:** Post-recording-only analysis contract, privacy boundary, deterministic fixtures, and error behavior are defined and tested; no analysis is exposed during capture.
 - **Test status:** Not started.
 - **Pull request:** Not available.
+
+## Later
 
 ### NR-040 — Feedback and scoring
 
@@ -47,6 +45,14 @@ This file is the authoritative backlog. Do not maintain a competing task list el
 - None.
 
 ## Completed
+
+### NR-011 — Prompt library and daily rotation
+
+- **Status:** Complete
+- **Plan:** [NR-011 prompt library and daily rotation](docs/plans/NR-011-prompt-library-and-rotation.md)
+- **Acceptance criteria:** A broad original Table Topics–style library deterministically rotates exactly three choices per local day, preserves existing same-day selections, and keeps the three-card accessible UI contract.
+- **Test status:** Red state recorded (missing rotation/current-plus-legacy APIs, exit 65); 26 unit and 2 UI tests pass locally with 97.86% app coverage, including 100% coverage of session policy, application state, and app composition; GitHub Actions passes.
+- **Pull request:** [#4 — Rotate a better daily prompt library](https://github.com/khodosko/noRamble/pull/4)
 
 ### NR-010 — Daily prompt domain
 

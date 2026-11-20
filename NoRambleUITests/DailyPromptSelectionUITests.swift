@@ -11,8 +11,8 @@ final class DailyPromptSelectionUITests: XCTestCase {
         let promptButtons = app.buttons.matching(
             NSPredicate(format: "identifier BEGINSWITH %@", "daily-prompt-option-")
         )
-        let chosen = app.buttons["daily-prompt-option-work-update"]
-        let alternative = app.buttons["daily-prompt-option-priority-case"]
+        let chosen = promptButtons.element(boundBy: 0)
+        let alternative = promptButtons.element(boundBy: 1)
 
         XCTAssertTrue(heading.waitForExistence(timeout: 5))
         XCTAssertEqual(heading.label, "Pick 1 of 3 prompts")

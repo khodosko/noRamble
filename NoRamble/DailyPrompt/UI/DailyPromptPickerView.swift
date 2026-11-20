@@ -5,7 +5,7 @@ struct DailyPromptPickerView: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
-            Text("Daily challenge")
+            Text("Daily rep")
                 .font(.caption.weight(.semibold))
                 .foregroundStyle(.secondary)
                 .textCase(.uppercase)

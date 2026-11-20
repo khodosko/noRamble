@@ -8,7 +8,7 @@ Speaking practice is easy to postpone when the next action is unclear or the pro
 
 ## Daily loop
 
-1. A daily notification opens three curated prompt choices.
+1. A daily notification opens three rotating choices from an original bundled prompt library.
 2. The user chooses one prompt for that daily session.
 3. A minimal recording screen shows only an unmistakable red recording/microphone state—no visible timer, transcript, coaching, or metrics.
 4. The user speaks naturally toward a two-minute soft ceiling without an abrupt cutoff at exactly two minutes.
@@ -18,7 +18,7 @@ Speaking practice is easy to postpone when the next action is unclear or the pro
 
 ## Status
 
-**Daily prompt selection complete.** [Pull request #3](https://github.com/khodosko/noRamble/pull/3) adds the first product behavior: exactly three accessible prompt choices, one locally persisted selection per local day, fixed retry consistency, and tested day rollover. Recording remains a later slice.
+**Daily prompt rotation complete.** [Pull request #4](https://github.com/khodosko/noRamble/pull/4) expands the weak starter copy into 30 original impromptu-speaking prompts across six categories while still showing exactly three accessible choices per local day. The selection remains fixed for same-day retries, legacy choices remain restorable, and recording remains the next slice.
 
 ## Technology direction
 

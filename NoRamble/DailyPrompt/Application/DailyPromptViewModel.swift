@@ -4,11 +4,12 @@ import Observation
 @MainActor
 @Observable
 final class DailyPromptViewModel {
-    let prompts: [DailyPrompt]
+    private(set) var prompts: [DailyPrompt]
     private(set) var selectedPromptID: DailyPrompt.ID?
     private(set) var errorMessage: String?
 
     private let session: DailyPromptSession
+    private let rotation: DailyPromptRotation?
     private let calendar: Calendar
     private let now: () -> Date
 
@@ -19,21 +20,57 @@ final class DailyPromptViewModel {
     ) {
         self.session = session
         self.prompts = session.prompts
+        self.rotation = nil
         self.calendar = calendar
         self.now = now
     }
 
+    init(
+        session: DailyPromptSession,
+        rotation: DailyPromptRotation,
+        calendar: Calendar,
+        now: @escaping () -> Date
+    ) {
+        self.session = session
+        self.rotation = rotation
+        self.calendar = calendar
+        self.now = now
+        self.prompts = rotation.options(on: now(), calendar: calendar)
+    }
+
     func loadSelection() {
         do {
-            selectedPromptID = try session.selectedPrompt(
-                on: now(),
+            let date = now()
+            let currentOptions = rotation?.options(on: date, calendar: calendar)
+                ?? session.prompts
+            let selectedPrompt = try session.selectedPrompt(
+                on: date,
                 calendar: calendar
-            )?.id
+            )
+            prompts = visiblePrompts(
+                currentOptions: currentOptions,
+                selectedPrompt: selectedPrompt
+            )
+            selectedPromptID = selectedPrompt?.id
             errorMessage = nil
         } catch {
             selectedPromptID = nil
             errorMessage = "We couldn’t load today’s prompt. Try reopening the app."
         }
+    }
+
+    private func visiblePrompts(
+        currentOptions: [DailyPrompt],
+        selectedPrompt: DailyPrompt?
+    ) -> [DailyPrompt] {
+        guard let selectedPrompt,
+              !currentOptions.contains(where: { $0.id == selectedPrompt.id }) else {
+            return currentOptions
+        }
+
+        return [selectedPrompt] + currentOptions
+            .filter { $0.id != selectedPrompt.id }
+            .prefix(2)
     }
 
     func select(promptID: DailyPrompt.ID) {
