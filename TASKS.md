@@ -4,14 +4,14 @@ This file is the authoritative backlog. Do not maintain a competing task list el
 
 ## Now
 
-- None. The next slice has not started.
+- NR-010 — Daily prompt domain
 
 ## Next
 
 ### NR-010 — Daily prompt domain
 
-- **Status:** Backlog
-- **Plan:** Pending
+- **Status:** In progress
+- **Plan:** [NR-010 daily prompt domain](docs/plans/NR-010-daily-prompt-domain.md)
 - **Acceptance criteria:** Exactly three curated daily options, one persisted selection per daily session, retry consistency, and daily rollover behavior are specified and covered by unit tests.
 - **Test status:** Not started.
 - **Pull request:** Not available.

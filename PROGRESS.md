@@ -2,11 +2,11 @@
 
 ## Current state
 
-NR-000 and NR-001 are merged. The repository has a launchable SwiftUI shell, automated unit/UI test targets, deterministic local commands, and green pull-request CI. No product feature behavior is included yet.
+NR-000 and NR-001 are merged. NR-010 is in progress on `feature/daily-prompt-domain`, beginning with locked tests for three daily options, selection persistence, retry consistency, and local-day rollover.
 
 ## Next recommended action
 
-Plan NR-010, the daily prompt domain, as the next focused test-first slice. Do not begin unrelated feature work before its plan and tests are reviewed.
+Write the NR-010 tests before production behavior, record the intended red result, then implement only the prompt-selection slice.
 
 ## Journal
 
