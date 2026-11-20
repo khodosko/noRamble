@@ -18,7 +18,7 @@ Speaking practice is easy to postpone when the next action is unclear or the pro
 
 ## Status
 
-**Recording foundation in review.** After choosing one of the three daily prompts, **Start Daily Rep** opens a focused full-screen recording flow backed by real `AVAudioRecorder` capture. Permission denial, start/stop failure, cancellation, temporary-file cleanup, and the captured seam are explicit and tested. Timing and interruption policy remain the next small slice.
+**Recording foundation complete.** [Pull request #6](https://github.com/khodosko/noRamble/pull/6) connects the daily prompt to a focused full-screen recording flow backed by real `AVAudioRecorder` capture. Permission denial, start/stop failure, cancellation, temporary-file cleanup, and the captured seam are explicit and tested. Timing and interruption policy remain the next small slice.
 
 ## Technology direction
 
