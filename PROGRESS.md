@@ -2,11 +2,11 @@
 
 ## Current state
 
-NR-000, NR-001, NR-010, and NR-011 are merged. Thirty original prompts rotate through three deterministic daily choices while preserving the three-card and same-day lock contracts. Recording has not started.
+NR-000, NR-001, NR-010, and NR-011 are merged. NR-020A is in progress to connect a selected prompt to real microphone capture through a minimal recording screen and a testable service boundary.
 
 ## Next recommended action
 
-Plan NR-020's testable audio-recording boundary, including permission, lifecycle, interruption, failure, and the two-minute soft-ceiling behavior behind the accepted **Start Daily Rep** action.
+Write and lock NR-020A permission, start, stop, cancel, failure, and assembled recording-flow tests before production implementation. Timing and interruption policy remain NR-020B.
 
 ## Journal
 

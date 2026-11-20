@@ -1,0 +1,226 @@
+<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Live Recording — No Ramble</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">/** @type {import('tailwindcss').Config} */
+globalThis.tailwind = globalThis.tailwind || {};
+globalThis.tailwind.config = {
+  darkMode: 'class',
+  theme: {
+    extend: {
+      colors: {
+        'fitness-green': '#58CC02',
+        'fitness-green-dark': '#46A302',
+        'fitness-green-text': '#2B6A00',
+        'fitness-green-bg': '#F3FCEB',
+        'fitness-pink': '#FF4B4B',
+        'fitness-cyan': '#1CB0F6',
+        'coach-amber': '#FF9600',
+        'coach-highlight': '#FFF3CC',
+        'coach-ink': '#FFFFFF',
+        'coach-ink-dark': '#FFFFFF',
+        'telemetry-dark': '#FFFFFF',
+        'telemetry-button': '#EEF2F6',
+        'telemetry-bg': '#F7F9FC',
+        'alert-red': '#FF4B4B',
+        'alert-red-text': '#C81E1E',
+        'timeline-wave': '#1CB0F6',
+        'timeline-wave-text': '#0B77AD',
+        'timeline-wave-bg': '#EEF9FF',
+        'waveform-muted': '#CBD5E1',
+        'streak-orange': '#FF9600',
+        'streak-bg': '#FFF4E0',
+        'streak-text': '#9A4800',
+        'ink-dark': '#1A1A1A',
+        'light-primary': '#58CC02',
+        'light-on-primary': '#1A3300',
+        'light-surface': '#F7F7F7',
+        'light-on-surface': '#3C3C3C',
+        'light-surface-container': '#FFFFFF',
+        'light-surface-container-high': '#EFEFEF',
+        'light-outline': '#6E6E73',
+        'dark-primary': '#58CC02',
+        'dark-on-primary': '#1A3300',
+        'dark-surface': '#131F24',
+        'dark-on-surface': '#FFFFFF',
+        'dark-surface-container': '#1F2F36',
+        'dark-surface-container-high': '#2A3E47',
+        'dark-outline': '#A1A1A6',
+      },
+      borderRadius: {
+        'sm': '8px',
+        'md': '12px',
+        'lg': '18px',
+        'xl': '24px',
+        'full': '9999px',
+      },
+      spacing: {
+        'xs': '4px',
+        'sm': '8px',
+        'md': '16px',
+        'lg': '20px',
+        'xl': '24px',
+        'xxl': '32px',
+        'section': '40px',
+      },
+      fontFamily: {
+        'display': ['"Afacad Flux"', 'sans-serif'],
+        'headline': ['"Afacad Flux"', 'sans-serif'],
+        'body': ['"Instrument Sans"', 'sans-serif'],
+        'label': ['"Instrument Sans"', 'sans-serif'],
+        'code': ['"Source Code Pro"', 'monospace'],
+      },
+      fontSize: {
+        'display-lg': ['48px', { lineHeight: '52px', letterSpacing: '-1px', fontWeight: '800' }],
+        'display-lg-mobile': ['32px', { lineHeight: '38px', letterSpacing: '-0.5px', fontWeight: '800' }],
+        'headline-lg': ['36px', { lineHeight: '42px', letterSpacing: '-0.5px', fontWeight: '700' }],
+        'headline-lg-mobile': ['28px', { lineHeight: '34px', letterSpacing: '-0.3px', fontWeight: '700' }],
+        'headline-md': ['24px', { lineHeight: '30px', letterSpacing: '-0.2px', fontWeight: '700' }],
+        'headline-sm': ['18px', { lineHeight: '24px', fontWeight: '600' }],
+        'body-lg': ['17px', { lineHeight: '24px', fontWeight: '400' }],
+        'body-md': ['15px', { lineHeight: '22px', fontWeight: '400' }],
+        'body-sm': ['13px', { lineHeight: '18px', fontWeight: '400' }],
+        'label-lg': ['16px', { lineHeight: '20px', fontWeight: '600' }],
+        'label-md': ['14px', { lineHeight: '18px', fontWeight: '600' }],
+        'label-sm': ['12px', { lineHeight: '16px', fontWeight: '600' }],
+        'code-md': ['14px', { lineHeight: '20px', fontWeight: '500' }],
+      },
+      transitionDuration: {
+        'tap': '100ms',
+        'sheet': '250ms',
+      },
+      transitionDelay: {
+        'tap': '0ms',
+        'sheet': '0ms',
+      },
+      transitionTimingFunction: {
+        'tap': 'ease-out',
+        'sheet': 'cubic-bezier(0.16, 1, 0.3, 1)',
+      },
+    },
+  },
+};
+if (typeof module !== 'undefined') module.exports = globalThis.tailwind.config;
+</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@600;700;800&amp;family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&amp;family=Source+Code+Pro:wght@500;600;700&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=block" rel="stylesheet">
+  <style>
+    .material-symbols-outlined, .material-symbols-rounded, .material-symbols-sharp, .material-icons {
+      display: inline-block; width: 1em; height: 1em; line-height: 1 !important;
+      box-sizing: content-box; overflow: hidden; white-space: nowrap; direction: ltr; vertical-align: middle;
+    }
+    .icon-filled { font-variation-settings: 'FILL' 1, 'wght' 600, 'GRAD' 0, 'opsz' 24; }
+  </style>
+</head>
+<body class="bg-light-surface text-light-on-surface font-body antialiased selection:bg-alert-red selection:text-light-surface-container">
+  <div class="min-h-[884px] flex flex-col justify-between max-w-[390px] mx-auto px-lg pt-md pb-xxl relative" data-stitch-vh="min-h-[884px]===min-h-screen">
+
+    <!-- Minimal Distraction-Free Top Bar -->
+    <header class="flex items-center justify-end py-sm">
+      <button type="button" aria-label="Close recording" class="w-10 h-10 rounded-full bg-light-surface-container border-2 border-light-surface-container-high flex items-center justify-center text-light-on-surface hover:bg-light-surface-container-high transition">
+        <span class="material-symbols-outlined text-[20px]">close</span>
+      </button>
+    </header>
+
+    <!-- Centered Prompt + One Big Record Button -->
+    <main class="flex-1 flex flex-col items-center justify-center text-center gap-xxl pb-xl">
+
+      <!-- Prompt Question -->
+      <div class="flex flex-col items-center gap-sm max-w-prose">
+        <span id="rec-status-pill" class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-light-surface-container border-2 border-alert-red/40 font-label text-label-sm font-semibold text-alert-red-text" data-design-text-token="label-sm">
+          <span id="rec-dot" class="w-2 h-2 rounded-full bg-alert-red animate-pulse"></span>
+          <span id="rec-status-text">Recording</span>
+        </span>
+        <h1 class="font-headline text-headline-lg-mobile font-bold tracking-tight text-light-on-surface leading-tight text-balance" data-design-text-token="headline-lg-mobile">
+          “What are you working on?”
+        </h1>
+      </div>
+
+      <!-- One Big Tactile Record Button (Red When Recording) -->
+      <div class="flex flex-col items-center gap-lg">
+        <button id="big-record-btn" type="button" aria-label="Stop recording" aria-pressed="true" class="w-40 h-40 rounded-full bg-alert-red text-ink-dark ring-8 ring-alert-red/20 flex flex-col items-center justify-center gap-xs active:scale-[0.96] transition duration-tap">
+          <span id="record-icon" class="material-symbols-outlined icon-filled text-[52px]">stop</span>
+        </button>
+
+        <div class="flex flex-col items-center gap-xs">
+          <span id="live-timer" class="font-headline text-display-lg-mobile font-bold text-light-on-surface tabular-nums leading-none" data-design-text-token="display-lg-mobile">0:04</span>
+          <span id="record-hint" class="font-body text-body-sm text-light-outline" data-design-text-token="body-sm">Tap to stop</span>
+        </div>
+      </div>
+
+    </main>
+
+    <!-- Clean Bottom Spacer -->
+    <div class="h-8" aria-hidden="true"></div>
+
+  </div>
+
+  <script>
+    (function () {
+      var btn = document.getElementById('big-record-btn');
+      var icon = document.getElementById('record-icon');
+      var timerEl = document.getElementById('live-timer');
+      var hintEl = document.getElementById('record-hint');
+      var statusPill = document.getElementById('rec-status-pill');
+      var statusText = document.getElementById('rec-status-text');
+      var recDot = document.getElementById('rec-dot');
+
+      var isRecording = true;
+      var seconds = 4;
+      var intervalId = setInterval(tick, 1000);
+
+      function formatTime(s) {
+        var mins = Math.floor(s / 60);
+        var secs = s % 60;
+        return mins + ':' + (secs < 10 ? '0' : '') + secs;
+      }
+
+      function tick() {
+        if (!isRecording) return;
+        seconds = (seconds + 1) % 61;
+        timerEl.textContent = formatTime(seconds);
+      }
+
+      function setRecordingState(active) {
+        isRecording = active;
+        btn.setAttribute('aria-pressed', active ? 'true' : 'false');
+        btn.setAttribute('aria-label', active ? 'Stop recording' : 'Start recording');
+
+        if (active) {
+          btn.classList.remove('bg-fitness-green', 'text-light-on-primary', 'ring-fitness-green/20');
+          btn.classList.add('bg-alert-red', 'text-ink-dark', 'ring-alert-red/20');
+          icon.textContent = 'stop';
+          hintEl.textContent = 'Tap to stop';
+          statusPill.classList.remove('border-light-surface-container-high', 'text-light-outline');
+          statusPill.classList.add('border-alert-red/40', 'text-alert-red-text');
+          statusText.textContent = 'Recording';
+          recDot.classList.remove('hidden');
+        } else {
+          btn.classList.remove('bg-alert-red', 'text-ink-dark', 'ring-alert-red/20');
+          btn.classList.add('bg-fitness-green', 'text-light-on-primary', 'ring-fitness-green/20');
+          icon.textContent = 'mic';
+          hintEl.textContent = 'Tap to record';
+          statusPill.classList.remove('border-alert-red/40', 'text-alert-red-text');
+          statusPill.classList.add('border-light-surface-container-high', 'text-light-outline');
+          statusText.textContent = 'Ready (60s)';
+          recDot.classList.add('hidden');
+        }
+      }
+
+      btn.addEventListener('click', function () {
+        if (isRecording) {
+          setRecordingState(false);
+        } else {
+          seconds = 0;
+          timerEl.textContent = formatTime(seconds);
+          setRecordingState(true);
+        }
+      });
+    })();
+  </script>
+
+
+</body></html>

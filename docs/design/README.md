@@ -6,6 +6,8 @@ The owner-provided Stitch export is the accepted **visual direction** for No Ram
 
 The source archive and extracted files live under [`design/reference`](../../design/reference/). The original archive is retained so future imports can be compared against an exact source.
 
+The later recording-screen revision was supplied separately in the shared workspace. Its extracted HTML is retained in the repository and its source-archive digest is recorded below; the original ZIP remains at `/Users/daniil/workplace/recordScreen.zip` outside source control.
+
 ## Provenance
 
 - **Archive:** `design/reference/stitch_no_ramble_feedback_screens.zip`
@@ -15,6 +17,16 @@ The source archive and extracted files live under [`design/reference`](../../des
 - **Path safety:** No absolute paths, traversal segments, or backslash-based paths
 - **Secrets scan:** No credentials, keys, tokens, or passwords found
 
+### Recording-screen revision
+
+- **Source archive:** `/Users/daniil/workplace/recordScreen.zip`
+- **Extracted reference:** [`record_screen_2026-11-20/code.html`](../../design/reference/record_screen_2026-11-20/code.html)
+- **SHA-256:** `137eca37f6edb4c758a4d4037cac8105573d39c7c2551e6c246a2f4ac3b72c1d`
+- **Imported:** 2026-11-20
+- **Archive integrity:** Verified with `unzip -t`
+- **Path safety:** The archive contains only top-level `code.html`; no absolute path, traversal segment, or backslash path exists
+- **Secrets scan:** No credentials, keys, tokens, or passwords found
+
 ## Included references
 
 - [`no_ramble_design_system.md`](../../design/reference/stitch_no_ramble_feedback_screens/no_ramble_design_system.md): palette, type scale, spacing, radii, motion, and voice
@@ -22,6 +34,7 @@ The source archive and extracted files live under [`design/reference`](../../des
 - [`live_recording_no_ramble/code.html`](../../design/reference/stitch_no_ramble_feedback_screens/live_recording_no_ramble/code.html): recording, timer, waveform, transcript, and coaching nudge
 - [`direction_2_editorial_markup_coach_transcript/code.html`](../../design/reference/stitch_no_ramble_feedback_screens/direction_2_editorial_markup_coach_transcript/code.html): transcript markup, concise feedback, and retry action
 - [`streak_extended_no_ramble/code.html`](../../design/reference/stitch_no_ramble_feedback_screens/streak_extended_no_ramble/code.html): completion, streak, progress comparison, and winning opener
+- [`record_screen_2026-11-20/code.html`](../../design/reference/record_screen_2026-11-20/code.html): later owner-provided minimal recording direction with close, status, and one large tactile recording control
 
 All four HTML screens were rendered successfully at the target 390-point mobile width.
 
@@ -49,7 +62,7 @@ The owner resolved the prototype differences on 2026-11-19:
 | Live timer, transcript, metrics, and coaching nudge | Do not show these while recording; use a minimal red recording/microphone state with no visible timer and reveal analysis only after capture ends |
 | XP plus streak celebration | Keep streaks and remove XP/points |
 
-The prompt-picker, feedback, and streak visuals remain useful after applying these behavior decisions. The exported live-recording screen is not the target recording UI; it is a source of visual tokens only.
+The prompt-picker, feedback, and streak visuals remain useful after applying these behavior decisions. Both exported recording screens are sources of visual tokens rather than executable behavior. The 2026-11-20 revision is the preferred recording layout reference, adapted to remove its prompt, visible timer, and 60-second state.
 
 ## Native implementation guidance
 
