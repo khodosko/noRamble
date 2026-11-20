@@ -1,6 +1,6 @@
 # NR-011: Prompt library and daily rotation
 
-- **Status:** Complete; merge pending
+- **Status:** Complete and merged 2026-11-20
 - **Task:** [NR-011 in TASKS.md](../../TASKS.md#nr-011--prompt-library-and-daily-rotation)
 - **Pull request:** [#4 — Rotate a better daily prompt library](https://github.com/khodosko/noRamble/pull/4)
 
@@ -184,3 +184,5 @@ Revert the focused NR-011 merge. NR-010’s persisted selection schema does not 
 - XcodeGen regeneration completed successfully and includes the new production and test sources.
 - Pull request: [#4 — Rotate a better daily prompt library](https://github.com/khodosko/noRamble/pull/4).
 - Hosted CI: GitHub Actions run [44694752680](https://github.com/khodosko/noRamble/actions/runs/44694752680) passed the complete unit/UI suite in 4m55s.
+- Final hosted CI: GitHub Actions run [44695445826](https://github.com/khodosko/noRamble/actions/runs/44695445826) passed against the merge candidate in 6m32s.
+- Squash merge: `196eb56c86fa979db07e57c84fd81686a0817cf3` on 2026-11-20.
