@@ -1,6 +1,6 @@
 # No Ramble
 
-No Ramble is a native iPhone app for people who want to speak more clearly but do not want to navigate a traditional public-speaking toolbox. Its promise is simple: **one prompt, one recording, one improvement, every day.**
+No Ramble is a native iPhone app for people who want to speak more clearly but do not want to navigate a traditional public-speaking toolbox. Its promise is simple: **one chosen prompt, one recording, one improvement, every day.**
 
 ## The problem
 
@@ -8,11 +8,13 @@ Speaking practice is easy to postpone when the next action is unclear or the pro
 
 ## Daily loop
 
-1. A daily notification opens today's prompt.
-2. The user records a natural response, typically for one to two minutes.
-3. The app evaluates delivery, pace, pauses, filler words, conciseness, and structure.
-4. The user receives a score, a few observations, and one primary improvement.
-5. The user retries and compares attempts, or finishes and returns tomorrow.
+1. A daily notification opens three curated prompt choices.
+2. The user chooses one prompt for that daily session.
+3. A minimal recording screen shows only an unmistakable red recording/microphone state—no visible timer, transcript, coaching, or metrics.
+4. The user speaks naturally toward a two-minute soft ceiling without an abrupt cutoff at exactly two minutes.
+5. After recording ends, the app evaluates delivery, pace, pauses, filler words, conciseness, and structure.
+6. The user receives a score, a few observations, and one primary improvement.
+7. The user retries the selected prompt and compares attempts, or finishes and continues their streak tomorrow.
 
 ## Status
 

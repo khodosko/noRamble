@@ -10,6 +10,10 @@ This document distinguishes **accepted**, **proposed**, and **open** decisions. 
 - The internal target/module name is `NoRamble`; the user-facing name is **No Ramble**.
 - The app is a directed daily ritual, not an open-ended toolbox.
 - The owner-provided Stitch export is the visual reference; its prototype behaviors remain provisional unless accepted by the product specification and a slice plan.
+- Each day offers three curated prompts for one daily session; the user's selected prompt remains fixed for retries in that session.
+- Recording uses a minimal red recording/microphone presentation, a two-minute soft ceiling without an abrupt `2:00` cutoff, and no visible timer, live transcript, coaching, or metrics.
+- Analysis and feedback begin only after recording ends.
+- Streaks are the MVP motivational mechanism; XP/points are excluded.
 - Business behavior must be testable independently of SwiftUI and concrete Apple services.
 - Recordings and transcripts are sensitive; collection, transport, and retention must be minimized.
 
@@ -36,19 +40,19 @@ Concrete services implement domain-facing protocols and are composed at the appl
 
 ## Daily prompt domain
 
-**Proposed:** A `DailyPrompt` identity and selection policy operate on injected calendar/time-zone values and a prompt source. Selection must be deterministic for a given user/day policy and explicitly handle day rollover, travel, missing content, and notification deep links.
+**Proposed:** A `DailyPrompt` identity and daily-option policy operate on injected calendar/time-zone values and a prompt source. The policy produces three curated options for a day, persists exactly one selection for the daily session, and keeps retries tied to that selection. It must explicitly handle day rollover, travel, missing/duplicate content, selection restoration, and notification deep links.
 
-**Open:** Prompt sourcing, rotation, localization, content review, and whether users ever receive limited category choice.
+**Open:** Prompt sourcing, rotation, localization, content review, and how the three options remain meaningfully distinct.
 
 ## Recording abstraction
 
-**Proposed:** A domain-facing recorder exposes permission state and a controlled lifecycle such as idle, preparing, recording, stopping, completed, cancelled, and failed. The AVFoundation implementation remains outside the domain. Interruptions, route changes, app backgrounding, file cleanup, and competing operations require explicit behavior.
+**Proposed:** A domain-facing recorder exposes permission state and a controlled lifecycle such as idle, preparing, recording, stopping, completed, cancelled, and failed. The AVFoundation implementation remains outside the domain. The recording UI reflects only the recording state with a prominent red indicator/microphone treatment and no visible timer. Interruptions, route changes, app backgrounding, file cleanup, and competing operations require explicit behavior.
 
-**Open:** File format, maximum duration, metering needs, and whether audio is retained after analysis.
+**Open:** File format, the warning/grace/stop policy after the two-minute soft ceiling, whether visual metering is necessary for recording confidence, and whether audio is retained after analysis.
 
 ## Speech-analysis abstraction
 
-**Proposed:** An analysis client accepts an attempt asset/reference plus locale and returns a versioned, domain-owned analysis result. The adapter may combine transcription and derived metrics, but platform/network response types do not cross the boundary. Cancellation, partial results, unsupported locale, malformed output, timeout, and service unavailability are modeled.
+**Proposed:** After recording completes, an analysis client accepts an attempt asset/reference plus locale and returns a versioned, domain-owned analysis result. No transcript, coaching, or analysis result is exposed during capture. The adapter may combine transcription and derived metrics, but platform/network response types do not cross the boundary. Cancellation, partial results, unsupported locale, malformed output, timeout, and service unavailability are modeled.
 
 **Open:** Apple on-device capabilities, any cloud provider, upload/consent flow, offline behavior, and quality thresholds.
 
@@ -66,7 +70,7 @@ Concrete services implement domain-facing protocols and are composed at the appl
 
 ## Session history and streaks
 
-**Proposed:** A daily session aggregates prompt, attempts, completion state, and local-day identity. History retains the minimum data needed for progress. Streak calculation is a pure policy over completed session dates with injected calendar/time zone.
+**Proposed:** A daily session aggregates three prompt options, the selected prompt, attempts, completion state, and local-day identity. History retains the minimum data needed for progress. Streak calculation is a pure policy over completed session dates with injected calendar/time zone. The MVP has no XP or points ledger.
 
 **Open:** Grace periods, travel semantics, retention duration, and whether raw audio/transcripts are ever part of history.
 

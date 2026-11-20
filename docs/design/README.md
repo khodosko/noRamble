@@ -38,16 +38,18 @@ All four HTML screens were rendered successfully at the target 390-point mobile 
 
 The export uses Afacad Flux, Instrument Sans, Source Code Pro, and Material Symbols from external Google resources. Before native implementation, confirm font licensing/bundling and Dynamic Type behavior. Prefer SF Symbols for native icons where a close semantic match exists.
 
-## Behavioral differences requiring product decisions
+## Resolved product behavior
 
-| Stitch reference | Current durable product direction | Required resolution |
-|---|---|---|
-| User picks one of three prompts | App chooses one daily prompt and directs the next action | Decide before the daily-prompt slice |
-| Per-prompt 45/60-second limits | Recommend one to two minutes and allow natural completion | Decide before recording UX is specified |
-| Live transcript and coaching nudge | Analyze after recording | Decide whether live analysis belongs in MVP |
-| XP plus streak celebration | Minimal history and streaks; XP is unspecified | Validate motivational value before adding XP |
+The owner resolved the prototype differences on 2026-11-19:
 
-Until these decisions are made, reproduce the visual system without treating the prototype's sample behavior as accepted requirements.
+| Stitch reference | Accepted No Ramble behavior |
+|---|---|
+| User picks one of three prompts | Keep three curated choices for one daily session; the user selects one prompt and retries use that same prompt |
+| Per-prompt 45/60-second limits | Use a two-minute soft ceiling with no abrupt cutoff at exactly `2:00`; specify warning/grace behavior in the recording slice |
+| Live timer, transcript, metrics, and coaching nudge | Do not show these while recording; use a minimal red recording/microphone state with no visible timer and reveal analysis only after capture ends |
+| XP plus streak celebration | Keep streaks and remove XP/points |
+
+The prompt-picker, feedback, and streak visuals remain useful after applying these behavior decisions. The exported live-recording screen is not the target recording UI; it is a source of visual tokens only.
 
 ## Native implementation guidance
 
@@ -55,9 +57,10 @@ Until these decisions are made, reproduce the visual system without treating the
 - Model typography through Dynamic Type-aware SwiftUI styles; never lock accessibility text to the prototype's pixel sizes.
 - Build reusable native cards, pills, buttons, metric labels, and transcript annotations from the shared tokens.
 - Replace browser-only scripts with tested state and domain behavior.
+- Simplify the recording screen instead of porting the prototype's live transcript, timer card, coaching card, or metrics.
 - Preserve VoiceOver meaning, focus order, contrast, reduced-motion behavior, and minimum tap targets.
 - Test each screen at supported Dynamic Type sizes and narrow/large iPhone widths rather than assuming a fixed 390-point canvas.
 
 ## Export sufficiency
 
-This ZIP is enough to begin faithful native planning and implementation. A Stitch project/share link or versioned screenshots would be useful for future design revisions and pixel-level review, but another export format is not required now. Native SwiftUI should be implemented from approved slice behavior and this visual reference, not mechanically converted from the HTML.
+This ZIP is enough to begin faithful native planning and implementation. A Stitch project/share link or versioned screenshots would be useful for future design revisions and pixel-level review, but another export format is not required now. Native SwiftUI should be implemented from the resolved product behavior above and this visual reference, not mechanically converted from the HTML.

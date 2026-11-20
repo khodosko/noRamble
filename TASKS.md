@@ -8,7 +8,7 @@ This file is the authoritative backlog. Do not maintain a competing task list el
 
 - **Status:** In review
 - **Plan:** [NR-000 project foundation](docs/plans/NR-000-project-foundation.md)
-- **Acceptance criteria:** Repository and branch initialized; required documentation exists and is internally consistent; the public GitHub repository is verified and connected; the Stitch visual reference is preserved with behavioral conflicts documented; no application or Xcode project is created.
+- **Acceptance criteria:** Repository and branch initialized; required documentation exists and is internally consistent; the public GitHub repository is verified and connected; the Stitch visual reference is preserved and its behavior differences are explicitly resolved; no application or Xcode project is created.
 - **Test status:** Documentation/design-reference slice; archive integrity, safe paths, expected files, HTML rendering, links, and prohibited application-artifact checks verified; no executable application tests apply.
 - **Pull request:** [#1 — Establish No Ramble project foundation](https://github.com/khodosko/noRamble/pull/1)
 
@@ -28,7 +28,7 @@ This file is the authoritative backlog. Do not maintain a competing task list el
 
 - **Status:** Backlog
 - **Plan:** Pending
-- **Acceptance criteria:** Deterministic prompt selection and daily rollover behavior are specified and covered by unit tests.
+- **Acceptance criteria:** Exactly three curated daily options, one persisted selection per daily session, retry consistency, and daily rollover behavior are specified and covered by unit tests.
 - **Test status:** Not started.
 - **Pull request:** Not available.
 
@@ -36,7 +36,7 @@ This file is the authoritative backlog. Do not maintain a competing task list el
 
 - **Status:** Backlog
 - **Plan:** Pending
-- **Acceptance criteria:** Permission, recording lifecycle, interruption, and failure behavior are specified behind a testable abstraction.
+- **Acceptance criteria:** Permission, minimal recording-state presentation, two-minute soft-ceiling behavior, lifecycle, interruption, and failure handling are specified behind a testable abstraction.
 - **Test status:** Not started.
 - **Pull request:** Not available.
 
@@ -44,7 +44,7 @@ This file is the authoritative backlog. Do not maintain a competing task list el
 
 - **Status:** Backlog
 - **Plan:** Pending
-- **Acceptance criteria:** Analysis contract, privacy boundary, deterministic fixtures, and error behavior are defined and tested.
+- **Acceptance criteria:** Post-recording-only analysis contract, privacy boundary, deterministic fixtures, and error behavior are defined and tested; no analysis is exposed during capture.
 - **Test status:** Not started.
 - **Pull request:** Not available.
 

@@ -20,7 +20,7 @@ A disciplined foundation reduces privacy, quality, and product-scope failures be
 - Record the native-iOS decision and provisional system boundaries.
 - Make the locked-test policy explicit across agent, testing, engineering, and review guidance.
 - Verify and connect the canonical GitHub remote with the owner-selected visibility.
-- Preserve the owner-provided Stitch visual reference and document its role, dependencies, and unresolved behavioral differences.
+- Preserve the owner-provided Stitch visual reference and document its role, dependencies, and resolved behavioral differences.
 
 ## Non-goals
 
@@ -38,11 +38,12 @@ A disciplined foundation reduces privacy, quality, and product-scope failures be
 - Git was initialized locally with `main`, followed by `chore/project-foundation`.
 - The Codex GitHub connection identifies the authenticated user as `khodosko`.
 - The available GitHub connector can inspect and modify existing repositories but does not create repositories.
-- GitHub CLI (`gh`) is not installed.
+- GitHub CLI (`gh`) is installed and authenticated as `khodosko` for HTTPS Git operations.
 - The owner created `khodosko/noRamble` as an empty public repository and explicitly replaced the initial private-only requirement on 2026-11-19.
 - The connected GitHub account has admin and push access to the repository.
 - The Stitch export contains a design-system Markdown file and four working HTML prototypes for daily prompts, live recording, editorial transcript feedback, and streak completion.
 - The HTML depends on Tailwind CDN, Google Fonts, and Material Symbols; it is a visual reference rather than native or production code.
+- The owner resolved the prototype behavior differences: three prompt choices for one daily session, a two-minute soft ceiling without abrupt cutoff, minimal recording-only UI with no visible timer, post-recording analysis, and streaks without XP.
 
 ## Proposed design
 
@@ -73,7 +74,7 @@ Keep durable product truth in `PRODUCT.md`, authoritative work state in `TASKS.m
 - [x] No application source or Xcode project is created.
 - [x] The public `khodosko/noRamble` repository exists and its owner, URL, visibility, empty state, and access are verified.
 - [x] The Stitch ZIP is preserved and extracted; integrity, safe paths, expected contents, and rendering are verified.
-- [x] The visual reference is separated from production code and behavioral conflicts with `PRODUCT.md` are recorded as open questions.
+- [x] The visual reference is separated from production code and its behavioral conflicts are resolved in `PRODUCT.md`, system design, and design guidance.
 - [x] Documentation verification results are recorded in `PROGRESS.md` and this plan.
 
 ## Tests written before implementation
@@ -90,7 +91,7 @@ No pre-existing tests exist. The test-integrity policy added here prohibits chan
 - Contradictory documentation: make one document authoritative and cross-link it.
 - Accidental application/Xcode creation: detect during verification and remove before completion.
 - Ambiguous or incorrectly owned remote: do not push until identity and documented visibility are verified.
-- Generated HTML mistaken for product behavior: keep it under `design/reference`, document conflicts, and require slice-level acceptance criteria before translating it to SwiftUI.
+- Generated HTML mistaken for product behavior: keep it under `design/reference`, follow the documented resolutions, and require slice-level acceptance criteria before translating it to SwiftUI.
 
 ## Privacy and security
 
@@ -130,7 +131,7 @@ shasum -a 256 design/reference/stitch_no_ramble_feedback_screens.zip
 - **Over-design before evidence:** Label unvalidated architecture as proposed or open.
 - **Test policy is bypassed under delivery pressure:** Repeat the locked-test rule in agent, testing, engineering, and PR review policy.
 - **Repository identity or visibility differs from policy:** Do not push until the owner, URL, access, and documented visibility agree.
-- **Design export drifts from product policy:** Treat visual styling as reference and resolve behavior explicitly in the relevant slice plan.
+- **Design export drifts from product policy:** Product decisions override prototype behavior; treat the export as visual reference and carry the documented resolutions into slice acceptance criteria.
 
 ## Rollback strategy
 
@@ -146,5 +147,5 @@ This slice creates the complete initial documentation set. Final verification re
 - **Tests:** No executable application tests apply. Repository-relative Markdown links resolve; artifact checks found no Swift source, Xcode project, or Xcode workspace; the Stitch archive passes integrity/path-safety checks and all four HTML prototypes render.
 - **Git:** `main` contains the repository bootstrap commit. `chore/project-foundation` is connected to its remote tracking branch and contains the documentation changes.
 - **CI:** Deferred until NR-001 because no Xcode project or known test command exists.
-- **GitHub:** `khodosko/noRamble` is verified as public, empty, unarchived, and writable by the connected owner account. Public visibility is an explicit owner decision recorded in ADR-0002.
+- **GitHub:** `khodosko/noRamble` is verified as public, unarchived, and writable by the connected owner account. Public visibility is an explicit owner decision recorded in ADR-0002.
 - **Pull request:** [#1](https://github.com/khodosko/noRamble/pull/1) is open for review.

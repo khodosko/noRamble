@@ -10,23 +10,25 @@ Speaking improvement requires repeated practice and useful feedback, yet existin
 
 ## Product thesis
 
-A guided daily speaking ritual with one prompt and one prioritized improvement will create more consistent practice than an open-ended collection of coaching tools.
+A guided daily speaking ritual with three curated choices, one selected prompt, and one prioritized improvement will create more consistent practice than an open-ended collection of coaching tools.
 
-Core promise: **One prompt. One recording. One improvement. Every day.**
+Core promise: **One chosen prompt. One recording. One improvement. Every day.**
 
 ## Core daily loop
 
-1. A notification opens directly to today's prompt.
-2. The user records a response; one to two minutes is recommended, not enforced.
-3. The app analyzes the attempt.
-4. The app shows an overall score, focused feedback, a few observations, and one primary improvement.
-5. The user retries the same prompt or finishes.
-6. A retry produces a comparison that highlights improvement.
-7. The session closes with a clear invitation to return tomorrow.
+1. A notification opens today's three prompt choices.
+2. The user selects one prompt for the daily session. The limited choice prevents a blank-mind blocker without becoming a content browser.
+3. The app presents a minimal recording state: a prominent red recording indicator and microphone treatment, with no visible timer, live transcript, coaching, metrics, or analysis.
+4. The user records naturally. Two minutes is the soft ceiling; the app must not cut speech off abruptly at exactly `2:00`.
+5. After recording ends, the app analyzes the attempt.
+6. The app shows an overall score, focused feedback, a few observations, and one primary improvement.
+7. The user retries the same selected prompt or finishes.
+8. A retry produces a comparison that highlights improvement.
+9. The session closes with a clear invitation to return tomorrow and updates the streak.
 
 ## Product principles
 
-- Direct the next action; do not make the user browse for it.
+- Direct the next action; offer only three curated prompt choices rather than a browsable content library.
 - Keep a daily session short and finishable.
 - Prefer one actionable improvement over an exhaustive critique.
 - Explain scores and feedback in language the user can apply.
@@ -36,12 +38,13 @@ Core promise: **One prompt. One recording. One improvement. Every day.**
 
 ## MVP scope
 
-- Daily prompt selection and notification deep link
-- Audio recording and permission/error handling
+- Three curated daily prompt choices, one selected prompt per daily session, and notification deep linking
+- Minimal audio-recording screen with a prominent red recording/microphone state, a two-minute soft ceiling, and permission/error handling
 - Analysis of filler words, pace, pauses/hesitation, conciseness, and structure
 - Overall score, concise observations, and one prioritized improvement
 - Retry of the same prompt with attempt comparison
-- Daily completion, minimal session history, and streak state
+- Post-recording analysis only; no live transcript or coaching during capture
+- Daily completion, minimal session history, and streak state without XP
 - Local persistence for essential state
 - Clear privacy controls and disclosure for any remote analysis
 
@@ -53,6 +56,8 @@ Core promise: **One prompt. One recording. One improvement. Every day.**
 - Course catalog
 - Coaching marketplace
 - Complex navigation or an open-ended analytics dashboard
+- Live transcription, coaching, metrics, or feedback while recording
+- XP, points, or a second gamification currency beyond streaks
 - Android, web, or iPad-specific experiences in the initial product
 
 ## Activation event
@@ -81,7 +86,4 @@ Reach **100 real users** who complete at least one session, then evaluate activa
 - What reminder timing and customization support a ritual without becoming intrusive?
 - What evidence threshold should define a meaningful improvement between retries?
 - What free experience is sufficient to establish value before monetization?
-- Does the Stitch prompt-picker screen represent final behavior, or should the app continue assigning exactly one daily prompt?
-- Is recording duration a flexible one-to-two-minute recommendation or a hard per-prompt limit?
-- Do live transcription and coaching nudges belong in the MVP recording experience, or should all analysis remain post-recording?
-- Does XP add useful motivation beyond streaks, or unnecessary gamification?
+- What warning, grace period, or gentle stop behavior should occur after the two-minute soft ceiling without cutting the user off mid-thought?
