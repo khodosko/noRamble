@@ -17,6 +17,7 @@ This document distinguishes **accepted**, **proposed**, and **open** decisions. 
 - Business behavior must be testable independently of SwiftUI and concrete Apple services.
 - A local day is derived from an injected calendar/time zone; the first prompt choice stored for that day remains fixed and idempotent for retries, and a different local day permits a new choice.
 - The daily prompt selection adapter stores only a prompt identifier and local date components in namespaced `UserDefaults`; broader attempt/history persistence remains open.
+- NR-020A composes a main-actor, domain-facing audio service with explicit permission, start, stop, cancel, discard, failure, and temporary-artifact behavior. Its AVFoundation adapter records mono AAC into a UUID-named `.m4a` in the temporary directory and deactivates the audio session after capture or cancellation.
 - Recordings and transcripts are sensitive; collection, transport, and retention must be minimized.
 
 ### Proposed
@@ -52,9 +53,13 @@ The concrete adapter stores one encoded prompt identifier and local date in name
 
 ## Recording abstraction
 
-**Proposed:** A domain-facing recorder exposes permission state and a controlled lifecycle such as idle, preparing, recording, stopping, completed, cancelled, and failed. The AVFoundation implementation remains outside the domain. The recording UI reflects only the recording state with a prominent red indicator/microphone treatment and no visible timer. Interruptions, route changes, app backgrounding, file cleanup, and competing operations require explicit behavior.
+**Accepted for NR-020A:** `AudioRecordingService` is a main-actor feature boundary for permission, request, start, stop, cancel, and discard. `RecordingViewModel` maps it into preparing, recording, denied, captured, and failed presentation states without importing AVFoundation. The system adapter uses `AVAudioApplication`, `AVAudioSession`, and `AVAudioRecorder` to write a unique mono AAC temporary `.m4a`; cancellation and captured-route dismissal delete the owned file. A debug-only simulated adapter makes the assembled UI journey deterministic without bypassing the production composition.
 
-**Open:** File format, the warning/grace/stop policy after the two-minute soft ceiling, whether visual metering is necessary for recording confidence, and whether audio is retained after analysis.
+The full-screen SwiftUI route begins only after **Start Daily Rep**, exposes a close action and one large red microphone control, and hides the prompt picker, visible time, transcript, coaching, and metrics during capture.
+
+**Proposed for NR-020B:** An injected scheduler and explicit audio lifecycle inputs will define the two-minute soft ceiling, warning/grace behavior, interruptions, route changes, app backgrounding, and recovery. These behaviors are not implied by NR-020A.
+
+**Open:** The warning/grace/stop policy after the two-minute soft ceiling, whether visual metering is necessary for recording confidence, and whether audio is retained after analysis.
 
 ## Speech-analysis abstraction
 

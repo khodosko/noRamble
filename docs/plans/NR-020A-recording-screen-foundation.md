@@ -1,6 +1,6 @@
 # NR-020A: Recording screen foundation
 
-- **Status:** In progress
+- **Status:** In review
 - **Task:** [NR-020A in TASKS.md](../../TASKS.md#nr-020a--recording-screen-foundation)
 - **Pull request:** Pending
 
@@ -77,17 +77,17 @@ The prototype also renders the chosen prompt, a visible elapsed timer, a `60s` r
 
 ## Acceptance criteria
 
-- [ ] A selected daily prompt reveals one **Start Daily Rep** action; no action appears before selection.
-- [ ] Starting with granted permission calls the recording service once and presents the active recording state.
-- [ ] Undetermined permission is requested once; a grant starts capture and a denial does not.
-- [ ] Already-denied permission presents recovery guidance without calling start.
-- [ ] The active screen shows a close action, red recording status, and one large microphone control with no prompt, visible timer, transcript, metric, or coaching content.
-- [ ] Tapping the large control stops once and presents a captured artifact state.
-- [ ] Closing while active cancels once, deletes the temporary recording through the service, and dismisses.
-- [ ] Startup and stop failures produce stable user-facing recovery states.
-- [ ] The system adapter records AAC to a unique temporary `.m4a`, deactivates the session after stop/cancel, and never logs audio paths or contents.
-- [ ] The app declares a clear microphone purpose string.
-- [ ] Existing prompt, persistence, launch, and accessibility tests remain green without weakening.
+- [x] A selected daily prompt reveals one **Start Daily Rep** action; no action appears before selection.
+- [x] Starting with granted permission calls the recording service once and presents the active recording state.
+- [x] Undetermined permission is requested once; a grant starts capture and a denial does not.
+- [x] Already-denied permission presents recovery guidance without calling start.
+- [x] The active screen shows a close action, red recording status, and one large microphone control with no prompt, visible timer, transcript, metric, or coaching content.
+- [x] Tapping the large control stops once and presents a captured artifact state.
+- [x] Closing while active cancels once, deletes the temporary recording through the service, and dismisses.
+- [x] Startup and stop failures produce stable user-facing recovery states.
+- [x] The system adapter records AAC to a unique temporary `.m4a`, deactivates the session after stop/cancel, and never logs audio paths or contents.
+- [x] The app declares a clear microphone purpose string.
+- [x] Existing prompt, persistence, launch, and accessibility tests remain green without weakening.
 - [ ] Relevant and complete suites pass locally and in hosted CI; native simulator visual QA passes.
 
 ## Tests to write before implementation
@@ -148,4 +148,9 @@ Revert the focused NR-020A merge. Prompt persistence is unchanged. Temporary rec
 
 ## Completion evidence
 
-Pending tests, implementation, verification, pull request, and CI.
+- Red: focused unit build exited 65 because the recording boundary and model did not exist.
+- Green: 36 unit and 3 UI tests pass on iPhone 17 Pro / iOS 26.2; app coverage is 79.44% (935/1177).
+- The assembled recording UI test verifies selection-to-capture-to-dismiss and asserts that neither a visible elapsed-time element nor the underlying prompt screen is exposed during capture.
+- The built `Info.plist` contains the expected `NSMicrophoneUsageDescription` value.
+- XcodeGen regeneration produces a byte-identical `project.pbxproj`; `git diff --check` passes.
+- Hosted CI, pull-request evidence, and the final simulator visual check remain before merge. A separate computer-control attempt could not attach to Simulator because its service timed out; this is reported rather than treated as passed.

@@ -18,7 +18,7 @@ Speaking practice is easy to postpone when the next action is unclear or the pro
 
 ## Status
 
-**Daily prompt rotation complete.** [Pull request #4](https://github.com/khodosko/noRamble/pull/4) expands the weak starter copy into 30 original impromptu-speaking prompts across six categories while still showing exactly three accessible choices per local day. The selection remains fixed for same-day retries, legacy choices remain restorable, and recording remains the next slice.
+**Recording foundation in review.** After choosing one of the three daily prompts, **Start Daily Rep** opens a focused full-screen recording flow backed by real `AVAudioRecorder` capture. Permission denial, start/stop failure, cancellation, temporary-file cleanup, and the captured seam are explicit and tested. Timing and interruption policy remain the next small slice.
 
 ## Technology direction
 
