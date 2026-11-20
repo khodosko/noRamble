@@ -49,12 +49,62 @@ final class DailyPromptViewModelTests: XCTestCase {
         )
     }
 
+    func testSelect_storeFailure_exposesSaveRecoveryMessage() {
+        let model = makeModel(store: ViewModelSelectionStore(saveError: TestStoreError.failed))
+
+        model.select(promptID: "work-update")
+
+        XCTAssertNil(model.selectedPromptID)
+        XCTAssertEqual(
+            model.errorMessage,
+            "We couldn’t save your prompt. Please try again."
+        )
+    }
+
+    func testSelect_unknownPrompt_exposesUnavailableMessage() {
+        let model = makeModel(store: ViewModelSelectionStore())
+
+        model.select(promptID: "missing-prompt")
+
+        XCTAssertNil(model.selectedPromptID)
+        XCTAssertEqual(
+            model.errorMessage,
+            "That prompt is unavailable. Reopen the app to refresh."
+        )
+    }
+
+    func testSelect_whenStoreAlreadyHasDifferentSameDayChoice_restoresLock() throws {
+        let date = ISO8601DateFormatter().date(from: "2026-11-19T18:00:00Z")!
+        let calendar = makeCalendar()
+        let original = try XCTUnwrap(DailyPromptCatalog.curated.first)
+        let replacement = try XCTUnwrap(DailyPromptCatalog.curated.dropFirst().first)
+        let model = makeModel(
+            store: ViewModelSelectionStore(
+                selection: DailyPromptSelection(
+                    day: LocalDay(date: date, calendar: calendar),
+                    promptID: original.id
+                )
+            ),
+            date: date,
+            calendar: calendar
+        )
+
+        model.select(promptID: replacement.id)
+
+        XCTAssertEqual(model.selectedPromptID, original.id)
+        XCTAssertEqual(
+            model.errorMessage,
+            "Today’s prompt is already locked for your retries."
+        )
+    }
+
     private func makeModel(
         store: ViewModelSelectionStore,
         date: Date = ISO8601DateFormatter().date(from: "2026-11-19T18:00:00Z")!,
-        calendar: Calendar = makeCalendar()
+        calendar: Calendar? = nil
     ) -> DailyPromptViewModel {
-        DailyPromptViewModel(
+        let calendar = calendar ?? makeCalendar()
+        return DailyPromptViewModel(
             session: DailyPromptSession(
                 prompts: DailyPromptCatalog.curated,
                 selectionStore: store
@@ -74,13 +124,16 @@ final class DailyPromptViewModelTests: XCTestCase {
 private final class ViewModelSelectionStore: DailyPromptSelectionStore {
     var selection: DailyPromptSelection?
     let loadError: Error?
+    let saveError: Error?
 
     init(
         selection: DailyPromptSelection? = nil,
-        loadError: Error? = nil
+        loadError: Error? = nil,
+        saveError: Error? = nil
     ) {
         self.selection = selection
         self.loadError = loadError
+        self.saveError = saveError
     }
 
     func loadSelection() throws -> DailyPromptSelection? {
@@ -91,6 +144,9 @@ private final class ViewModelSelectionStore: DailyPromptSelectionStore {
     }
 
     func saveSelection(_ selection: DailyPromptSelection) throws {
+        if let saveError {
+            throw saveError
+        }
         self.selection = selection
     }
 

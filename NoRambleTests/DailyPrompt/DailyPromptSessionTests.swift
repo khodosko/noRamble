@@ -146,7 +146,7 @@ final class DailyPromptSessionTests: XCTestCase {
     }
 
     func testLocalDay_usesInjectedCalendarTimeZone() {
-        let instant = TestDates.date("2026-11-20T07:30:00Z")
+        let instant = TestDates.date("2026-11-20T06:30:00Z")
         var utcCalendar = Calendar(identifier: .gregorian)
         utcCalendar.timeZone = TimeZone(secondsFromGMT: 0)!
 

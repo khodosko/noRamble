@@ -85,6 +85,12 @@ A main-actor observable view model composes the domain policy for SwiftUI. The p
 
 These new tests become locked after their intended initial failure is recorded. Existing tests require no changes.
 
+### Exceptional test-harness correction
+
+After production types were added, Swift exposed a compile-time defect that the earlier missing-type failure had masked: `DailyPromptViewModelTests.makeModel` used the instance method `makeCalendar()` as a default-parameter expression, which Swift forbids. Production code cannot affect test helper parameter evaluation. The helper will accept an optional calendar and resolve `calendar ?? makeCalendar()` inside its body. No test name, assertion, input, expected result, coverage, or product requirement changes.
+
+The time-zone boundary fixture also assumed Vancouver would be UTC−8 on 2026-11-20. Xcode 26.2/Foundation and the installed zone database report `America/Vancouver` as UTC−7 on that date, making `07:30Z` local `00:30` rather than the prior day. This is an external platform time-zone contract, and production correctly honors the injected calendar. The fixture instant changes to `06:30Z`, which preserves the original behavioral assertion: November 19 in Vancouver and November 20 in UTC. Assertions and product intent remain unchanged.
+
 ## Failure and edge cases
 
 - Unknown prompt identifiers fail explicitly and do not write state.

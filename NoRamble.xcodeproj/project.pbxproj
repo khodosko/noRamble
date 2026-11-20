@@ -8,15 +8,21 @@
 
 /* Begin PBXBuildFile section */
 		0FA1B0EC8FDC00B48D8256C5 /* NoRambleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16C055833EE4CA4658F9134 /* NoRambleApp.swift */; };
+		22E120B735477B85E79ADF47 /* DailyPromptViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D088FB31FAA779CADB946DD9 /* DailyPromptViewModel.swift */; };
 		29FE638595AD3C6FB929366B /* DailyPromptCatalogTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BE8A6EF238A9E03B45BBB3 /* DailyPromptCatalogTests.swift */; };
 		328F9CD953D031C02159EC77 /* DailyPromptSelectionUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD396A080F8D510F3A4A7F1 /* DailyPromptSelectionUITests.swift */; };
 		32BB108978E31354E5AFC7AB /* DailyPromptViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A987FFA6B485AD4D83FE51CF /* DailyPromptViewModelTests.swift */; };
 		650228AFD4225EEA5547DA10 /* DailyPromptSessionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B6A777386F36D614C045F0C /* DailyPromptSessionTests.swift */; };
 		79EA41F2938DB545D039B9F5 /* AppLaunchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD9FA7A36A69088963EE0A9 /* AppLaunchUITests.swift */; };
+		7A430EE9047CC55B45320389 /* DailyPromptSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288A924C23503A017848B835 /* DailyPromptSelection.swift */; };
+		9F1B46062F2BE9EEFCA5E402 /* DailyPromptPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AF56892BEAF8BA8C503362 /* DailyPromptPickerView.swift */; };
 		AE0FCF8B8BBB1D665B14088E /* AppShellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79AC50A5BE7A8383CDA0A50 /* AppShellView.swift */; };
+		AEF5A14C0FF9F72C82A79AD0 /* DailyPrompt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23AAD1F36364DA1C815E767D /* DailyPrompt.swift */; };
 		B5B8B9AD7CC8BB525FBA01F6 /* AppShellContentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5ACFA89A121847ED0414C5 /* AppShellContentTests.swift */; };
 		DE27A553171479CE3B1D2C1C /* UserDefaultsDailyPromptSelectionStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68EA493934C9877E440B127 /* UserDefaultsDailyPromptSelectionStoreTests.swift */; };
+		E0B33EF9905B96560FC20372 /* UserDefaultsDailyPromptSelectionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C3DFEF28B43CE8AA6D13CD /* UserDefaultsDailyPromptSelectionStore.swift */; };
 		ECE8CED308A10B8C96EC6603 /* AppShellContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3FB504BB7941D0887C688D /* AppShellContent.swift */; };
+		FA252C975E9B39533F7AF48C /* DailyPromptSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333834DBB220C501D86D0E8F /* DailyPromptSession.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,17 +44,23 @@
 
 /* Begin PBXFileReference section */
 		0E3FB504BB7941D0887C688D /* AppShellContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppShellContent.swift; sourceTree = "<group>"; };
+		23AAD1F36364DA1C815E767D /* DailyPrompt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyPrompt.swift; sourceTree = "<group>"; };
+		288A924C23503A017848B835 /* DailyPromptSelection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyPromptSelection.swift; sourceTree = "<group>"; };
 		2B6A777386F36D614C045F0C /* DailyPromptSessionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyPromptSessionTests.swift; sourceTree = "<group>"; };
+		333834DBB220C501D86D0E8F /* DailyPromptSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyPromptSession.swift; sourceTree = "<group>"; };
 		3A998574F7F481DB6A380B5A /* NoRambleUITests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = NoRambleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A5ACFA89A121847ED0414C5 /* AppShellContentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppShellContentTests.swift; sourceTree = "<group>"; };
 		73C1737242D239DF4D946301 /* NoRambleTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = NoRambleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		75AF56892BEAF8BA8C503362 /* DailyPromptPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyPromptPickerView.swift; sourceTree = "<group>"; };
 		7AD396A080F8D510F3A4A7F1 /* DailyPromptSelectionUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyPromptSelectionUITests.swift; sourceTree = "<group>"; };
 		883EDBFD32AF79DC9BC5A5C4 /* NoRamble.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = NoRamble.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BD9FA7A36A69088963EE0A9 /* AppLaunchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLaunchUITests.swift; sourceTree = "<group>"; };
 		A987FFA6B485AD4D83FE51CF /* DailyPromptViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyPromptViewModelTests.swift; sourceTree = "<group>"; };
 		C1BE8A6EF238A9E03B45BBB3 /* DailyPromptCatalogTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyPromptCatalogTests.swift; sourceTree = "<group>"; };
+		D088FB31FAA779CADB946DD9 /* DailyPromptViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyPromptViewModel.swift; sourceTree = "<group>"; };
 		D16C055833EE4CA4658F9134 /* NoRambleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoRambleApp.swift; sourceTree = "<group>"; };
 		D68EA493934C9877E440B127 /* UserDefaultsDailyPromptSelectionStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsDailyPromptSelectionStoreTests.swift; sourceTree = "<group>"; };
+		E5C3DFEF28B43CE8AA6D13CD /* UserDefaultsDailyPromptSelectionStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsDailyPromptSelectionStore.swift; sourceTree = "<group>"; };
 		E79AC50A5BE7A8383CDA0A50 /* AppShellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppShellView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -71,11 +83,20 @@
 			path = App;
 			sourceTree = "<group>";
 		};
+		5D157A0C1B7F21E45C390D41 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				D088FB31FAA779CADB946DD9 /* DailyPromptViewModel.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
 		6CC7F2F6F58401A4E81A07D5 /* NoRamble */ = {
 			isa = PBXGroup;
 			children = (
 				37746DEB73BDFAB38E042E33 /* App */,
 				A99D7613B7088D1385E5032C /* AppShell */,
+				7CC6626933EFFAA24C48526D /* DailyPrompt */,
 			);
 			path = NoRamble;
 			sourceTree = "<group>";
@@ -87,6 +108,35 @@
 				886DC4040B371B1C3AB3A08D /* DailyPrompt */,
 			);
 			path = NoRambleTests;
+			sourceTree = "<group>";
+		};
+		7317A14AC74E3B5E8F378CED /* Infrastructure */ = {
+			isa = PBXGroup;
+			children = (
+				E5C3DFEF28B43CE8AA6D13CD /* UserDefaultsDailyPromptSelectionStore.swift */,
+			);
+			path = Infrastructure;
+			sourceTree = "<group>";
+		};
+		7CC6626933EFFAA24C48526D /* DailyPrompt */ = {
+			isa = PBXGroup;
+			children = (
+				5D157A0C1B7F21E45C390D41 /* Application */,
+				814DAB6ACF6A590F4B7BCFB3 /* Domain */,
+				7317A14AC74E3B5E8F378CED /* Infrastructure */,
+				DCB94F028C72E42DBE722B7D /* UI */,
+			);
+			path = DailyPrompt;
+			sourceTree = "<group>";
+		};
+		814DAB6ACF6A590F4B7BCFB3 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				23AAD1F36364DA1C815E767D /* DailyPrompt.swift */,
+				288A924C23503A017848B835 /* DailyPromptSelection.swift */,
+				333834DBB220C501D86D0E8F /* DailyPromptSession.swift */,
+			);
+			path = Domain;
 			sourceTree = "<group>";
 		};
 		886DC4040B371B1C3AB3A08D /* DailyPrompt */ = {
@@ -126,6 +176,14 @@
 				E79AC50A5BE7A8383CDA0A50 /* AppShellView.swift */,
 			);
 			path = AppShell;
+			sourceTree = "<group>";
+		};
+		DCB94F028C72E42DBE722B7D /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				75AF56892BEAF8BA8C503362 /* DailyPromptPickerView.swift */,
+			);
+			path = UI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -226,7 +284,13 @@
 			files = (
 				ECE8CED308A10B8C96EC6603 /* AppShellContent.swift in Sources */,
 				AE0FCF8B8BBB1D665B14088E /* AppShellView.swift in Sources */,
+				AEF5A14C0FF9F72C82A79AD0 /* DailyPrompt.swift in Sources */,
+				9F1B46062F2BE9EEFCA5E402 /* DailyPromptPickerView.swift in Sources */,
+				7A430EE9047CC55B45320389 /* DailyPromptSelection.swift in Sources */,
+				FA252C975E9B39533F7AF48C /* DailyPromptSession.swift in Sources */,
+				22E120B735477B85E79ADF47 /* DailyPromptViewModel.swift in Sources */,
 				0FA1B0EC8FDC00B48D8256C5 /* NoRambleApp.swift in Sources */,
+				E0B33EF9905B96560FC20372 /* UserDefaultsDailyPromptSelectionStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
