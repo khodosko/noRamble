@@ -8,9 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		0FA1B0EC8FDC00B48D8256C5 /* NoRambleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16C055833EE4CA4658F9134 /* NoRambleApp.swift */; };
+		29FE638595AD3C6FB929366B /* DailyPromptCatalogTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BE8A6EF238A9E03B45BBB3 /* DailyPromptCatalogTests.swift */; };
+		328F9CD953D031C02159EC77 /* DailyPromptSelectionUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD396A080F8D510F3A4A7F1 /* DailyPromptSelectionUITests.swift */; };
+		32BB108978E31354E5AFC7AB /* DailyPromptViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A987FFA6B485AD4D83FE51CF /* DailyPromptViewModelTests.swift */; };
+		650228AFD4225EEA5547DA10 /* DailyPromptSessionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B6A777386F36D614C045F0C /* DailyPromptSessionTests.swift */; };
 		79EA41F2938DB545D039B9F5 /* AppLaunchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD9FA7A36A69088963EE0A9 /* AppLaunchUITests.swift */; };
 		AE0FCF8B8BBB1D665B14088E /* AppShellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79AC50A5BE7A8383CDA0A50 /* AppShellView.swift */; };
 		B5B8B9AD7CC8BB525FBA01F6 /* AppShellContentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5ACFA89A121847ED0414C5 /* AppShellContentTests.swift */; };
+		DE27A553171479CE3B1D2C1C /* UserDefaultsDailyPromptSelectionStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68EA493934C9877E440B127 /* UserDefaultsDailyPromptSelectionStoreTests.swift */; };
 		ECE8CED308A10B8C96EC6603 /* AppShellContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3FB504BB7941D0887C688D /* AppShellContent.swift */; };
 /* End PBXBuildFile section */
 
@@ -33,12 +38,17 @@
 
 /* Begin PBXFileReference section */
 		0E3FB504BB7941D0887C688D /* AppShellContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppShellContent.swift; sourceTree = "<group>"; };
+		2B6A777386F36D614C045F0C /* DailyPromptSessionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyPromptSessionTests.swift; sourceTree = "<group>"; };
 		3A998574F7F481DB6A380B5A /* NoRambleUITests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = NoRambleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A5ACFA89A121847ED0414C5 /* AppShellContentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppShellContentTests.swift; sourceTree = "<group>"; };
 		73C1737242D239DF4D946301 /* NoRambleTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = NoRambleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7AD396A080F8D510F3A4A7F1 /* DailyPromptSelectionUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyPromptSelectionUITests.swift; sourceTree = "<group>"; };
 		883EDBFD32AF79DC9BC5A5C4 /* NoRamble.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = NoRamble.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BD9FA7A36A69088963EE0A9 /* AppLaunchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLaunchUITests.swift; sourceTree = "<group>"; };
+		A987FFA6B485AD4D83FE51CF /* DailyPromptViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyPromptViewModelTests.swift; sourceTree = "<group>"; };
+		C1BE8A6EF238A9E03B45BBB3 /* DailyPromptCatalogTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyPromptCatalogTests.swift; sourceTree = "<group>"; };
 		D16C055833EE4CA4658F9134 /* NoRambleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoRambleApp.swift; sourceTree = "<group>"; };
+		D68EA493934C9877E440B127 /* UserDefaultsDailyPromptSelectionStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsDailyPromptSelectionStoreTests.swift; sourceTree = "<group>"; };
 		E79AC50A5BE7A8383CDA0A50 /* AppShellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppShellView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -74,8 +84,20 @@
 			isa = PBXGroup;
 			children = (
 				4A5ACFA89A121847ED0414C5 /* AppShellContentTests.swift */,
+				886DC4040B371B1C3AB3A08D /* DailyPrompt */,
 			);
 			path = NoRambleTests;
+			sourceTree = "<group>";
+		};
+		886DC4040B371B1C3AB3A08D /* DailyPrompt */ = {
+			isa = PBXGroup;
+			children = (
+				C1BE8A6EF238A9E03B45BBB3 /* DailyPromptCatalogTests.swift */,
+				2B6A777386F36D614C045F0C /* DailyPromptSessionTests.swift */,
+				A987FFA6B485AD4D83FE51CF /* DailyPromptViewModelTests.swift */,
+				D68EA493934C9877E440B127 /* UserDefaultsDailyPromptSelectionStoreTests.swift */,
+			);
+			path = DailyPrompt;
 			sourceTree = "<group>";
 		};
 		A17E512836023811EE152CEC = {
@@ -92,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				9BD9FA7A36A69088963EE0A9 /* AppLaunchUITests.swift */,
+				7AD396A080F8D510F3A4A7F1 /* DailyPromptSelectionUITests.swift */,
 			);
 			path = NoRambleUITests;
 			sourceTree = "<group>";
@@ -212,6 +235,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				79EA41F2938DB545D039B9F5 /* AppLaunchUITests.swift in Sources */,
+				328F9CD953D031C02159EC77 /* DailyPromptSelectionUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -220,6 +244,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				B5B8B9AD7CC8BB525FBA01F6 /* AppShellContentTests.swift in Sources */,
+				29FE638595AD3C6FB929366B /* DailyPromptCatalogTests.swift in Sources */,
+				650228AFD4225EEA5547DA10 /* DailyPromptSessionTests.swift in Sources */,
+				32BB108978E31354E5AFC7AB /* DailyPromptViewModelTests.swift in Sources */,
+				DE27A553171479CE3B1D2C1C /* UserDefaultsDailyPromptSelectionStoreTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
