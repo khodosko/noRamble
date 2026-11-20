@@ -4,7 +4,15 @@ This file is the authoritative backlog. Do not maintain a competing task list el
 
 ## Now
 
-- None. The next slice has not started.
+- NR-011 — Prompt library and daily rotation
+
+### NR-011 — Prompt library and daily rotation
+
+- **Status:** In progress
+- **Plan:** [NR-011 prompt library and daily rotation](docs/plans/NR-011-prompt-library-and-rotation.md)
+- **Acceptance criteria:** A broad original Table Topics–style library deterministically rotates exactly three choices per local day, preserves existing same-day selections, and keeps the three-card accessible UI contract.
+- **Test status:** Test changes and new red specifications pending.
+- **Pull request:** Not available.
 
 ## Next
 

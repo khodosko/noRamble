@@ -2,11 +2,11 @@
 
 ## Current state
 
-NR-000, NR-001, and NR-010 are merged. The app now presents exactly three accessible daily prompts, persists one local-day choice, keeps retries tied to it, and permits a new choice after rollover. Recording has not started.
+NR-000, NR-001, and NR-010 are merged. NR-011 is in progress to replace the fixed starter content with an original Table Topics–style library and deterministic daily rotation while preserving the three-choice and same-day lock contracts. Recording has not started.
 
 ## Next recommended action
 
-Plan NR-020 as the next focused test-first slice: the audio-recording boundary and minimal recording state. Resolve the warning/grace behavior around the two-minute soft ceiling in that plan before implementation.
+Write and lock NR-011 library-quality, deterministic-rotation, and legacy-restoration tests before production changes. NR-020 remains next after this corrective content slice.
 
 ## Journal
 
