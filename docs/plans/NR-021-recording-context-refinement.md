@@ -2,7 +2,7 @@
 
 - **Status:** In review
 - **Task:** [NR-021 in TASKS.md](../../TASKS.md#nr-021--recording-context-refinement)
-- **Pull request:** Pending
+- **Pull request:** [#8 — Align recording context with supplied design](https://github.com/khodosko/noRamble/pull/8)
 
 ## Goal
 

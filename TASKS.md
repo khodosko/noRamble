@@ -10,7 +10,7 @@ This file is the authoritative backlog. Do not maintain a competing task list el
 - **Plan:** [NR-021 recording context refinement](docs/plans/NR-021-recording-context-refinement.md)
 - **Acceptance criteria:** The start action matches the supplied tactile green design, and active recording retains the selected prompt plus a small deterministic elapsed timer without adding live coaching or cutoff behavior.
 - **Test status:** Red state recorded (missing formatter/start-instant behavior, exit 65); 37 unit and 3 UI tests pass locally with 81.22% app coverage. XcodeGen regeneration is byte-identical.
-- **Pull request:** Not available.
+- **Pull request:** [#8 — Align recording context with supplied design](https://github.com/khodosko/noRamble/pull/8)
 
 ## Next
 
