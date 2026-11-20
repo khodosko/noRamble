@@ -2,7 +2,7 @@
 
 ## Current state
 
-NR-000, NR-001, and NR-010 are merged. NR-011 is complete and its hosted suite is green: 30 original prompts rotate through three deterministic daily choices while preserving the three-card and same-day lock contracts. Recording has not started.
+NR-000, NR-001, NR-010, and NR-011 are merged. Thirty original prompts rotate through three deterministic daily choices while preserving the three-card and same-day lock contracts. Recording has not started.
 
 ## Next recommended action
 
@@ -17,7 +17,7 @@ Plan NR-020's testable audio-recording boundary, including permission, lifecycle
 - **Verification:** Red—unit command exited 65 because `DailyPromptRotation`, `DailyPromptCatalog.legacy`, and `DailyPromptCatalog.all` did not exist. Green—26 unit and 2 UI tests pass with 0 failures on iPhone 17 Pro / iOS 26.2. App coverage is 97.86% (503/514); session policy, view model, and app composition are 100%. Simulator visual review confirmed all three longer cards remain readable and scrollable without clipping. GitHub Actions run [44694752680](https://github.com/khodosko/noRamble/actions/runs/44694752680) passed the complete suite in 4m55s.
 - **Decisions:** Prompt wording is original rather than copied from published question sets; the bundled library stays offline and non-browsable; stable FNV-1a ordering avoids process-randomized hashing; adding future unselected prompts may alter a day's set, but a persisted same-day choice remains visible.
 - **Problems or blockers:** None. The owner explicitly replaced the fixed three-item catalog requirement. The invalid exact-catalog test was replaced with library-quality and rotation tests; two fixtures that named retired prompt IDs now select injected/visible prompts without weakening their save-failure or selection-lock assertions.
-- **Immediate next action:** Merge [pull request #4](https://github.com/khodosko/noRamble/pull/4) after hosted CI passes, then plan NR-020.
+- **Immediate next action:** Plan NR-020's audio-recording boundary and its failing lifecycle tests.
 
 ### 2026-11-19 — NR-000 Project foundation
 

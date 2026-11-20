@@ -52,7 +52,7 @@ This file is the authoritative backlog. Do not maintain a competing task list el
 - **Plan:** [NR-011 prompt library and daily rotation](docs/plans/NR-011-prompt-library-and-rotation.md)
 - **Acceptance criteria:** A broad original Table Topics–style library deterministically rotates exactly three choices per local day, preserves existing same-day selections, and keeps the three-card accessible UI contract.
 - **Test status:** Red state recorded (missing rotation/current-plus-legacy APIs, exit 65); 26 unit and 2 UI tests pass locally with 97.86% app coverage, including 100% coverage of session policy, application state, and app composition; GitHub Actions passes.
-- **Pull request:** [#4 — Rotate a better daily prompt library](https://github.com/khodosko/noRamble/pull/4)
+- **Pull request:** [#4 — Rotate a better daily prompt library](https://github.com/khodosko/noRamble/pull/4) — merged 2026-11-20.
 
 ### NR-010 — Daily prompt domain
 
