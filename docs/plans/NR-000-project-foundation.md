@@ -1,6 +1,6 @@
 # NR-000: Project foundation
 
-- **Status:** In review
+- **Status:** Complete
 - **Task:** [NR-000 in TASKS.md](../../TASKS.md#nr-000--project-foundation)
 - **Pull request:** [#1 — Establish No Ramble project foundation](https://github.com/khodosko/noRamble/pull/1)
 

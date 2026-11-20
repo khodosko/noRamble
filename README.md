@@ -18,7 +18,7 @@ Speaking practice is easy to postpone when the next action is unclear or the pro
 
 ## Status
 
-**Project foundation in review.** Product, engineering, testing, architecture, planning, and Git policies are proposed in [pull request #1](https://github.com/khodosko/noRamble/pull/1). No application or Xcode project has been created yet.
+**Xcode foundation in progress.** The documentation/design foundation merged in [pull request #1](https://github.com/khodosko/noRamble/pull/1). NR-001 adds the minimal launchable SwiftUI shell, unit/UI test targets, and pull-request CI; product features remain out of scope for this slice.
 
 ## Technology direction
 
@@ -45,11 +45,64 @@ Speaking practice is easy to postpone when the next action is unclear or the pro
 
 ## Development
 
-Development setup and test commands are pending creation of the Xcode project. Until then:
+### Prerequisites
+
+- Xcode 26.2 with the iOS 26.2 Simulator runtime
+- XcodeGen 2.48.0 when regenerating the committed project (`brew install xcodegen`)
+
+### Get and open the project
+
+This workspace is already cloned locally. Open it directly:
+
+```sh
+open NoRamble.xcodeproj
+```
+
+On another Mac, use Xcode's **Clone Git Repository** action with `https://github.com/khodosko/noRamble.git`, choose a local folder, then open `NoRamble.xcodeproj`. A terminal clone works too:
+
+```sh
+git clone https://github.com/khodosko/noRamble.git
+cd noRamble
+open NoRamble.xcodeproj
+```
+
+### Regenerate the project
+
+`project.yml` is the human-reviewable project definition. Regenerate after changing targets or build settings:
+
+```sh
+DEVELOPER_DIR=/Applications/Xcode.app/Contents/Developer xcodegen generate
+```
+
+### Run tests
+
+Relevant unit tests:
+
+```sh
+DEVELOPER_DIR=/Applications/Xcode.app/Contents/Developer xcodebuild test \
+  -project NoRamble.xcodeproj \
+  -scheme NoRamble \
+  -destination 'platform=iOS Simulator,name=iPhone 17 Pro,OS=26.2' \
+  -only-testing:NoRambleTests \
+  CODE_SIGNING_ALLOWED=NO
+```
+
+Complete unit/UI suite with coverage:
+
+```sh
+DEVELOPER_DIR=/Applications/Xcode.app/Contents/Developer xcodebuild test \
+  -project NoRamble.xcodeproj \
+  -scheme NoRamble \
+  -destination 'platform=iOS Simulator,name=iPhone 17 Pro,OS=26.2' \
+  -enableCodeCoverage YES \
+  CODE_SIGNING_ALLOWED=NO
+```
+
+Before contributing:
 
 1. Read `AGENTS.md` and the documents linked above.
 2. Select a task from `TASKS.md` and create or update its slice plan.
 3. Work on a focused branch using the test-first process in `docs/TESTING.md`.
-4. Do not add application behavior during the foundation slice.
+4. Run relevant tests while iterating and the complete suite before opening a pull request.
 
 This is intentionally a public repository so people can follow the work. Treat every committed file as public: never commit secrets, signing material, API keys, user recordings or transcripts, or developer-specific configuration.

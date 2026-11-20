@@ -47,14 +47,37 @@ Every meaningful failure, cancellation, permission denial, empty or boundary inp
 
 ## Running tests
 
-Exact schemes, destinations, and commands are pending NR-001. The project must document:
+The shared `NoRamble` scheme runs unit and UI tests. Local and CI verification use Xcode 26.2 with iPhone 17 Pro on iOS 26.2. The minimum deployment target is provisionally iOS 17.0; the newer pinned simulator provides one deterministic verification environment.
 
-- A fast relevant-test command for local iteration
-- A complete-suite command matching CI
-- Any required simulator runtime
-- Coverage reporting and artifact locations
+Regenerate the project after `project.yml` changes:
 
-CI must build and run the automated suite on every pull request once the Xcode project exists.
+```sh
+DEVELOPER_DIR=/Applications/Xcode.app/Contents/Developer xcodegen generate
+```
+
+Run relevant unit tests during iteration:
+
+```sh
+DEVELOPER_DIR=/Applications/Xcode.app/Contents/Developer xcodebuild test \
+  -project NoRamble.xcodeproj \
+  -scheme NoRamble \
+  -destination 'platform=iOS Simulator,name=iPhone 17 Pro,OS=26.2' \
+  -only-testing:NoRambleTests \
+  CODE_SIGNING_ALLOWED=NO
+```
+
+Run the complete suite before completion:
+
+```sh
+DEVELOPER_DIR=/Applications/Xcode.app/Contents/Developer xcodebuild test \
+  -project NoRamble.xcodeproj \
+  -scheme NoRamble \
+  -destination 'platform=iOS Simulator,name=iPhone 17 Pro,OS=26.2' \
+  -enableCodeCoverage YES \
+  CODE_SIGNING_ALLOWED=NO
+```
+
+Xcode writes local result bundles under the project's DerivedData `Logs/Test` directory. GitHub Actions runs the same complete-suite command for every pull request to `main`.
 
 ## Coverage and exceptions
 
