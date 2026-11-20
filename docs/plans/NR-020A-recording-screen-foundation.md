@@ -2,7 +2,7 @@
 
 - **Status:** In review
 - **Task:** [NR-020A in TASKS.md](../../TASKS.md#nr-020a--recording-screen-foundation)
-- **Pull request:** Pending
+- **Pull request:** [#6 — Add tested recording screen foundation](https://github.com/khodosko/noRamble/pull/6)
 
 ## Goal
 

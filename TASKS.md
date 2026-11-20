@@ -10,7 +10,7 @@ This file is the authoritative backlog. Do not maintain a competing task list el
 - **Plan:** [NR-020A recording screen foundation](docs/plans/NR-020A-recording-screen-foundation.md)
 - **Acceptance criteria:** A selected prompt can start, stop, or cancel real microphone capture through a tested boundary and minimal full-screen recording interface with explicit permission and failure states.
 - **Test status:** Red state recorded (missing recording boundary types, exit 65); 36 unit and 3 UI tests pass locally with 79.44% app coverage. Generated project and microphone purpose-string checks pass.
-- **Pull request:** Not available.
+- **Pull request:** [#6 — Add tested recording screen foundation](https://github.com/khodosko/noRamble/pull/6)
 
 ## Next
 
