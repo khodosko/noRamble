@@ -4,16 +4,6 @@ This file is the authoritative backlog. Do not maintain a competing task list el
 
 ## Now
 
-### NR-021 — Recording context refinement
-
-- **Status:** In review
-- **Plan:** [NR-021 recording context refinement](docs/plans/NR-021-recording-context-refinement.md)
-- **Acceptance criteria:** The start action matches the supplied tactile green design, and active recording retains the selected prompt plus a small deterministic elapsed timer without adding live coaching or cutoff behavior.
-- **Test status:** Red state recorded (missing formatter/start-instant behavior, exit 65); 37 unit and 3 UI tests pass locally with 81.22% app coverage. XcodeGen regeneration is byte-identical.
-- **Pull request:** [#8 — Align recording context with supplied design](https://github.com/khodosko/noRamble/pull/8)
-
-## Next
-
 ### NR-020B — Recording timing and interruption policy
 
 - **Status:** Backlog
@@ -22,7 +12,7 @@ This file is the authoritative backlog. Do not maintain a competing task list el
 - **Test status:** Not started.
 - **Pull request:** Not available.
 
-## Later
+## Next
 
 ### NR-030 — Speech-analysis boundary
 
@@ -31,6 +21,8 @@ This file is the authoritative backlog. Do not maintain a competing task list el
 - **Acceptance criteria:** Post-recording-only analysis contract, privacy boundary, deterministic fixtures, and error behavior are defined and tested; no analysis is exposed during capture.
 - **Test status:** Not started.
 - **Pull request:** Not available.
+
+## Later
 
 ### NR-040 — Feedback and scoring
 
@@ -53,6 +45,14 @@ This file is the authoritative backlog. Do not maintain a competing task list el
 - None.
 
 ## Completed
+
+### NR-021 — Recording context refinement
+
+- **Status:** Complete
+- **Plan:** [NR-021 recording context refinement](docs/plans/NR-021-recording-context-refinement.md)
+- **Acceptance criteria:** The start action matches the supplied tactile green design, and active recording retains the selected prompt plus a small deterministic elapsed timer without adding live coaching or cutoff behavior.
+- **Test status:** Red state recorded (missing formatter/start-instant behavior, exit 65); 37 unit and 3 UI tests pass locally with 81.22% app coverage. XcodeGen regeneration is byte-identical; GitHub Actions passes.
+- **Pull request:** [#8 — Align recording context with supplied design](https://github.com/khodosko/noRamble/pull/8) — merged 2026-11-20.
 
 ### NR-020A — Recording screen foundation
 

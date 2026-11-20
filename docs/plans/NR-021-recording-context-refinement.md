@@ -1,6 +1,6 @@
 # NR-021: Recording context refinement
 
-- **Status:** In review
+- **Status:** Complete
 - **Task:** [NR-021 in TASKS.md](../../TASKS.md#nr-021--recording-context-refinement)
 - **Pull request:** [#8 — Align recording context with supplied design](https://github.com/khodosko/noRamble/pull/8)
 
@@ -57,7 +57,7 @@ The timer is informational only. It does not introduce a cutoff, progress target
 - [x] Elapsed formatting clamps negative intervals to `0:00` and formats minute/second boundaries deterministically.
 - [x] The timer remains informational and does not alter stop/cancel or the future two-minute policy.
 - [x] Existing permission, failure, cleanup, prompt-persistence, and accessibility behavior remains green.
-- [ ] Relevant and complete suites pass locally and in hosted CI.
+- [x] Relevant and complete suites pass locally and in hosted CI.
 
 ## Test-first plan
 
@@ -82,4 +82,5 @@ Revert the focused NR-021 merge. Audio files, permission state, and prompt persi
 - Green: 37 unit and 3 UI tests pass on iPhone 17 Pro / iOS 26.2; app coverage is 81.22% (1055/1299).
 - The assembled UI journey verifies the large start target, exact prompt continuity, small valid `m:ss` timer, stop, captured state, and return.
 - XcodeGen regeneration produces a byte-identical `project.pbxproj`; `git diff --check` passes.
-- Hosted CI and pull-request evidence remain before merge. A separate computer-control screenshot pass timed out attaching to Simulator; this is reported rather than treated as visual evidence.
+- [Pull request #8](https://github.com/khodosko/noRamble/pull/8) merged on 2026-11-20 after GitHub Actions run [44770267181](https://github.com/khodosko/noRamble/actions/runs/44770267181) passed the full suite in 8m28s.
+- A separate computer-control screenshot pass timed out attaching to Simulator; this limitation is reported rather than treated as visual evidence.
