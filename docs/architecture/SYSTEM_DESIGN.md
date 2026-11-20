@@ -9,6 +9,7 @@ This document distinguishes **accepted**, **proposed**, and **open** decisions. 
 - The first product is a native iPhone app using Swift and SwiftUI; see [ADR-0001](../decisions/ADR-0001-native-ios.md).
 - The internal target/module name is `NoRamble`; the user-facing name is **No Ramble**.
 - The app is a directed daily ritual, not an open-ended toolbox.
+- The owner-provided Stitch export is the visual reference; its prototype behaviors remain provisional unless accepted by the product specification and a slice plan.
 - Business behavior must be testable independently of SwiftUI and concrete Apple services.
 - Recordings and transcripts are sensitive; collection, transport, and retention must be minimized.
 

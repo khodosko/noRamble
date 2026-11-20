@@ -1,0 +1,289 @@
+<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Live Recording — No Ramble</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">/** @type {import('tailwindcss').Config} */
+globalThis.tailwind = globalThis.tailwind || {};
+globalThis.tailwind.config = {
+  darkMode: 'class',
+  theme: {
+    extend: {
+      colors: {
+        'fitness-green': '#58CC02',
+        'fitness-green-dark': '#46A302',
+        'fitness-green-text': '#2B6A00',
+        'fitness-green-bg': '#F3FCEB',
+        'fitness-pink': '#FF4B4B',
+        'fitness-cyan': '#1CB0F6',
+        'coach-amber': '#FF9600',
+        'coach-highlight': '#FFF3CC',
+        'coach-ink': '#FFFFFF',
+        'coach-ink-dark': '#FFFFFF',
+        'telemetry-dark': '#FFFFFF',
+        'telemetry-button': '#EEF2F6',
+        'telemetry-bg': '#F7F9FC',
+        'alert-red': '#FF4B4B',
+        'alert-red-text': '#C81E1E',
+        'timeline-wave': '#1CB0F6',
+        'timeline-wave-text': '#0B77AD',
+        'timeline-wave-bg': '#EEF9FF',
+        'waveform-muted': '#CBD5E1',
+        'streak-orange': '#FF9600',
+        'streak-bg': '#FFF4E0',
+        'streak-text': '#9A4800',
+        'ink-dark': '#1A1A1A',
+        'light-primary': '#58CC02',
+        'light-on-primary': '#1A3300',
+        'light-surface': '#F7F7F7',
+        'light-on-surface': '#3C3C3C',
+        'light-surface-container': '#FFFFFF',
+        'light-surface-container-high': '#EFEFEF',
+        'light-outline': '#6E6E73',
+        'dark-primary': '#58CC02',
+        'dark-on-primary': '#1A3300',
+        'dark-surface': '#131F24',
+        'dark-on-surface': '#FFFFFF',
+        'dark-surface-container': '#1F2F36',
+        'dark-surface-container-high': '#2A3E47',
+        'dark-outline': '#A1A1A6',
+      },
+      borderRadius: {
+        'sm': '8px',
+        'md': '12px',
+        'lg': '18px',
+        'xl': '24px',
+        'full': '9999px',
+      },
+      spacing: {
+        'xs': '4px',
+        'sm': '8px',
+        'md': '16px',
+        'lg': '20px',
+        'xl': '24px',
+        'xxl': '32px',
+        'section': '40px',
+      },
+      fontFamily: {
+        'display': ['"Afacad Flux"', 'sans-serif'],
+        'headline': ['"Afacad Flux"', 'sans-serif'],
+        'body': ['"Instrument Sans"', 'sans-serif'],
+        'label': ['"Instrument Sans"', 'sans-serif'],
+        'code': ['"Source Code Pro"', 'monospace'],
+      },
+      fontSize: {
+        'display-lg': ['48px', { lineHeight: '52px', letterSpacing: '-1px', fontWeight: '800' }],
+        'display-lg-mobile': ['32px', { lineHeight: '38px', letterSpacing: '-0.5px', fontWeight: '800' }],
+        'headline-lg': ['36px', { lineHeight: '42px', letterSpacing: '-0.5px', fontWeight: '700' }],
+        'headline-lg-mobile': ['28px', { lineHeight: '34px', letterSpacing: '-0.3px', fontWeight: '700' }],
+        'headline-md': ['24px', { lineHeight: '30px', letterSpacing: '-0.2px', fontWeight: '700' }],
+        'headline-sm': ['18px', { lineHeight: '24px', fontWeight: '600' }],
+        'body-lg': ['17px', { lineHeight: '24px', fontWeight: '400' }],
+        'body-md': ['15px', { lineHeight: '22px', fontWeight: '400' }],
+        'body-sm': ['13px', { lineHeight: '18px', fontWeight: '400' }],
+        'label-lg': ['16px', { lineHeight: '20px', fontWeight: '600' }],
+        'label-md': ['14px', { lineHeight: '18px', fontWeight: '600' }],
+        'label-sm': ['12px', { lineHeight: '16px', fontWeight: '600' }],
+        'code-md': ['14px', { lineHeight: '20px', fontWeight: '500' }],
+      },
+      transitionDuration: {
+        'tap': '100ms',
+        'sheet': '250ms',
+      },
+      transitionDelay: {
+        'tap': '0ms',
+        'sheet': '0ms',
+      },
+      transitionTimingFunction: {
+        'tap': 'ease-out',
+        'sheet': 'cubic-bezier(0.16, 1, 0.3, 1)',
+      },
+    },
+  },
+};
+if (typeof module !== 'undefined') module.exports = globalThis.tailwind.config;
+</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@600;700;800&amp;family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&amp;family=Source+Code+Pro:wght@500;600;700&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=block" rel="stylesheet">
+  <style>
+    .material-symbols-outlined, .material-symbols-rounded, .material-symbols-sharp, .material-icons {
+      display: inline-block; width: 1em; height: 1em; line-height: 1 !important;
+      box-sizing: content-box; overflow: hidden; white-space: nowrap; direction: ltr; vertical-align: middle;
+    }
+    .icon-filled { font-variation-settings: 'FILL' 1, 'wght' 600, 'GRAD' 0, 'opsz' 24; }
+  </style>
+</head>
+<body class="bg-light-surface text-light-on-surface font-body antialiased selection:bg-coach-highlight selection:text-light-on-surface">
+  <div class="min-h-[884px] flex flex-col justify-between max-w-[390px] mx-auto px-lg pt-sm pb-xxl relative" data-stitch-vh="min-h-[884px]===min-h-screen">
+
+    <!-- Top Navigation Header with Duolingo-Style Streak -->
+    <header class="flex items-center justify-between py-sm mb-sm">
+      <div class="flex items-center gap-sm">
+        <span class="w-2.5 h-2.5 rounded-full bg-alert-red animate-pulse"></span>
+        <span class="font-label text-label-sm font-bold uppercase tracking-wider text-light-outline" data-design-text-token="label-sm">Live Take</span>
+      </div>
+      <div class="flex items-center gap-sm">
+        <!-- Duolingo-Style Streak Pill -->
+        <div class="inline-flex items-center gap-xs px-2.5 py-1 rounded-full bg-streak-bg border-2 border-streak-orange/40" aria-label="7 day streak">
+          <span class="material-symbols-outlined icon-filled text-[18px] text-streak-orange">local_fire_department</span>
+          <span class="font-headline text-label-md font-extrabold text-streak-text leading-none tabular-nums" data-design-text-token="label-md">7</span>
+          <span class="font-label text-label-sm font-bold text-streak-text uppercase tracking-wide" data-design-text-token="label-sm">Streak</span>
+        </div>
+        <button type="button" aria-label="Cancel recording" class="w-8 h-8 rounded-full bg-light-surface-container border-2 border-light-surface-container-high flex items-center justify-center text-light-on-surface hover:bg-light-surface-container-high transition">
+          <span class="material-symbols-outlined text-[18px]">close</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="flex-1 flex flex-col gap-md">
+
+      <!-- Question & Recording Bubble -->
+      <div>
+        <div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-light-surface-container border-2 border-light-surface-container-high text-light-on-surface font-label text-label-sm mb-sm">
+          <span class="w-2 h-2 rounded-full bg-fitness-pink animate-pulse"></span>
+          <span data-design-text-token="label-sm">Prompt 01</span>
+          <span class="text-light-outline">•</span>
+          <span class="font-code text-label-sm text-light-on-surface font-semibold" data-design-text-token="label-sm">60s Limit</span>
+        </div>
+        <h1 class="font-headline text-headline-lg-mobile font-extrabold tracking-tight text-light-on-surface leading-tight text-balance" data-design-text-token="headline-lg-mobile">
+          “What are you working on?”
+        </h1>
+      </div>
+
+      <!-- 8-Second Target Window & Live Timer Card -->
+      <section class="p-md rounded-xl bg-light-surface-container border-2 border-light-surface-container-high flex flex-col gap-3">
+        <div class="flex items-center justify-between">
+          <div class="flex items-baseline gap-sm">
+            <span id="live-timer" class="font-headline text-display-lg-mobile font-extrabold text-light-on-surface tabular-nums leading-none" data-design-text-token="display-lg-mobile">0:03</span>
+            <span class="font-code text-code-md text-light-outline tabular-nums" data-design-text-token="code-md">/ 1:00</span>
+          </div>
+          <span id="window-badge" class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-fitness-green-bg text-fitness-green-text font-label text-label-sm font-bold border border-fitness-green/40">
+            <span class="material-symbols-outlined icon-filled text-[15px]">bolt</span>
+            <span data-design-text-token="label-sm">In 8s Window</span>
+          </span>
+        </div>
+
+        <!-- Progress Bar with 8s Goal Marker -->
+        <div class="relative w-full h-3 rounded-full bg-light-surface-container-high overflow-hidden">
+          <div id="timer-progress" class="h-full bg-fitness-green rounded-full transition-colors duration-tap" style="width: 38%;"></div>
+        </div>
+
+        <!-- Compact Live Audio Level Bars -->
+        <div class="flex items-center justify-between gap-sm pt-xs">
+          <div id="live-bars" class="flex items-center gap-1 h-7 flex-1">
+            <div class="w-1 h-3 bg-fitness-green rounded-full"></div>
+            <div class="w-1 h-5 bg-fitness-green rounded-full"></div>
+            <div class="w-1 h-7 bg-fitness-green rounded-full"></div>
+            <div class="w-1 h-4 bg-fitness-green rounded-full"></div>
+            <div class="w-1 h-6 bg-fitness-green rounded-full"></div>
+            <div class="w-1 h-7 bg-fitness-green rounded-full"></div>
+            <div class="w-1 h-5 bg-fitness-green rounded-full"></div>
+            <div class="w-1 h-3 bg-fitness-green rounded-full"></div>
+            <div class="w-1 h-6 bg-fitness-green rounded-full"></div>
+            <div class="w-1 h-4 bg-fitness-green rounded-full"></div>
+            <div class="w-1 h-5 bg-waveform-muted rounded-full"></div>
+            <div class="w-1 h-3 bg-waveform-muted rounded-full"></div>
+            <div class="w-1 h-2 bg-waveform-muted rounded-full"></div>
+          </div>
+          <span class="font-code text-label-sm text-fitness-green-text font-bold" data-design-text-token="label-sm">Target: &lt; 0:08</span>
+        </div>
+      </section>
+
+      <!-- Live Speech-to-Text Transcript Card -->
+      <section class="p-md rounded-xl bg-light-surface-container border-2 border-light-surface-container-high flex flex-col gap-3">
+        <div class="flex items-center justify-between pb-sm border-b-2 border-light-surface-container-high">
+          <div class="flex items-center gap-1.5">
+            <span class="material-symbols-outlined text-timeline-wave-text text-[18px]">graphic_eq</span>
+            <span class="font-label text-label-sm font-bold text-light-on-surface uppercase tracking-wider" data-design-text-token="label-sm">Live Transcript</span>
+          </div>
+          <span id="point-status-pill" class="font-code text-label-sm text-fitness-green-text font-bold bg-fitness-green-bg px-2.5 py-0.5 rounded-full border border-fitness-green/40" data-design-text-token="label-sm">
+            Main point @ 0:03!
+          </span>
+        </div>
+
+        <p id="live-transcript-text" class="font-body text-body-md text-light-on-surface leading-relaxed text-pretty" data-design-text-token="body-md">
+          <span class="bg-coach-highlight px-1 rounded font-semibold">“I’m redesigning our checkout architecture to cut cart drop-off by 30% before Q4.”</span>
+          <span class="text-light-outline"> Right now we’re simplifying the mobile payment step...</span>
+        </p>
+
+        <div class="flex items-center justify-between pt-xs">
+          <button id="toggle-demo-btn" type="button" class="text-timeline-wave-text font-label text-label-sm font-bold inline-flex items-center gap-1 hover:underline">
+            <span class="material-symbols-outlined text-[16px]">play_arrow</span>
+            <span data-design-text-token="label-sm">Simulate Live Take</span>
+          </button>
+          <span class="font-code text-label-sm text-light-outline" data-design-text-token="label-sm">132 wpm</span>
+        </div>
+      </section>
+
+      <!-- Blue Coach Nudge Card (Direction 3 / Direction 2 Match) -->
+      <section data-component-id="card-live-nudge" data-component-type="card" data-component-variant="elevated" class="p-md rounded-xl bg-timeline-wave-bg border-2 border-timeline-wave/40 flex flex-col gap-xs">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-1.5">
+            <span class="material-symbols-outlined text-timeline-wave-text text-[18px]">alt_route</span>
+            <span class="font-label text-label-sm font-bold text-timeline-wave-text uppercase tracking-wider" data-design-text-token="label-sm">Coach Rule</span>
+          </div>
+          <span id="coach-badge" class="font-code text-label-sm text-fitness-green-text font-bold bg-light-surface-container border border-fitness-green/40 px-2.5 py-0.5 rounded-full" data-design-text-token="label-sm">Nailed It</span>
+        </div>
+        <p class="font-body text-body-sm text-light-on-surface font-medium leading-snug text-pretty" data-design-text-token="body-sm">
+          Great hook! You stated your outcome in the first 3 seconds—now back it up with one quick detail.
+        </p>
+      </section>
+
+    </main>
+
+    <!-- Tactile Duolingo-Style Finish & Analyze Footer -->
+    <footer class="pt-md mt-sm">
+      <button id="finish-btn" data-component-id="button-finish-take" data-component-type="button" data-component-variant="primary" type="button" class="w-full flex items-center justify-center gap-sm py-md px-xl rounded-lg bg-fitness-green text-light-on-primary font-label text-label-lg font-extrabold border-b-4 border-fitness-green-dark active:border-b-0 active:translate-y-1 hover:brightness-105 transition duration-tap">
+        <span class="material-symbols-outlined icon-filled text-[22px]" aria-hidden="true">stop_circle</span>
+        <span data-design-text-token="label-lg">Finish &amp; Lock Streak</span>
+      </button>
+      <div class="text-center mt-sm">
+        <span class="font-body text-body-sm text-light-outline" data-design-text-token="body-sm">Land your main point before 0:08 to extend your streak</span>
+      </div>
+    </footer>
+
+  </div>
+
+  <script>
+    (function () {
+      var timerEl = document.getElementById('live-timer');
+      var progressEl = document.getElementById('timer-progress');
+      var demoBtn = document.getElementById('toggle-demo-btn');
+      var seconds = 3;
+      var running = false;
+      var intervalId = null;
+
+      function render() {
+        var mins = Math.floor(seconds / 60);
+        var secs = seconds % 60;
+        timerEl.textContent = mins + ':' + (secs < 10 ? '0' : '') + secs;
+        var pct = Math.min(100, Math.max(8, Math.round((seconds / 60) * 100)));
+        progressEl.style.width = pct + '%';
+      }
+
+      if (demoBtn) {
+        demoBtn.addEventListener('click', function () {
+          if (running) {
+            clearInterval(intervalId);
+            running = false;
+            demoBtn.querySelector('span:last-child').textContent = 'Simulate Live Take';
+            return;
+          }
+          seconds = 0;
+          running = true;
+          demoBtn.querySelector('span:last-child').textContent = 'Pause Simulation';
+          render();
+          intervalId = setInterval(function () {
+            seconds = (seconds + 1) % 61;
+            render();
+          }, 1000);
+        });
+      }
+    })();
+  </script>
+
+
+</body></html>

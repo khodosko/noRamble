@@ -20,6 +20,7 @@ A disciplined foundation reduces privacy, quality, and product-scope failures be
 - Record the native-iOS decision and provisional system boundaries.
 - Make the locked-test policy explicit across agent, testing, engineering, and review guidance.
 - Verify and connect the canonical GitHub remote with the owner-selected visibility.
+- Preserve the owner-provided Stitch visual reference and document its role, dependencies, and unresolved behavioral differences.
 
 ## Non-goals
 
@@ -27,6 +28,7 @@ A disciplined foundation reduces privacy, quality, and product-scope failures be
 - Xcode project, targets, schemes, dependencies, or CI implementation
 - Unverified or incorrectly owned remote
 - Final technology choices for persistence, analysis, analytics, or cloud services
+- Native implementation of the Stitch screens
 - Beginning NR-001 before foundation review
 
 ## Existing-system observations
@@ -39,6 +41,8 @@ A disciplined foundation reduces privacy, quality, and product-scope failures be
 - GitHub CLI (`gh`) is not installed.
 - The owner created `khodosko/noRamble` as an empty public repository and explicitly replaced the initial private-only requirement on 2026-11-19.
 - The connected GitHub account has admin and push access to the repository.
+- The Stitch export contains a design-system Markdown file and four working HTML prototypes for daily prompts, live recording, editorial transcript feedback, and streak completion.
+- The HTML depends on Tailwind CDN, Google Fonts, and Material Symbols; it is a visual reference rather than native or production code.
 
 ## Proposed design
 
@@ -51,6 +55,8 @@ Keep durable product truth in `PRODUCT.md`, authoritative work state in `TASKS.m
 - `docs/architecture/SYSTEM_DESIGN.md`
 - `docs/decisions/README.md`, `docs/decisions/ADR-0001-native-ios.md`
 - `docs/plans/README.md`, `docs/plans/SLICE_PLAN_TEMPLATE.md`, this plan
+- `docs/design/README.md` and `design/reference/stitch_no_ramble_feedback_screens/`
+- `design/reference/stitch_no_ramble_feedback_screens.zip` for source provenance
 - Local Git metadata and branch only
 
 ## Acceptance criteria
@@ -66,11 +72,13 @@ Keep durable product truth in `PRODUCT.md`, authoritative work state in `TASKS.m
 - [x] ADR-0001 records the native iPhone decision and revisit conditions.
 - [x] No application source or Xcode project is created.
 - [x] The public `khodosko/noRamble` repository exists and its owner, URL, visibility, empty state, and access are verified.
+- [x] The Stitch ZIP is preserved and extracted; integrity, safe paths, expected contents, and rendering are verified.
+- [x] The visual reference is separated from production code and behavioral conflicts with `PRODUCT.md` are recorded as open questions.
 - [x] Documentation verification results are recorded in `PROGRESS.md` and this plan.
 
 ## Tests written before implementation
 
-No production behavior exists in this documentation-only slice, so executable application tests would be meaningless. Verification checks will assert required file presence, Markdown link validity, absence of Swift/Xcode artifacts, current branch, and remote state. Future slices must follow red/green TDD.
+No production behavior exists in this documentation/design-reference slice, so executable application tests would be meaningless. Verification checks assert required file presence, Markdown link validity, absence of Swift/Xcode artifacts, current branch, remote state, ZIP integrity and safe paths, expected design contents, and successful browser rendering. Future slices must follow red/green TDD.
 
 No pre-existing tests exist. The test-integrity policy added here prohibits changing future valid tests simply to make code pass.
 
@@ -82,6 +90,7 @@ No pre-existing tests exist. The test-integrity policy added here prohibits chan
 - Contradictory documentation: make one document authoritative and cross-link it.
 - Accidental application/Xcode creation: detect during verification and remove before completion.
 - Ambiguous or incorrectly owned remote: do not push until identity and documented visibility are verified.
+- Generated HTML mistaken for product behavior: keep it under `design/reference`, document conflicts, and require slice-level acceptance criteria before translating it to SwiftUI.
 
 ## Privacy and security
 
@@ -99,7 +108,8 @@ No UI is created. Engineering and system-design documents establish VoiceOver, D
 4. Review product, testing, Git, architecture, and planning documents for contradictions.
 5. Run structural/link/prohibited-artifact checks and inspect Git diff/status.
 6. Verify the canonical repository identity, access, and owner-selected visibility.
-7. Update completion evidence and present NR-001 for review without beginning it.
+7. Import and inspect the Stitch design package, record its provenance and implementation guidance, and verify its four screens render.
+8. Update completion evidence and present NR-001 for review without beginning it.
 
 ## Verification commands
 
@@ -110,6 +120,8 @@ find . -type f -not -path './.git/*' | sort
 find . -type f \( -name '*.swift' -o -name '*.xcodeproj' -o -name '*.xcworkspace' \)
 # Run a local Markdown-link checker against repository-relative links.
 git remote -v
+unzip -t design/reference/stitch_no_ramble_feedback_screens.zip
+shasum -a 256 design/reference/stitch_no_ramble_feedback_screens.zip
 ```
 
 ## Risks
@@ -118,6 +130,7 @@ git remote -v
 - **Over-design before evidence:** Label unvalidated architecture as proposed or open.
 - **Test policy is bypassed under delivery pressure:** Repeat the locked-test rule in agent, testing, engineering, and PR review policy.
 - **Repository identity or visibility differs from policy:** Do not push until the owner, URL, access, and documented visibility agree.
+- **Design export drifts from product policy:** Treat visual styling as reference and resolve behavior explicitly in the relevant slice plan.
 
 ## Rollback strategy
 
@@ -129,8 +142,8 @@ This slice creates the complete initial documentation set. Final verification re
 
 ## Completion evidence
 
-- **Files:** All required Markdown documents are present, including ADR-0002 recording public repository visibility.
-- **Tests:** No executable application tests apply. Repository-relative Markdown links resolve, and artifact checks found no Swift source, Xcode project, or Xcode workspace.
+- **Files:** All required foundation documents are present, including ADR-0002 and the owner-provided Stitch source package with a design-reference guide.
+- **Tests:** No executable application tests apply. Repository-relative Markdown links resolve; artifact checks found no Swift source, Xcode project, or Xcode workspace; the Stitch archive passes integrity/path-safety checks and all four HTML prototypes render.
 - **Git:** `main` contains the repository bootstrap commit. `chore/project-foundation` is connected to its remote tracking branch and contains the documentation changes.
 - **CI:** Deferred until NR-001 because no Xcode project or known test command exists.
 - **GitHub:** `khodosko/noRamble` is verified as public, empty, unarchived, and writable by the connected owner account. Public visibility is an explicit owner decision recorded in ADR-0002.

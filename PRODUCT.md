@@ -81,3 +81,7 @@ Reach **100 real users** who complete at least one session, then evaluate activa
 - What reminder timing and customization support a ritual without becoming intrusive?
 - What evidence threshold should define a meaningful improvement between retries?
 - What free experience is sufficient to establish value before monetization?
+- Does the Stitch prompt-picker screen represent final behavior, or should the app continue assigning exactly one daily prompt?
+- Is recording duration a flexible one-to-two-minute recommendation or a hard per-prompt limit?
+- Do live transcription and coaching nudges belong in the MVP recording experience, or should all analysis remain post-recording?
+- Does XP add useful motivation beyond streaks, or unnecessary gamification?

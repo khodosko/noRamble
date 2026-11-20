@@ -8,8 +8,8 @@ This file is the authoritative backlog. Do not maintain a competing task list el
 
 - **Status:** In review
 - **Plan:** [NR-000 project foundation](docs/plans/NR-000-project-foundation.md)
-- **Acceptance criteria:** Repository and branch initialized; required documentation exists and is internally consistent; the public GitHub repository is verified and connected; no application or Xcode project is created.
-- **Test status:** Documentation-only slice; structural and content checks required, with no executable application tests applicable.
+- **Acceptance criteria:** Repository and branch initialized; required documentation exists and is internally consistent; the public GitHub repository is verified and connected; the Stitch visual reference is preserved with behavioral conflicts documented; no application or Xcode project is created.
+- **Test status:** Documentation/design-reference slice; archive integrity, safe paths, expected files, HTML rendering, links, and prohibited application-artifact checks verified; no executable application tests apply.
 - **Pull request:** [#1 — Establish No Ramble project foundation](https://github.com/khodosko/noRamble/pull/1)
 
 ## Next

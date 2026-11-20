@@ -1,0 +1,282 @@
+<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daily Prompts — No Ramble</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">/** @type {import('tailwindcss').Config} */
+globalThis.tailwind = globalThis.tailwind || {};
+globalThis.tailwind.config = {
+  darkMode: 'class',
+  theme: {
+    extend: {
+      colors: {
+        'fitness-green': '#58CC02',
+        'fitness-green-dark': '#46A302',
+        'fitness-green-text': '#2B6A00',
+        'fitness-green-bg': '#F3FCEB',
+        'fitness-pink': '#FF4B4B',
+        'fitness-cyan': '#1CB0F6',
+        'coach-amber': '#FF9600',
+        'coach-highlight': '#FFF3CC',
+        'coach-ink': '#FFFFFF',
+        'coach-ink-dark': '#FFFFFF',
+        'telemetry-dark': '#FFFFFF',
+        'telemetry-button': '#EEF2F6',
+        'telemetry-bg': '#F7F9FC',
+        'alert-red': '#FF4B4B',
+        'alert-red-text': '#C81E1E',
+        'timeline-wave': '#1CB0F6',
+        'timeline-wave-text': '#0B77AD',
+        'timeline-wave-bg': '#EEF9FF',
+        'waveform-muted': '#CBD5E1',
+        'streak-orange': '#FF9600',
+        'streak-bg': '#FFF4E0',
+        'streak-text': '#9A4800',
+        'ink-dark': '#1A1A1A',
+        'light-primary': '#58CC02',
+        'light-on-primary': '#1A3300',
+        'light-surface': '#F7F7F7',
+        'light-on-surface': '#3C3C3C',
+        'light-surface-container': '#FFFFFF',
+        'light-surface-container-high': '#EFEFEF',
+        'light-outline': '#6E6E73',
+        'dark-primary': '#58CC02',
+        'dark-on-primary': '#1A3300',
+        'dark-surface': '#131F24',
+        'dark-on-surface': '#FFFFFF',
+        'dark-surface-container': '#1F2F36',
+        'dark-surface-container-high': '#2A3E47',
+        'dark-outline': '#A1A1A6',
+      },
+      borderRadius: {
+        'sm': '8px',
+        'md': '12px',
+        'lg': '18px',
+        'xl': '24px',
+        'full': '9999px',
+      },
+      spacing: {
+        'xs': '4px',
+        'sm': '8px',
+        'md': '16px',
+        'lg': '20px',
+        'xl': '24px',
+        'xxl': '32px',
+        'section': '40px',
+      },
+      fontFamily: {
+        'display': ['"Afacad Flux"', 'sans-serif'],
+        'headline': ['"Afacad Flux"', 'sans-serif'],
+        'body': ['"Instrument Sans"', 'sans-serif'],
+        'label': ['"Instrument Sans"', 'sans-serif'],
+        'code': ['"Source Code Pro"', 'monospace'],
+      },
+      fontSize: {
+        'display-lg': ['48px', { lineHeight: '52px', letterSpacing: '-1px', fontWeight: '800' }],
+        'display-lg-mobile': ['32px', { lineHeight: '38px', letterSpacing: '-0.5px', fontWeight: '800' }],
+        'headline-lg': ['36px', { lineHeight: '42px', letterSpacing: '-0.5px', fontWeight: '700' }],
+        'headline-lg-mobile': ['28px', { lineHeight: '34px', letterSpacing: '-0.3px', fontWeight: '700' }],
+        'headline-md': ['24px', { lineHeight: '30px', letterSpacing: '-0.2px', fontWeight: '700' }],
+        'headline-sm': ['18px', { lineHeight: '24px', fontWeight: '600' }],
+        'body-lg': ['17px', { lineHeight: '24px', fontWeight: '400' }],
+        'body-md': ['15px', { lineHeight: '22px', fontWeight: '400' }],
+        'body-sm': ['13px', { lineHeight: '18px', fontWeight: '400' }],
+        'label-lg': ['16px', { lineHeight: '20px', fontWeight: '600' }],
+        'label-md': ['14px', { lineHeight: '18px', fontWeight: '600' }],
+        'label-sm': ['12px', { lineHeight: '16px', fontWeight: '600' }],
+        'code-md': ['14px', { lineHeight: '20px', fontWeight: '500' }],
+      },
+      transitionDuration: {
+        'tap': '100ms',
+        'sheet': '250ms',
+      },
+      transitionDelay: {
+        'tap': '0ms',
+        'sheet': '0ms',
+      },
+      transitionTimingFunction: {
+        'tap': 'ease-out',
+        'sheet': 'cubic-bezier(0.16, 1, 0.3, 1)',
+      },
+    },
+  },
+};
+if (typeof module !== 'undefined') module.exports = globalThis.tailwind.config;
+</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@600;700;800&amp;family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&amp;family=Source+Code+Pro:wght@500;600;700&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=block" rel="stylesheet">
+  <style>
+    .material-symbols-outlined, .material-symbols-rounded, .material-symbols-sharp, .material-icons {
+      display: inline-block; width: 1em; height: 1em; line-height: 1 !important;
+      box-sizing: content-box; overflow: hidden; white-space: nowrap; direction: ltr; vertical-align: middle;
+    }
+    .icon-filled { font-variation-settings: 'FILL' 1, 'wght' 600, 'GRAD' 0, 'opsz' 24; }
+  </style>
+</head>
+<body class="bg-light-surface text-light-on-surface font-body antialiased selection:bg-fitness-green selection:text-light-on-primary">
+  <div class="min-h-[884px] flex flex-col justify-between max-w-[390px] mx-auto px-lg pt-sm pb-xxl relative" data-stitch-vh="min-h-[884px]===min-h-screen">
+
+    <!-- Top Brand & Duolingo-Style Streak Header -->
+    <header class="flex items-center justify-between py-sm mb-sm">
+      <div class="flex items-center gap-sm">
+        <span class="w-8 h-8 rounded-md bg-fitness-green text-light-on-primary flex items-center justify-center border-b-2 border-fitness-green-dark">
+          <span class="material-symbols-outlined icon-filled text-[18px]">graphic_eq</span>
+        </span>
+        <span class="font-headline text-headline-sm font-bold text-light-on-surface tracking-tight" data-design-text-token="headline-sm">No Ramble</span>
+      </div>
+
+      <div class="flex items-center gap-sm">
+        <!-- Duolingo-Style Streak Pill -->
+        <div class="inline-flex items-center gap-xs px-2.5 py-1 rounded-full bg-streak-bg border-2 border-streak-orange/40" aria-label="7 day streak">
+          <span class="material-symbols-outlined icon-filled text-[18px] text-streak-orange">local_fire_department</span>
+          <span class="font-headline text-label-md font-semibold text-streak-text leading-none tabular-nums" data-design-text-token="label-md">7</span>
+          <span class="font-label text-label-sm font-semibold text-streak-text uppercase tracking-wide" data-design-text-token="label-sm">Streak</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-1 flex flex-col gap-md">
+
+      <!-- Weekly Streak Strip -->
+      <section class="px-md py-3 rounded-xl bg-light-surface-container border-2 border-light-surface-container-high flex items-center justify-between">
+        <div>
+          <div class="font-headline text-label-md font-semibold text-light-on-surface leading-none" data-design-text-token="label-md">Today’s Goal</div>
+          <div class="font-body text-body-sm text-light-outline mt-xs" data-design-text-token="body-sm">1 pick left today</div>
+        </div>
+        <div class="flex items-center gap-xs">
+          <span class="w-6 h-6 rounded-full bg-streak-orange text-ink-dark font-label text-label-sm font-semibold flex items-center justify-center">M</span>
+          <span class="w-6 h-6 rounded-full bg-streak-orange text-ink-dark font-label text-label-sm font-semibold flex items-center justify-center">T</span>
+          <span class="w-6 h-6 rounded-full bg-streak-orange text-ink-dark font-label text-label-sm font-semibold flex items-center justify-center">W</span>
+          <span class="w-6 h-6 rounded-full bg-streak-orange text-ink-dark font-label text-label-sm font-semibold flex items-center justify-center">T</span>
+          <span class="w-6 h-6 rounded-full bg-streak-orange text-ink-dark font-label text-label-sm font-semibold flex items-center justify-center">F</span>
+          <span class="w-6 h-6 rounded-full bg-streak-orange text-ink-dark font-label text-label-sm font-semibold flex items-center justify-center">S</span>
+          <span class="w-6 h-6 rounded-full bg-streak-bg border-2 border-streak-orange text-streak-text font-label text-label-sm font-semibold flex items-center justify-center">S</span>
+        </div>
+      </section>
+
+      <!-- Section Heading -->
+      <div class="flex flex-col gap-xs">
+        <div class="flex items-center justify-between">
+          <span class="font-label text-label-sm font-semibold uppercase tracking-wider text-light-outline" data-design-text-token="label-sm">Daily Challenge</span>
+          <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-timeline-wave-bg border border-timeline-wave/40 font-code text-label-sm font-semibold text-timeline-wave-text" data-design-text-token="label-sm">
+            1 selection / day
+          </span>
+        </div>
+        <h1 class="font-headline text-headline-lg-mobile font-bold tracking-tight text-light-on-surface leading-tight text-balance" data-design-text-token="headline-lg-mobile">
+          Pick 1 of 3 prompts
+        </h1>
+        <p class="font-body text-body-sm text-light-outline text-pretty" data-design-text-token="body-sm">
+          Choose your single daily prompt and land your main point in under 8 seconds.
+        </p>
+      </div>
+
+      <!-- 3 Daily Prompt Options (Single-Select Radio Group) -->
+      <div id="prompt-list" class="flex flex-col gap-3" role="radiogroup" aria-label="Daily prompt options">
+
+        <!-- Option 1 (Selected) -->
+        <button type="button" role="radio" aria-checked="true" data-prompt-card class="prompt-card text-left p-md rounded-xl bg-fitness-green-bg border-2 border-fitness-green flex flex-col gap-xs transition duration-tap">
+          <div class="flex items-center justify-between w-full">
+            <span class="inline-flex items-center gap-1.5 font-label text-label-sm font-semibold text-fitness-green-text" data-design-text-token="label-sm">
+              <span class="w-2 h-2 rounded-full bg-fitness-green"></span>
+              Work &amp; Projects • 60s
+            </span>
+            <span data-check-icon class="w-6 h-6 rounded-full bg-fitness-green text-light-on-primary flex items-center justify-center">
+              <span class="material-symbols-outlined icon-filled text-[16px]">check</span>
+            </span>
+          </div>
+          <div class="font-headline text-headline-sm font-semibold text-light-on-surface leading-snug" data-design-text-token="headline-sm">
+            “What are you working on?”
+          </div>
+          <p class="font-body text-body-sm text-light-outline text-pretty" data-design-text-token="body-sm">
+            Lead with the outcome, not the backstory.
+          </p>
+        </button>
+
+        <!-- Option 2 -->
+        <button type="button" role="radio" aria-checked="false" data-prompt-card class="prompt-card text-left p-md rounded-xl bg-light-surface-container border-2 border-light-surface-container-high hover:border-timeline-wave/50 flex flex-col gap-xs transition duration-tap">
+          <div class="flex items-center justify-between w-full">
+            <span class="inline-flex items-center gap-1.5 font-label text-label-sm font-semibold text-timeline-wave-text" data-design-text-token="label-sm">
+              <span class="w-2 h-2 rounded-full bg-timeline-wave"></span>
+              Decision &amp; Impact • 60s
+            </span>
+            <span data-check-icon class="w-6 h-6 rounded-full border-2 border-light-surface-container-high bg-light-surface flex items-center justify-center text-transparent">
+              <span class="material-symbols-outlined icon-filled text-[16px]">check</span>
+            </span>
+          </div>
+          <div class="font-headline text-headline-sm font-semibold text-light-on-surface leading-snug" data-design-text-token="headline-sm">
+            “Why should we prioritize this now?”
+          </div>
+          <p class="font-body text-body-sm text-light-outline text-pretty" data-design-text-token="body-sm">
+            State the urgency in your opening line.
+          </p>
+        </button>
+
+        <!-- Option 3 -->
+        <button type="button" role="radio" aria-checked="false" data-prompt-card class="prompt-card text-left p-md rounded-xl bg-light-surface-container border-2 border-light-surface-container-high hover:border-timeline-wave/50 flex flex-col gap-xs transition duration-tap">
+          <div class="flex items-center justify-between w-full">
+            <span class="inline-flex items-center gap-1.5 font-label text-label-sm font-semibold text-streak-text" data-design-text-token="label-sm">
+              <span class="w-2 h-2 rounded-full bg-streak-orange"></span>
+              Pitch &amp; Intro • 45s
+            </span>
+            <span data-check-icon class="w-6 h-6 rounded-full border-2 border-light-surface-container-high bg-light-surface flex items-center justify-center text-transparent">
+              <span class="material-symbols-outlined icon-filled text-[16px]">check</span>
+            </span>
+          </div>
+          <div class="font-headline text-headline-sm font-semibold text-light-on-surface leading-snug" data-design-text-token="headline-sm">
+            “What does your team actually do?”
+          </div>
+          <p class="font-body text-body-sm text-light-outline text-pretty" data-design-text-token="body-sm">
+            Skip the org chart—name the core value.
+          </p>
+        </button>
+
+      </div>
+
+    </main>
+
+    <!-- Tactile Duolingo-Style Primary CTA -->
+    <footer class="pt-md mt-sm">
+      <button data-component-id="button-start-daily" data-component-type="button" data-component-variant="primary" type="button" class="w-full flex items-center justify-center gap-sm py-md px-xl rounded-lg bg-fitness-green text-light-on-primary font-label text-label-lg font-semibold border-b-4 border-fitness-green-dark active:border-b-0 active:translate-y-1 hover:brightness-105 transition duration-tap">
+        <span class="material-symbols-outlined icon-filled text-[22px]" aria-hidden="true">mic</span>
+        <span data-design-text-token="label-lg">Start Daily Take</span>
+      </button>
+      <div class="text-center mt-sm">
+        <span class="font-body text-body-sm text-light-outline" data-design-text-token="body-sm">Uses your 1 daily selection • New prompts in 7h 49m</span>
+      </div>
+    </footer>
+
+  </div>
+
+  <script>
+    (function () {
+      var cards = document.querySelectorAll('[data-prompt-card]');
+      cards.forEach(function (card) {
+        card.addEventListener('click', function () {
+          cards.forEach(function (c) {
+            c.setAttribute('aria-checked', 'false');
+            c.classList.remove('bg-fitness-green-bg', 'border-fitness-green');
+            c.classList.add('bg-light-surface-container', 'border-light-surface-container-high');
+            var icon = c.querySelector('[data-check-icon]');
+            if (icon) {
+              icon.classList.remove('bg-fitness-green', 'text-light-on-primary');
+              icon.classList.add('border-2', 'border-light-surface-container-high', 'bg-light-surface', 'text-transparent');
+            }
+          });
+          card.setAttribute('aria-checked', 'true');
+          card.classList.remove('bg-light-surface-container', 'border-light-surface-container-high');
+          card.classList.add('bg-fitness-green-bg', 'border-fitness-green');
+          var activeIcon = card.querySelector('[data-check-icon]');
+          if (activeIcon) {
+            activeIcon.classList.remove('border-2', 'border-light-surface-container-high', 'bg-light-surface', 'text-transparent');
+            activeIcon.classList.add('bg-fitness-green', 'text-light-on-primary');
+          }
+        });
+      });
+    })();
+  </script>
+
+
+</body></html>

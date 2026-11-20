@@ -37,6 +37,7 @@ Speaking practice is easy to postpone when the next action is unclear or the pro
 - [Testing strategy](docs/TESTING.md)
 - [Git workflow](docs/GIT_WORKFLOW.md)
 - [Provisional system design](docs/architecture/SYSTEM_DESIGN.md)
+- [Design reference](docs/design/README.md)
 - [Architecture decisions](docs/decisions/README.md)
 - [Slice plans](docs/plans/README.md)
 
