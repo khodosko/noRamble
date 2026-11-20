@@ -18,7 +18,7 @@ Speaking practice is easy to postpone when the next action is unclear or the pro
 
 ## Status
 
-**Xcode foundation complete.** [Pull request #2](https://github.com/khodosko/noRamble/pull/2) adds the minimal launchable SwiftUI shell, unit/UI test targets, and green pull-request CI. Product features remain out of scope for this slice.
+**Daily prompt selection complete.** [Pull request #3](https://github.com/khodosko/noRamble/pull/3) adds the first product behavior: exactly three accessible prompt choices, one locally persisted selection per local day, fixed retry consistency, and tested day rollover. Recording remains a later slice.
 
 ## Technology direction
 

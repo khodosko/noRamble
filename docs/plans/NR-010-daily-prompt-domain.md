@@ -1,8 +1,8 @@
 # NR-010: Daily prompt domain
 
-- **Status:** In progress
+- **Status:** Complete
 - **Task:** [NR-010 in TASKS.md](../../TASKS.md#nr-010--daily-prompt-domain)
-- **Pull request:** Pending
+- **Pull request:** [#3 — Add tested daily prompt selection](https://github.com/khodosko/noRamble/pull/3)
 
 ## Goal
 
@@ -57,17 +57,17 @@ A main-actor observable view model composes the domain policy for SwiftUI. The p
 
 ## Acceptance criteria
 
-- [ ] The launch screen visibly presents exactly three curated prompt choices.
-- [ ] The three prompts have distinct stable identifiers and meaningful title/guidance copy.
-- [ ] Selecting a known prompt persists its identifier for the injected local day.
-- [ ] Reloading or retrying on that local day restores the same prompt.
-- [ ] Selecting the same prompt again is idempotent.
-- [ ] Selecting a different prompt on the same local day is rejected without replacing the original.
-- [ ] An unknown prompt identifier is rejected without persistence.
-- [ ] On the next injected local day, no prompt is initially selected and a new choice can be persisted.
-- [ ] Concrete local persistence round-trips a valid selection and reports corrupt data.
-- [ ] The picker exposes an accessible heading, three buttons, selected state, and locked alternatives.
-- [ ] Existing locked NR-001 tests remain unchanged and pass.
+- [x] The launch screen visibly presents exactly three curated prompt choices.
+- [x] The three prompts have distinct stable identifiers and meaningful title/guidance copy.
+- [x] Selecting a known prompt persists its identifier for the injected local day.
+- [x] Reloading or retrying on that local day restores the same prompt.
+- [x] Selecting the same prompt again is idempotent.
+- [x] Selecting a different prompt on the same local day is rejected without replacing the original.
+- [x] An unknown prompt identifier is rejected without persistence.
+- [x] On the next injected local day, no prompt is initially selected and a new choice can be persisted.
+- [x] Concrete local persistence round-trips a valid selection and reports corrupt data.
+- [x] The picker exposes an accessible heading, three buttons, selected state, and locked alternatives.
+- [x] Existing locked NR-001 tests remain unchanged and pass.
 
 ## Tests written before implementation
 
@@ -158,4 +158,12 @@ Revert the focused NR-010 merge. The only stored state is one namespaced `UserDe
 
 ## Completion evidence
 
-Pending implementation, local verification, pull request, and CI.
+- **Acceptance criteria:** 11 of 11 satisfied.
+- **Red evidence:** Relevant unit test command exited 65 because `DailyPromptCatalog` was absent before production files existed.
+- **Relevant tests:** 19 unit tests passed, 0 failed.
+- **Complete suite:** 19 unit and 2 UI tests passed, 0 failed, with coverage enabled on iPhone 17 Pro / iOS 26.2.
+- **Coverage:** App 98.16% (427/435); `DailyPromptSession`, `DailyPromptViewModel`, the concrete selection store, app composition, and shell are 100%. The uncovered lines are six compiler-generated SwiftUI error-branch regions not rendered in the successful journey and two defensive `LocalDay` precondition regions that Foundation calendars cannot practically trigger.
+- **Warnings:** No Swift compiler warnings; warnings are treated as errors. Xcode emits only its informational App Intents metadata message for a target with no App Intents dependency.
+- **Project/visual checks:** XcodeGen regeneration retained SHA-256 `0ded15453f07a7f13e76505f3dce8ffc4fd7b191d3526fb98e6597e0c6912a06`; manual simulator launch and screenshot review passed.
+- **Test integrity:** Existing NR-001 tests are unchanged. The two documented NR-010 fixture corrections preserved intent and assertions.
+- **Pull request:** [#3](https://github.com/khodosko/noRamble/pull/3); final hosted CI gates squash merge.

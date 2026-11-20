@@ -15,6 +15,8 @@ This document distinguishes **accepted**, **proposed**, and **open** decisions. 
 - Analysis and feedback begin only after recording ends.
 - Streaks are the MVP motivational mechanism; XP/points are excluded.
 - Business behavior must be testable independently of SwiftUI and concrete Apple services.
+- A local day is derived from an injected calendar/time zone; the first prompt choice stored for that day remains fixed and idempotent for retries, and a different local day permits a new choice.
+- The daily prompt selection adapter stores only a prompt identifier and local date components in namespaced `UserDefaults`; broader attempt/history persistence remains open.
 - Recordings and transcripts are sensitive; collection, transport, and retention must be minimized.
 
 ### Proposed
@@ -40,9 +42,11 @@ Concrete services implement domain-facing protocols and are composed at the appl
 
 ## Daily prompt domain
 
-**Proposed:** A `DailyPrompt` identity and daily-option policy operate on injected calendar/time-zone values and a prompt source. The policy produces three curated options for a day, persists exactly one selection for the daily session, and keeps retries tied to that selection. It must explicitly handle day rollover, travel, missing/duplicate content, selection restoration, and notification deep links.
+**Accepted for NR-010:** `DailyPrompt` and `LocalDay` are domain values. The initial catalog contains exactly three distinct curated options. `DailyPromptSession` operates on an injected date/calendar and a domain-owned selection-store boundary. It restores the same prompt for retries, treats reselecting it as idempotent, rejects replacement or unknown identifiers, reports retired stored content, and permits a new choice after local-day rollover. A main-actor observable model maps these outcomes for SwiftUI.
 
-**Open:** Prompt sourcing, rotation, localization, content review, and how the three options remain meaningfully distinct.
+The concrete adapter stores one encoded prompt identifier and local date in namespaced `UserDefaults`. This preference-like use is not a decision for attempt, feedback, recording, or history persistence.
+
+**Open:** Prompt sourcing, rotation, localization, content review, notification deep links, travel semantics beyond the injected-current-calendar rule, and how future daily sets remain meaningfully distinct.
 
 ## Recording abstraction
 

@@ -4,19 +4,9 @@ This file is the authoritative backlog. Do not maintain a competing task list el
 
 ## Now
 
-- NR-010 — Daily prompt domain
+- None. The next slice has not started.
 
 ## Next
-
-### NR-010 — Daily prompt domain
-
-- **Status:** In progress
-- **Plan:** [NR-010 daily prompt domain](docs/plans/NR-010-daily-prompt-domain.md)
-- **Acceptance criteria:** Exactly three curated daily options, one persisted selection per daily session, retry consistency, and daily rollover behavior are specified and covered by unit tests.
-- **Test status:** Not started.
-- **Pull request:** Not available.
-
-## Later
 
 ### NR-020 — Audio recording boundary
 
@@ -25,6 +15,8 @@ This file is the authoritative backlog. Do not maintain a competing task list el
 - **Acceptance criteria:** Permission, minimal recording-state presentation, two-minute soft-ceiling behavior, lifecycle, interruption, and failure handling are specified behind a testable abstraction.
 - **Test status:** Not started.
 - **Pull request:** Not available.
+
+## Later
 
 ### NR-030 — Speech-analysis boundary
 
@@ -55,6 +47,14 @@ This file is the authoritative backlog. Do not maintain a competing task list el
 - None.
 
 ## Completed
+
+### NR-010 — Daily prompt domain
+
+- **Status:** Complete
+- **Plan:** [NR-010 daily prompt domain](docs/plans/NR-010-daily-prompt-domain.md)
+- **Acceptance criteria:** Exactly three curated daily options, one persisted selection per local day, retry consistency, daily rollover behavior, accessible presentation, and failure handling are covered by unit, persistence, and UI tests.
+- **Test status:** Red state recorded (missing `DailyPromptCatalog`, exit 65); 19 unit and 2 UI tests pass locally with 98.16% app coverage and 100% coverage of session policy, application state, and concrete persistence.
+- **Pull request:** [#3 — Add tested daily prompt selection](https://github.com/khodosko/noRamble/pull/3) — merged 2026-11-19.
 
 ### NR-001 — Xcode project and CI foundation
 
