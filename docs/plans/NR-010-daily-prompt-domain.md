@@ -1,0 +1,169 @@
+# NR-010: Daily prompt domain
+
+- **Status:** Complete
+- **Task:** [NR-010 in TASKS.md](../../TASKS.md#nr-010--daily-prompt-domain)
+- **Pull request:** [#3 — Add tested daily prompt selection](https://github.com/khodosko/noRamble/pull/3)
+
+## Goal
+
+Give the user exactly three curated daily speaking prompts, persist the first choice for the local day, keep retries tied to that prompt, and permit a new choice after local-day rollover.
+
+## User value
+
+The first real product behavior removes the blank-page problem without becoming a content browser. Once a prompt is chosen, the user cannot silently switch topics between attempts, so later retry comparisons remain meaningful.
+
+## Scope
+
+- A small domain model for a prompt, local-day identity, and saved daily selection
+- Exactly three distinct curated starter prompts based on the accepted Stitch visual reference
+- A testable selection policy with injected calendar/time-zone inputs
+- Idempotent restoration of the selected prompt for same-day retries
+- Rejection of a different same-day selection and of unknown prompt identifiers
+- A `UserDefaults` adapter for the small, non-sensitive selection record
+- A native SwiftUI prompt picker that shows and persists the locked daily choice
+- Deterministic unit, persistence-integration, and critical UI-journey tests
+
+## Non-goals
+
+- Prompt rotation, networking, localization, content-management tooling, or notification deep links
+- Recording, microphone permission, timers, analysis, feedback, retry comparison, completion, or streak behavior
+- Persisting recordings, transcripts, attempts, or any sensitive speech data
+- A final decision for broader session/history persistence
+
+## Existing-system observations
+
+- NR-001 provides a launchable SwiftUI shell, one locked unit test, one locked UI test, and green pull-request CI.
+- The current shell has no product behavior or persistence.
+- The accepted design reference shows three single-select prompt cards and supplies starter copy, but its 45/60-second labels conflict with the accepted two-minute soft-ceiling behavior and will not be carried forward.
+- The system design requires injected calendar/time-zone behavior and keeps business logic independent of SwiftUI and concrete Apple services.
+
+## Proposed design
+
+`DailyPrompt` and `LocalDay` are small value types. `DailyPromptCatalog` owns the three starter choices. `DailyPromptSession` applies the selection invariant against a domain-owned `DailyPromptSelectionStore` protocol: a same-day selection is restored, selecting it again is idempotent, choosing a different prompt is rejected, and a different local day permits a new selection. Dates become `LocalDay` values using the injected `Calendar`, including its time zone, so tests never depend on the wall clock.
+
+`UserDefaultsDailyPromptSelectionStore` encodes only the local-day components and stable prompt identifier. This is a scoped adapter for a tiny preference-like record and does not choose the storage technology for future attempts or history.
+
+A main-actor observable view model composes the domain policy for SwiftUI. The picker exposes three accessible buttons, clearly marks the chosen card, disables alternatives after selection, and restores the choice on launch. A launch-only UI-test reset argument clears this one test record to keep UI tests deterministic.
+
+## Expected files or components
+
+- `NoRamble/DailyPrompt/` domain, application state, persistence adapter, and SwiftUI prompt UI
+- `NoRamble/AppShell/AppShellView.swift`
+- `NoRamble/App/NoRambleApp.swift`
+- `NoRambleTests/DailyPrompt/`
+- `NoRambleUITests/DailyPromptSelectionUITests.swift`
+- `NoRamble.xcodeproj` regenerated from `project.yml`
+- `README.md`, `TASKS.md`, `PROGRESS.md`, `docs/architecture/SYSTEM_DESIGN.md`, this plan
+
+## Acceptance criteria
+
+- [x] The launch screen visibly presents exactly three curated prompt choices.
+- [x] The three prompts have distinct stable identifiers and meaningful title/guidance copy.
+- [x] Selecting a known prompt persists its identifier for the injected local day.
+- [x] Reloading or retrying on that local day restores the same prompt.
+- [x] Selecting the same prompt again is idempotent.
+- [x] Selecting a different prompt on the same local day is rejected without replacing the original.
+- [x] An unknown prompt identifier is rejected without persistence.
+- [x] On the next injected local day, no prompt is initially selected and a new choice can be persisted.
+- [x] Concrete local persistence round-trips a valid selection and reports corrupt data.
+- [x] The picker exposes an accessible heading, three buttons, selected state, and locked alternatives.
+- [x] Existing locked NR-001 tests remain unchanged and pass.
+
+## Tests written before implementation
+
+- `DailyPromptCatalogTests.curated_containsExactlyThreeDistinctPrompts`
+- `DailyPromptSessionTests.select_knownPrompt_persistsAndRestoresForSameDayRetry`
+- `DailyPromptSessionTests.select_samePromptAgain_isIdempotent`
+- `DailyPromptSessionTests.select_differentPromptOnSameDay_keepsOriginalAndThrowsLocked`
+- `DailyPromptSessionTests.select_unknownPrompt_doesNotPersistAndThrowsUnknownPrompt`
+- `DailyPromptSessionTests.selection_onNextLocalDay_startsEmptyAndAllowsNewChoice`
+- `DailyPromptSessionTests.localDay_usesInjectedCalendarTimeZone`
+- `UserDefaultsDailyPromptSelectionStoreTests.savedSelection_roundTrips`
+- `UserDefaultsDailyPromptSelectionStoreTests.corruptSelection_throwsWithoutInventingState`
+- `DailyPromptViewModelTests.selection_updatesObservableStateAndLocksAlternatives`
+- `DailyPromptSelectionUITests.selectingPrompt_marksItSelectedAndLocksOtherChoices`
+
+These new tests become locked after their intended initial failure is recorded. Existing tests require no changes.
+
+### Exceptional test-harness correction
+
+After production types were added, Swift exposed a compile-time defect that the earlier missing-type failure had masked: `DailyPromptViewModelTests.makeModel` used the instance method `makeCalendar()` as a default-parameter expression, which Swift forbids. Production code cannot affect test helper parameter evaluation. The helper will accept an optional calendar and resolve `calendar ?? makeCalendar()` inside its body. No test name, assertion, input, expected result, coverage, or product requirement changes.
+
+The time-zone boundary fixture also assumed Vancouver would be UTC−8 on 2026-11-20. Xcode 26.2/Foundation and the installed zone database report `America/Vancouver` as UTC−7 on that date, making `07:30Z` local `00:30` rather than the prior day. This is an external platform time-zone contract, and production correctly honors the injected calendar. The fixture instant changes to `06:30Z`, which preserves the original behavioral assertion: November 19 in Vancouver and November 20 in UTC. Assertions and product intent remain unchanged.
+
+## Failure and edge cases
+
+- Unknown prompt identifiers fail explicitly and do not write state.
+- A different same-day choice returns a typed locked-selection error and preserves the original.
+- A saved identifier missing from the current catalog returns a typed unavailable-prompt error rather than silently selecting something else.
+- Corrupt persisted data is reported to the application model; the UI shows a non-technical recovery message without inventing a selection.
+- Local-day calculation uses the injected calendar and time zone. Travel semantics beyond that deterministic rule remain open.
+
+## Privacy and security
+
+The adapter stores only a prompt identifier plus year/month/day. It stores no response, recording, transcript, account identifier, analytics, or secret and performs no network access. UI tests use synthetic prompt state only.
+
+## Accessibility
+
+The screen uses Dynamic Type styles and scrolls when content grows. Prompt cards are full-width buttons with stable accessibility identifiers, selected traits/values, useful labels and hints, and at least standard control height. Selection is conveyed by text/icon/VoiceOver state as well as color. Locked alternatives become disabled after selection.
+
+## Implementation steps
+
+1. Add the plan and mark NR-010 active on a focused feature branch.
+2. Add all domain, persistence, view-model, and UI tests before production behavior; regenerate the project and record the intended red failure.
+3. Add the smallest domain models and selection policy that satisfy relevant unit tests.
+4. Add and test the concrete local store.
+5. Add the observable application state and accessible SwiftUI picker that satisfy the UI journey without adding recording behavior.
+6. Run relevant tests after each step, then the complete suite with coverage.
+7. Update documentation/evidence, push, open the focused pull request, require green CI, and squash-merge.
+
+## Verification commands
+
+```sh
+DEVELOPER_DIR=/Applications/Xcode.app/Contents/Developer xcodegen generate
+
+DEVELOPER_DIR=/Applications/Xcode.app/Contents/Developer xcodebuild test \
+  -project NoRamble.xcodeproj \
+  -scheme NoRamble \
+  -destination 'platform=iOS Simulator,name=iPhone 17 Pro,OS=26.2' \
+  -only-testing:NoRambleTests \
+  CODE_SIGNING_ALLOWED=NO
+
+DEVELOPER_DIR=/Applications/Xcode.app/Contents/Developer xcodebuild test \
+  -project NoRamble.xcodeproj \
+  -scheme NoRamble \
+  -destination 'platform=iOS Simulator,name=iPhone 17 Pro,OS=26.2' \
+  -enableCodeCoverage YES \
+  CODE_SIGNING_ALLOWED=NO
+```
+
+## Risks
+
+- **A daily choice can be accidentally changed:** the domain rejects replacement and the UI locks alternatives after the first persisted choice.
+- **Wall-clock tests become flaky:** all day calculations receive a date and calendar explicitly.
+- **A tiny adapter becomes an accidental architecture commitment:** documentation limits `UserDefaults` to this preference-like record and leaves broader persistence open.
+- **The slice drifts into recording:** the picker stops after selection; microphone behavior remains NR-020.
+
+## Rollback strategy
+
+Revert the focused NR-010 merge. The only stored state is one namespaced `UserDefaults` data value; older scaffold code ignores it, and the adapter provides a removal operation for deterministic recovery.
+
+## Documentation updates
+
+- `README.md`
+- `TASKS.md`
+- `PROGRESS.md`
+- `docs/architecture/SYSTEM_DESIGN.md`
+- This plan
+
+## Completion evidence
+
+- **Acceptance criteria:** 11 of 11 satisfied.
+- **Red evidence:** Relevant unit test command exited 65 because `DailyPromptCatalog` was absent before production files existed.
+- **Relevant tests:** 19 unit tests passed, 0 failed.
+- **Complete suite:** 19 unit and 2 UI tests passed, 0 failed, with coverage enabled on iPhone 17 Pro / iOS 26.2.
+- **Coverage:** App 98.16% (427/435); `DailyPromptSession`, `DailyPromptViewModel`, the concrete selection store, app composition, and shell are 100%. The uncovered lines are six compiler-generated SwiftUI error-branch regions not rendered in the successful journey and two defensive `LocalDay` precondition regions that Foundation calendars cannot practically trigger.
+- **Warnings:** No Swift compiler warnings; warnings are treated as errors. Xcode emits only its informational App Intents metadata message for a target with no App Intents dependency.
+- **Project/visual checks:** XcodeGen regeneration retained SHA-256 `0ded15453f07a7f13e76505f3dce8ffc4fd7b191d3526fb98e6597e0c6912a06`; manual simulator launch and screenshot review passed.
+- **Test integrity:** Existing NR-001 tests are unchanged. The two documented NR-010 fixture corrections preserved intent and assertions.
+- **Pull request:** [#3](https://github.com/khodosko/noRamble/pull/3); final hosted CI gates squash merge.
