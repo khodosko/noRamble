@@ -18,7 +18,7 @@ Speaking practice is easy to postpone when the next action is unclear or the pro
 
 ## Status
 
-**Xcode foundation in review.** [Pull request #2](https://github.com/khodosko/noRamble/pull/2) adds the minimal launchable SwiftUI shell, unit/UI test targets, and green pull-request CI. Product features remain out of scope for this slice.
+**Xcode foundation complete.** [Pull request #2](https://github.com/khodosko/noRamble/pull/2) adds the minimal launchable SwiftUI shell, unit/UI test targets, and green pull-request CI. Product features remain out of scope for this slice.
 
 ## Technology direction
 

@@ -1,6 +1,6 @@
 # NR-001: Xcode project and CI foundation
 
-- **Status:** In review
+- **Status:** Complete
 - **Task:** [NR-001 in TASKS.md](../../TASKS.md#nr-001--xcode-project-and-ci-foundation)
 - **Pull request:** [#2 — Establish tested SwiftUI project foundation](https://github.com/khodosko/noRamble/pull/2)
 
@@ -158,5 +158,5 @@ Revert the focused NR-001 merge. No user data or migrations exist. Removing the 
 - **Complete suite:** Passed with coverage, exit 0: 2 passed, 0 failed, 0 skipped; testable app code 100% (48/48).
 - **Warnings:** None; warnings are treated as errors.
 - **Project/visual checks:** Regeneration produced an identical project hash; three targets and the shared scheme are discoverable; simulator launch screenshot reviewed successfully.
-- **CI:** Passed on GitHub Actions in 4m 6s using Xcode 26.2 and iPhone 17 Pro / iOS 26.2.
-- **Pull request:** [#2](https://github.com/khodosko/noRamble/pull/2) open and awaiting final green run/merge.
+- **CI:** Passed twice on GitHub Actions using Xcode 26.2 and iPhone 17 Pro / iOS 26.2; the documentation-evidence run completed in 6m 56s.
+- **Pull request:** [#2](https://github.com/khodosko/noRamble/pull/2) merged on 2026-11-19.
