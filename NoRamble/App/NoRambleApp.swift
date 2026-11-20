@@ -12,13 +12,15 @@ struct NoRambleApp: App {
         }
 
         let session = DailyPromptSession(
-            prompts: DailyPromptCatalog.curated,
+            prompts: DailyPromptCatalog.all,
             selectionStore: store
         )
+        let calendar = Calendar.autoupdatingCurrent
         _dailyPromptModel = State(
             initialValue: DailyPromptViewModel(
                 session: session,
-                calendar: .autoupdatingCurrent,
+                rotation: DailyPromptRotation(prompts: DailyPromptCatalog.curated),
+                calendar: calendar,
                 now: Date.init
             )
         )

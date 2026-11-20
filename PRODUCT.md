@@ -10,15 +10,15 @@ Speaking improvement requires repeated practice and useful feedback, yet existin
 
 ## Product thesis
 
-A guided daily speaking ritual with three curated choices, one selected prompt, and one prioritized improvement will create more consistent practice than an open-ended collection of coaching tools.
+A guided daily speaking ritual with three fresh choices from a broader original prompt library, one selected prompt, and one prioritized improvement will create more consistent practice than an open-ended collection of coaching tools.
 
 Core promise: **One chosen prompt. One recording. One improvement. Every day.**
 
 ## Core daily loop
 
-1. A notification opens today's three prompt choices.
+1. A notification opens today's three rotated prompt choices.
 2. The user selects one prompt for the daily session. The limited choice prevents a blank-mind blocker without becoming a content browser.
-3. The app presents a minimal recording state: a prominent red recording indicator and microphone treatment, with no visible timer, live transcript, coaching, metrics, or analysis.
+3. **Start Daily Rep** begins a minimal recording state: a prominent red recording indicator and microphone treatment, with no visible timer, live transcript, coaching, metrics, or analysis.
 4. The user records naturally. Two minutes is the soft ceiling; the app must not cut speech off abruptly at exactly `2:00`.
 5. After recording ends, the app analyzes the attempt.
 6. The app shows an overall score, focused feedback, a few observations, and one primary improvement.
@@ -28,7 +28,7 @@ Core promise: **One chosen prompt. One recording. One improvement. Every day.**
 
 ## Product principles
 
-- Direct the next action; offer only three curated prompt choices rather than a browsable content library.
+- Direct the next action; rotate only three original prompt choices from the bundled library rather than exposing a content browser.
 - Keep a daily session short and finishable.
 - Prefer one actionable improvement over an exhaustive critique.
 - Explain scores and feedback in language the user can apply.
@@ -38,7 +38,7 @@ Core promise: **One chosen prompt. One recording. One improvement. Every day.**
 
 ## MVP scope
 
-- Three curated daily prompt choices, one selected prompt per daily session, and notification deep linking
+- A bundled original prompt library that rotates three daily choices, one selected prompt per daily session, and notification deep linking
 - Minimal audio-recording screen with a prominent red recording/microphone state, a two-minute soft ceiling, and permission/error handling
 - Analysis of filler words, pace, pauses/hesitation, conciseness, and structure
 - Overall score, concise observations, and one prioritized improvement
@@ -50,7 +50,7 @@ Core promise: **One chosen prompt. One recording. One improvement. Every day.**
 
 ## Explicit non-goals
 
-- Large prompt or content library
+- Browsable prompt library, remote content feed, or content marketplace
 - Social feed or public profiles
 - AI avatar
 - Course catalog

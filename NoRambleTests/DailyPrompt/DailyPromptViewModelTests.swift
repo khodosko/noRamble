@@ -80,7 +80,7 @@ final class DailyPromptViewModelTests: XCTestCase {
     func testSelect_storeFailure_exposesSaveRecoveryMessage() {
         let model = makeModel(store: ViewModelSelectionStore(saveError: TestStoreError.failed))
 
-        model.select(promptID: "work-update")
+        model.select(promptID: model.prompts[0].id)
 
         XCTAssertNil(model.selectedPromptID)
         XCTAssertEqual(

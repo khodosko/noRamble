@@ -10,7 +10,7 @@ This document distinguishes **accepted**, **proposed**, and **open** decisions. 
 - The internal target/module name is `NoRamble`; the user-facing name is **No Ramble**.
 - The app is a directed daily ritual, not an open-ended toolbox.
 - The owner-provided Stitch export is the visual reference; its prototype behaviors remain provisional unless accepted by the product specification and a slice plan.
-- Each day offers three curated prompts for one daily session; the user's selected prompt remains fixed for retries in that session.
+- Each local day deterministically rotates three choices from a bundled original prompt library; the user's selected prompt remains fixed for retries in that session.
 - Recording uses a minimal red recording/microphone presentation, a two-minute soft ceiling without an abrupt `2:00` cutoff, and no visible timer, live transcript, coaching, or metrics.
 - Analysis and feedback begin only after recording ends.
 - Streaks are the MVP motivational mechanism; XP/points are excluded.
@@ -46,7 +46,9 @@ Concrete services implement domain-facing protocols and are composed at the appl
 
 The concrete adapter stores one encoded prompt identifier and local date in namespaced `UserDefaults`. This preference-like use is not a decision for attempt, feedback, recording, or history persistence.
 
-**Open:** Prompt sourcing, rotation, localization, content review, notification deep links, travel semantics beyond the injected-current-calendar rule, and how future daily sets remain meaningfully distinct.
+**Accepted for NR-011:** The current catalog contains 30 original prompts across six categories. `DailyPromptRotation` uses a fixed FNV-1a identifier ordering and the injected calendar's local-day distance from a fixed epoch to expose three stable choices, change the set at rollover, and surface the complete current catalog in ten days. It does not use Swift's process-randomized `Hasher`. The session validates current plus retired prompt identifiers while the view model normally exposes only the rotating three; a restored same-day retired choice is retained in the visible three until rollover.
+
+**Open:** Localization, ongoing content review, notification deep links, travel semantics beyond the injected-current-calendar rule, and whether future catalog changes need versioned daily sets.
 
 ## Recording abstraction
 

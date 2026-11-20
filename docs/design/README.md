@@ -44,7 +44,7 @@ The owner resolved the prototype differences on 2026-11-19:
 
 | Stitch reference | Accepted No Ramble behavior |
 |---|---|
-| User picks one of three prompts | Keep three curated choices for one daily session; the user selects one prompt and retries use that same prompt |
+| User picks one of three prompts | Rotate three choices from the bundled original library for one daily session; the user selects one prompt and retries use that same prompt |
 | Per-prompt 45/60-second limits | Use a two-minute soft ceiling with no abrupt cutoff at exactly `2:00`; specify warning/grace behavior in the recording slice |
 | Live timer, transcript, metrics, and coaching nudge | Do not show these while recording; use a minimal red recording/microphone state with no visible timer and reveal analysis only after capture ends |
 | XP plus streak celebration | Keep streaks and remove XP/points |

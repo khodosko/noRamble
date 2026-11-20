@@ -1,6 +1,6 @@
 # NR-011: Prompt library and daily rotation
 
-- **Status:** In progress
+- **Status:** Complete locally; pull request pending
 - **Task:** [NR-011 in TASKS.md](../../TASKS.md#nr-011--prompt-library-and-daily-rotation)
 - **Pull request:** Pending
 
@@ -42,6 +42,13 @@ The daily choices should make someone want to speak. A broader mix of stories, o
 - Official magazine examples cover personal stories, opinions, relationships, values, imagination, and reflection rather than only workplace status updates.
 - The product remains a directed ritual, so a larger internal library must not become a content browser.
 
+Research references:
+
+- [Toastmasters — Table Topics Speaker](https://toastmasters.org/membership/club-meeting-roles/table-topics-speaker)
+- [Toastmasters Magazine — Table Topics Workout](https://www.toastmasters.org/magazine/articles/table-topics-workout)
+- [Toastmasters Magazine — Get to Know Your Members Through Table Topics](https://www.toastmasters.org/magazine/magazine-issues/2026/april/get-to-know-your-members-through-table-topics)
+- [Toastmasters Magazine — Table Topics](https://www.toastmasters.org/magazine/magazine-issues/2026/may/table-topics)
+
 ## Proposed design
 
 `DailyPromptCatalog.curated` becomes a bundled library of at least 30 original prompts. The three NR-010 items move to a separate legacy collection used only to restore already-persisted same-day choices; they never enter future rotation.
@@ -66,17 +73,17 @@ The library is inspired by the impromptu-speaking structure and theme breadth do
 
 ## Acceptance criteria
 
-- [ ] The current library contains at least 30 original, distinct, nonempty prompts across at least five categories.
-- [ ] The three disliked NR-010 starter prompts are excluded from future rotation.
-- [ ] Any injected local day produces exactly three distinct library prompts.
-- [ ] Different instants in the same injected local day produce the same ordered options.
-- [ ] Consecutive local days produce a different option set.
-- [ ] Every current prompt appears within one bounded rotation cycle.
-- [ ] Rotation is stable across independent instances and does not use Swift’s randomized `Hasher`.
-- [ ] A same-day selection is restored and remains visible even if it belongs to the retired catalog.
-- [ ] The assembled app and UI test still expose exactly three accessible prompt cards.
-- [ ] Existing selection, persistence, launch, and error-handling behavior remains green.
-- [ ] Product documentation accepts **Start Daily Rep** as the next recording action label without adding a nonfunctional button.
+- [x] The current library contains at least 30 original, distinct, nonempty prompts across at least five categories.
+- [x] The three disliked NR-010 starter prompts are excluded from future rotation.
+- [x] Any injected local day produces exactly three distinct library prompts.
+- [x] Different instants in the same injected local day produce the same ordered options.
+- [x] Consecutive local days produce a different option set.
+- [x] Every current prompt appears within one bounded rotation cycle.
+- [x] Rotation is stable across independent instances and does not use Swift’s randomized `Hasher`.
+- [x] A same-day selection is restored and remains visible even if it belongs to the retired catalog.
+- [x] The assembled app and UI test still expose exactly three accessible prompt cards.
+- [x] Existing selection, persistence, launch, and error-handling behavior remains green.
+- [x] Product documentation accepts **Start Daily Rep** as the next recording action label without adding a nonfunctional button.
 
 ## Tests written before implementation
 
@@ -94,6 +101,8 @@ The library is inspired by the impromptu-speaking structure and theme breadth do
 The owner explicitly replaced NR-010’s fixed three-item content requirement with a larger rotating library on 2026-11-20. Therefore `DailyPromptCatalogTests.testCurated_containsExactlyThreeDistinctPrompts` is no longer a valid catalog assertion and will be replaced by library size, uniqueness, category breadth, and legacy-exclusion assertions. The UI test’s exactly-three-visible-options assertion remains unchanged.
 
 Existing session and view-model fixtures may switch from the three-item `curated` array to the combined catalog or explicitly selected small fixtures where needed. Those are mechanical fixture updates required by the new catalog/rotation boundary; no selection, locking, persistence, failure, or rollover expectation will be deleted or weakened.
+
+The accepted UI journey previously addressed the retired starter prompts by the fixed identifiers `work-update` and `priority-case`. Those identifiers are intentionally absent from future rotation, so the journey will mechanically select the first and second of the still-asserted three visible prompt buttons. Its behavioral contract remains unchanged: exactly three options appear, tapping one marks it selected, and the alternative becomes disabled. The view-model save-failure fixture likewise selects the first prompt exposed by its injected catalog instead of naming the retired `work-update` fixture; its error assertion is unchanged.
 
 All new tests become locked after their intended red failures are observed.
 
@@ -167,4 +176,10 @@ Revert the focused NR-011 merge. NR-010’s persisted selection schema does not 
 
 ## Completion evidence
 
-Pending implementation, verification, pull request, and CI.
+- Test-first red: the relevant unit command exited 65 because `DailyPromptRotation`, `DailyPromptCatalog.legacy`, and `DailyPromptCatalog.all` were intentionally absent.
+- Relevant green: 26 unit tests passed with 0 failures on iPhone 17 Pro / iOS 26.2.
+- Complete green: 26 unit and 2 UI tests passed with 0 failures under the shared scheme with coverage enabled.
+- Coverage: 97.86% app coverage (503/514); `DailyPromptSession`, `DailyPromptViewModel`, and `NoRambleApp` are 100%. The rotation gaps are defensive construction/calendar/hash-collision branches; the SwiftUI gap is a non-rendered result-builder branch.
+- Visual QA: simulator inspection confirmed the new copy renders as three readable, scrollable cards without clipping and displays **Daily Rep**.
+- XcodeGen regeneration completed successfully and includes the new production and test sources.
+- Pull request and hosted CI: pending.

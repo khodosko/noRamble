@@ -2,13 +2,22 @@
 
 ## Current state
 
-NR-000, NR-001, and NR-010 are merged. NR-011 is in progress to replace the fixed starter content with an original Table Topics–style library and deterministic daily rotation while preserving the three-choice and same-day lock contracts. Recording has not started.
+NR-000, NR-001, and NR-010 are merged. NR-011 is complete locally: 30 original prompts rotate through three deterministic daily choices while preserving the three-card and same-day lock contracts. Recording has not started.
 
 ## Next recommended action
 
-Write and lock NR-011 library-quality, deterministic-rotation, and legacy-restoration tests before production changes. NR-020 remains next after this corrective content slice.
+Plan NR-020's testable audio-recording boundary, including permission, lifecycle, interruption, failure, and the two-minute soft-ceiling behavior behind the accepted **Start Daily Rep** action.
 
 ## Journal
+
+### 2026-11-20 — NR-011 Prompt library and daily rotation
+
+- **Work completed:** Researched official Toastmasters guidance and examples; replaced the three weak workplace prompts with 30 newly written prompts across story, opinion, reflection, imagination, decision, and connection themes; added deterministic local-day rotation; kept retired identifiers available only for same-day restoration; updated the visible ritual label to **Daily Rep** and accepted **Start Daily Rep** for the recording slice.
+- **Tests added:** Catalog size, uniqueness, category breadth, and legacy separation; exactly-three rotation, same-day and cross-instance stability, next-day change, full ten-day catalog coverage, and pre-epoch behavior; same-day legacy-selection visibility.
+- **Verification:** Red—unit command exited 65 because `DailyPromptRotation`, `DailyPromptCatalog.legacy`, and `DailyPromptCatalog.all` did not exist. Green—26 unit and 2 UI tests pass with 0 failures on iPhone 17 Pro / iOS 26.2. App coverage is 97.86% (503/514); session policy, view model, and app composition are 100%. Simulator visual review confirmed all three longer cards remain readable and scrollable without clipping.
+- **Decisions:** Prompt wording is original rather than copied from published question sets; the bundled library stays offline and non-browsable; stable FNV-1a ordering avoids process-randomized hashing; adding future unselected prompts may alter a day's set, but a persisted same-day choice remains visible.
+- **Problems or blockers:** None. The owner explicitly replaced the fixed three-item catalog requirement. The invalid exact-catalog test was replaced with library-quality and rotation tests; two fixtures that named retired prompt IDs now select injected/visible prompts without weakening their save-failure or selection-lock assertions.
+- **Immediate next action:** Open and merge the focused NR-011 pull request after hosted CI passes, then plan NR-020.
 
 ### 2026-11-19 — NR-000 Project foundation
 
