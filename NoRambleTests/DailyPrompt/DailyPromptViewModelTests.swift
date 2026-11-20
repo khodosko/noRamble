@@ -98,6 +98,19 @@ final class DailyPromptViewModelTests: XCTestCase {
         )
     }
 
+    func testSelect_disabledAlternativeAfterChoice_isIgnored() throws {
+        let prompts = DailyPromptCatalog.curated
+        let original = try XCTUnwrap(prompts.first)
+        let alternative = try XCTUnwrap(prompts.dropFirst().first)
+        let model = makeModel(store: ViewModelSelectionStore())
+
+        model.select(promptID: original.id)
+        model.select(promptID: alternative.id)
+
+        XCTAssertEqual(model.selectedPromptID, original.id)
+        XCTAssertNil(model.errorMessage)
+    }
+
     private func makeModel(
         store: ViewModelSelectionStore,
         date: Date = ISO8601DateFormatter().date(from: "2026-11-19T18:00:00Z")!,
