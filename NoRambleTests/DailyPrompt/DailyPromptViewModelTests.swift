@@ -37,6 +37,34 @@ final class DailyPromptViewModelTests: XCTestCase {
         XCTAssertNil(model.errorMessage)
     }
 
+    func testLoadSelection_legacySameDayChoice_preservesItWithinThreeVisibleOptions() throws {
+        let date = ISO8601DateFormatter().date(from: "2026-11-20T18:00:00Z")!
+        let calendar = makeCalendar()
+        let legacyPrompt = try XCTUnwrap(DailyPromptCatalog.legacy.first)
+        let store = ViewModelSelectionStore(
+            selection: DailyPromptSelection(
+                day: LocalDay(date: date, calendar: calendar),
+                promptID: legacyPrompt.id
+            )
+        )
+        let session = DailyPromptSession(
+            prompts: DailyPromptCatalog.all,
+            selectionStore: store
+        )
+        let model = DailyPromptViewModel(
+            session: session,
+            rotation: DailyPromptRotation(prompts: DailyPromptCatalog.curated),
+            calendar: calendar,
+            now: { date }
+        )
+
+        model.loadSelection()
+
+        XCTAssertEqual(model.selectedPromptID, legacyPrompt.id)
+        XCTAssertEqual(model.prompts.count, 3)
+        XCTAssertTrue(model.prompts.contains(legacyPrompt))
+    }
+
     func testLoadSelection_storeFailure_exposesRecoveryMessage() {
         let model = makeModel(store: ViewModelSelectionStore(loadError: TestStoreError.failed))
 
