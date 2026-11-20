@@ -18,7 +18,7 @@ Speaking practice is easy to postpone when the next action is unclear or the pro
 
 ## Status
 
-**Xcode foundation in progress.** The documentation/design foundation merged in [pull request #1](https://github.com/khodosko/noRamble/pull/1). NR-001 adds the minimal launchable SwiftUI shell, unit/UI test targets, and pull-request CI; product features remain out of scope for this slice.
+**Xcode foundation in review.** [Pull request #2](https://github.com/khodosko/noRamble/pull/2) adds the minimal launchable SwiftUI shell, unit/UI test targets, and green pull-request CI. Product features remain out of scope for this slice.
 
 ## Technology direction
 

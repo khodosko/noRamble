@@ -4,11 +4,11 @@ This file is the authoritative backlog. Do not maintain a competing task list el
 
 ### NR-001 — Xcode project and CI foundation
 
-- **Status:** In progress
+- **Status:** In review
 - **Plan:** [NR-001 Xcode project and CI foundation](docs/plans/NR-001-xcode-project-and-ci.md)
 - **Acceptance criteria:** Minimal native iPhone project with `NoRamble` module, unit and UI test targets, deterministic CI on pull requests, and no product behavior beyond launchable scaffolding.
-- **Test status:** Red state recorded (missing `NoRamble` module, exit 65); relevant unit test and complete two-test unit/UI suite pass locally with coverage. CI pending pull request.
-- **Pull request:** Not available.
+- **Test status:** Red state recorded (missing `NoRamble` module, exit 65); relevant unit test and complete two-test unit/UI suite pass locally with 100% testable app-code coverage; GitHub Actions passes.
+- **Pull request:** [#2 — Establish tested SwiftUI project foundation](https://github.com/khodosko/noRamble/pull/2)
 
 ## Next
 

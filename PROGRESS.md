@@ -2,11 +2,11 @@
 
 ## Current state
 
-NR-000 is merged. NR-001 is in progress on `chore/xcode-project-foundation` to create the minimal SwiftUI project, automated test targets, deterministic local commands, and pull-request CI. No product feature behavior is in scope.
+NR-000 is merged. NR-001 is in review in [pull request #2](https://github.com/khodosko/noRamble/pull/2) with a launchable SwiftUI shell, automated test targets, deterministic local commands, and green pull-request CI. No product feature behavior is included.
 
 ## Next recommended action
 
-Write and observe the NR-001 scaffold tests failing, implement the smallest launchable SwiftUI shell, run the complete suite, then open the focused pull request.
+Merge pull request #2 after the final documentation-triggered CI run passes, then create the next slice plan without beginning unrelated feature work.
 
 ## Journal
 
@@ -21,9 +21,9 @@ Write and observe the NR-001 scaffold tests failing, implement the smallest laun
 
 ### 2026-11-19 — NR-001 Xcode project and CI foundation
 
-- **Work completed:** Confirmed Xcode 26.2 and iOS 26.2 Simulator availability; created the focused branch and slice plan; installed XcodeGen 2.48.0; generated the project; implemented the minimal accessible SwiftUI shell; added pull-request CI.
+- **Work completed:** Confirmed Xcode 26.2 and iOS 26.2 Simulator availability; created the focused branch and slice plan; installed XcodeGen 2.48.0; generated the project; implemented the minimal accessible SwiftUI shell; added pull-request CI; opened pull request #2.
 - **Tests added:** `AppShellContentTests.defaultContent_identifiesNoRambleAndFoundationReadiness`; `AppLaunchUITests.testLaunch_displaysAccessibleAppShell`.
-- **Verification:** Red—unit command exited 65 because the `NoRamble` module was absent. Green—relevant unit command exited 0. Complete suite with coverage exited 0 on iPhone 17 Pro / iOS 26.2: 2 passed, 0 failed, 0 skipped; testable app code reports 100% coverage (48/48). Generated project is deterministic and exposes the expected three targets plus shared scheme. Simulator launch and visual QA passed.
+- **Verification:** Red—unit command exited 65 because the `NoRamble` module was absent. Green—relevant unit command exited 0. Complete suite with coverage exited 0 on iPhone 17 Pro / iOS 26.2: 2 passed, 0 failed, 0 skipped; testable app code reports 100% coverage (48/48). Generated project is deterministic and exposes the expected three targets plus shared scheme. Simulator launch and visual QA passed. GitHub Actions completed successfully in 4m 6s.
 - **Decisions:** Provisional minimum deployment target iOS 17.0; commit a generated Xcode project backed by `project.yml`; pin local and CI verification to Xcode 26.2 and iPhone 17 Pro on iOS 26.2.
 - **Problems or blockers:** None. The system-wide active developer directory points at Command Line Tools, so repository commands explicitly set `DEVELOPER_DIR` instead of changing global machine configuration.
-- **Immediate next action:** Regenerate once more, verify the project diff/build has no warnings, push the branch, open the pull request, and observe CI.
+- **Immediate next action:** Observe the final CI run and squash-merge pull request #2 when green.

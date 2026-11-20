@@ -1,8 +1,8 @@
 # NR-001: Xcode project and CI foundation
 
-- **Status:** In progress
+- **Status:** In review
 - **Task:** [NR-001 in TASKS.md](../../TASKS.md#nr-001--xcode-project-and-ci-foundation)
-- **Pull request:** Pending
+- **Pull request:** [#2 — Establish tested SwiftUI project foundation](https://github.com/khodosko/noRamble/pull/2)
 
 ## Goal
 
@@ -73,7 +73,7 @@ The shared `NoRamble` scheme gathers coverage and runs both test targets. CI use
 - [x] A UI test launches the app and verifies the initial accessible elements.
 - [x] The relevant unit-test command passes.
 - [x] The complete unit/UI suite passes with coverage enabled.
-- [ ] Pull requests to `main` run the complete suite on GitHub Actions.
+- [x] Pull requests to `main` run the complete suite on GitHub Actions.
 - [x] Local setup and exact verification commands are documented.
 - [x] No product behavior beyond launch scaffolding is introduced.
 
@@ -152,11 +152,11 @@ Revert the focused NR-001 merge. No user data or migrations exist. Removing the 
 
 ## Completion evidence
 
-- **Acceptance criteria:** 10 of 11 satisfied; CI execution pending pull request.
+- **Acceptance criteria:** 11 of 11 satisfied.
 - **Red test evidence:** Unit command exited 65: `Unable to find module dependency: 'NoRamble'` before production sources existed.
 - **Relevant tests:** Passed, exit 0, on iPhone 17 Pro / iOS 26.2.
 - **Complete suite:** Passed with coverage, exit 0: 2 passed, 0 failed, 0 skipped; testable app code 100% (48/48).
 - **Warnings:** None; warnings are treated as errors.
 - **Project/visual checks:** Regeneration produced an identical project hash; three targets and the shared scheme are discoverable; simulator launch screenshot reviewed successfully.
-- **CI:** Pending
-- **Pull request:** Pending
+- **CI:** Passed on GitHub Actions in 4m 6s using Xcode 26.2 and iPhone 17 Pro / iOS 26.2.
+- **Pull request:** [#2](https://github.com/khodosko/noRamble/pull/2) open and awaiting final green run/merge.
