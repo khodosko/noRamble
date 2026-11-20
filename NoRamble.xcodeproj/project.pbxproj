@@ -1,0 +1,515 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0FA1B0EC8FDC00B48D8256C5 /* NoRambleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16C055833EE4CA4658F9134 /* NoRambleApp.swift */; };
+		79EA41F2938DB545D039B9F5 /* AppLaunchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD9FA7A36A69088963EE0A9 /* AppLaunchUITests.swift */; };
+		AE0FCF8B8BBB1D665B14088E /* AppShellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79AC50A5BE7A8383CDA0A50 /* AppShellView.swift */; };
+		B5B8B9AD7CC8BB525FBA01F6 /* AppShellContentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5ACFA89A121847ED0414C5 /* AppShellContentTests.swift */; };
+		ECE8CED308A10B8C96EC6603 /* AppShellContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3FB504BB7941D0887C688D /* AppShellContent.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		32C76DBE9B66CECC7425F8CE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AB72494C04F41D6F9C4851F0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B4DF38D5EC021F90E49B94D8;
+			remoteInfo = NoRamble;
+		};
+		72593795B8C39B80FCEB4D55 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AB72494C04F41D6F9C4851F0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B4DF38D5EC021F90E49B94D8;
+			remoteInfo = NoRamble;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0E3FB504BB7941D0887C688D /* AppShellContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppShellContent.swift; sourceTree = "<group>"; };
+		3A998574F7F481DB6A380B5A /* NoRambleUITests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = NoRambleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4A5ACFA89A121847ED0414C5 /* AppShellContentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppShellContentTests.swift; sourceTree = "<group>"; };
+		73C1737242D239DF4D946301 /* NoRambleTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = NoRambleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		883EDBFD32AF79DC9BC5A5C4 /* NoRamble.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = NoRamble.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9BD9FA7A36A69088963EE0A9 /* AppLaunchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLaunchUITests.swift; sourceTree = "<group>"; };
+		D16C055833EE4CA4658F9134 /* NoRambleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoRambleApp.swift; sourceTree = "<group>"; };
+		E79AC50A5BE7A8383CDA0A50 /* AppShellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppShellView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		032929A17F446104552D3D82 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				883EDBFD32AF79DC9BC5A5C4 /* NoRamble.app */,
+				73C1737242D239DF4D946301 /* NoRambleTests.xctest */,
+				3A998574F7F481DB6A380B5A /* NoRambleUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		37746DEB73BDFAB38E042E33 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				D16C055833EE4CA4658F9134 /* NoRambleApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		6CC7F2F6F58401A4E81A07D5 /* NoRamble */ = {
+			isa = PBXGroup;
+			children = (
+				37746DEB73BDFAB38E042E33 /* App */,
+				A99D7613B7088D1385E5032C /* AppShell */,
+			);
+			path = NoRamble;
+			sourceTree = "<group>";
+		};
+		6D7E060755F2CCF610CEB9F5 /* NoRambleTests */ = {
+			isa = PBXGroup;
+			children = (
+				4A5ACFA89A121847ED0414C5 /* AppShellContentTests.swift */,
+			);
+			path = NoRambleTests;
+			sourceTree = "<group>";
+		};
+		A17E512836023811EE152CEC = {
+			isa = PBXGroup;
+			children = (
+				6CC7F2F6F58401A4E81A07D5 /* NoRamble */,
+				6D7E060755F2CCF610CEB9F5 /* NoRambleTests */,
+				A91383A5528CB8A7727477D8 /* NoRambleUITests */,
+				032929A17F446104552D3D82 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A91383A5528CB8A7727477D8 /* NoRambleUITests */ = {
+			isa = PBXGroup;
+			children = (
+				9BD9FA7A36A69088963EE0A9 /* AppLaunchUITests.swift */,
+			);
+			path = NoRambleUITests;
+			sourceTree = "<group>";
+		};
+		A99D7613B7088D1385E5032C /* AppShell */ = {
+			isa = PBXGroup;
+			children = (
+				0E3FB504BB7941D0887C688D /* AppShellContent.swift */,
+				E79AC50A5BE7A8383CDA0A50 /* AppShellView.swift */,
+			);
+			path = AppShell;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4EA3626005417097E1E3C3E3 /* NoRambleTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F75454060349A4A55BEFBCA0 /* Build configuration list for PBXNativeTarget "NoRambleTests" */;
+			buildPhases = (
+				66EB5C9398DD257B416B967D /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A2F2078BB2E1D19449B09B4B /* PBXTargetDependency */,
+			);
+			name = NoRambleTests;
+			packageProductDependencies = (
+			);
+			productName = NoRambleTests;
+			productReference = 73C1737242D239DF4D946301 /* NoRambleTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		AEF803A15F26D21D179549CD /* NoRambleUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0A61CFFB0C5E85CBC5E0700C /* Build configuration list for PBXNativeTarget "NoRambleUITests" */;
+			buildPhases = (
+				385051A903F66AA1A45AB579 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3D002CB611EFB0DB5DC97F6C /* PBXTargetDependency */,
+			);
+			name = NoRambleUITests;
+			packageProductDependencies = (
+			);
+			productName = NoRambleUITests;
+			productReference = 3A998574F7F481DB6A380B5A /* NoRambleUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		B4DF38D5EC021F90E49B94D8 /* NoRamble */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0F2A053AEE50566D6D179E0A /* Build configuration list for PBXNativeTarget "NoRamble" */;
+			buildPhases = (
+				26B6382A180F7F27B2C690F9 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NoRamble;
+			packageProductDependencies = (
+			);
+			productName = NoRamble;
+			productReference = 883EDBFD32AF79DC9BC5A5C4 /* NoRamble.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AB72494C04F41D6F9C4851F0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 2620;
+				TargetAttributes = {
+					AEF803A15F26D21D179549CD = {
+						TestTargetID = B4DF38D5EC021F90E49B94D8;
+					};
+				};
+			};
+			buildConfigurationList = BB97A52D3956E382C00CE69D /* Build configuration list for PBXProject "NoRamble" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = A17E512836023811EE152CEC;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 032929A17F446104552D3D82 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B4DF38D5EC021F90E49B94D8 /* NoRamble */,
+				4EA3626005417097E1E3C3E3 /* NoRambleTests */,
+				AEF803A15F26D21D179549CD /* NoRambleUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		26B6382A180F7F27B2C690F9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ECE8CED308A10B8C96EC6603 /* AppShellContent.swift in Sources */,
+				AE0FCF8B8BBB1D665B14088E /* AppShellView.swift in Sources */,
+				0FA1B0EC8FDC00B48D8256C5 /* NoRambleApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		385051A903F66AA1A45AB579 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				79EA41F2938DB545D039B9F5 /* AppLaunchUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		66EB5C9398DD257B416B967D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B5B8B9AD7CC8BB525FBA01F6 /* AppShellContentTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3D002CB611EFB0DB5DC97F6C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B4DF38D5EC021F90E49B94D8 /* NoRamble */;
+			targetProxy = 32C76DBE9B66CECC7425F8CE /* PBXContainerItemProxy */;
+		};
+		A2F2078BB2E1D19449B09B4B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B4DF38D5EC021F90E49B94D8 /* NoRamble */;
+			targetProxy = 72593795B8C39B80FCEB4D55 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		1C0566B216CE397F3714E226 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.khodosko.NoRambleTests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NoRamble.app/NoRamble";
+			};
+			name = Release;
+		};
+		263B0FD935BA75C5E9581BCB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_TREAT_WARNINGS_AS_ERRORS = YES;
+				SWIFT_VERSION = 6.0;
+			};
+			name = Release;
+		};
+		2E5FE9687A783B4C9FA58CCD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.khodosko.NoRambleUITests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = NoRamble;
+			};
+			name = Debug;
+		};
+		5DC8CA040470E2AFF9B8687C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "No Ramble";
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.khodosko.NoRamble;
+				PRODUCT_NAME = NoRamble;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		6F851538013F38ECB07DA019 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "No Ramble";
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.khodosko.NoRamble;
+				PRODUCT_NAME = NoRamble;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		7E93CB67A584B15260164028 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.khodosko.NoRambleTests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NoRamble.app/NoRamble";
+			};
+			name = Debug;
+		};
+		E6A966607A9E5AE239D502D4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.khodosko.NoRambleUITests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = NoRamble;
+			};
+			name = Release;
+		};
+		E85A29AD5C9440ED4E464618 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_TREAT_WARNINGS_AS_ERRORS = YES;
+				SWIFT_VERSION = 6.0;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0A61CFFB0C5E85CBC5E0700C /* Build configuration list for PBXNativeTarget "NoRambleUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2E5FE9687A783B4C9FA58CCD /* Debug */,
+				E6A966607A9E5AE239D502D4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		0F2A053AEE50566D6D179E0A /* Build configuration list for PBXNativeTarget "NoRamble" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5DC8CA040470E2AFF9B8687C /* Debug */,
+				6F851538013F38ECB07DA019 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		BB97A52D3956E382C00CE69D /* Build configuration list for PBXProject "NoRamble" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E85A29AD5C9440ED4E464618 /* Debug */,
+				263B0FD935BA75C5E9581BCB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		F75454060349A4A55BEFBCA0 /* Build configuration list for PBXNativeTarget "NoRambleTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7E93CB67A584B15260164028 /* Debug */,
+				1C0566B216CE397F3714E226 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AB72494C04F41D6F9C4851F0 /* Project object */;
+}

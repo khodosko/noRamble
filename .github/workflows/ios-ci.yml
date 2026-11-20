@@ -1,0 +1,40 @@
+name: iOS CI
+
+on:
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ios-ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    name: Unit and UI tests
+    runs-on: macos-26
+    timeout-minutes: 20
+    env:
+      DEVELOPER_DIR: /Applications/Xcode_26.2.app/Contents/Developer
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v7
+
+      - name: Verify toolchain
+        run: |
+          xcodebuild -version
+          xcrun simctl list devices available
+
+      - name: Run complete test suite
+        run: |
+          xcodebuild test \
+            -project NoRamble.xcodeproj \
+            -scheme NoRamble \
+            -destination 'platform=iOS Simulator,name=iPhone 17 Pro,OS=26.2' \
+            -enableCodeCoverage YES \
+            CODE_SIGNING_ALLOWED=NO
