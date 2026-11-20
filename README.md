@@ -18,7 +18,7 @@ Speaking practice is easy to postpone when the next action is unclear or the pro
 
 ## Status
 
-**Daily prompt rotation complete locally.** [Pull request #4](https://github.com/khodosko/noRamble/pull/4) expands the weak starter copy into 30 original impromptu-speaking prompts across six categories while still showing exactly three accessible choices per local day. The selection remains fixed for same-day retries, legacy choices remain restorable, and recording remains the next slice.
+**Daily prompt rotation complete.** [Pull request #4](https://github.com/khodosko/noRamble/pull/4) expands the weak starter copy into 30 original impromptu-speaking prompts across six categories while still showing exactly three accessible choices per local day. The selection remains fixed for same-day retries, legacy choices remain restorable, and recording remains the next slice.
 
 ## Technology direction
 
