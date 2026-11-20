@@ -28,7 +28,19 @@ struct NoRambleApp: App {
 
     var body: some Scene {
         WindowGroup {
-            AppShellView(dailyPromptModel: dailyPromptModel)
+            AppShellView(
+                dailyPromptModel: dailyPromptModel,
+                makeRecordingModel: makeRecordingModel
+            )
         }
+    }
+
+    private func makeRecordingModel() -> RecordingViewModel {
+        #if DEBUG
+        if ProcessInfo.processInfo.arguments.contains("--use-simulated-audio-recorder") {
+            return RecordingViewModel(service: SimulatedAudioRecordingService())
+        }
+        #endif
+        return RecordingViewModel(service: SystemAudioRecordingService())
     }
 }

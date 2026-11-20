@@ -2,13 +2,22 @@
 
 ## Current state
 
-NR-000, NR-001, NR-010, and NR-011 are merged. Thirty original prompts rotate through three deterministic daily choices while preserving the three-card and same-day lock contracts. Recording has not started.
+NR-000, NR-001, NR-010, and NR-011 are merged. NR-020A is implemented and locally verified on its feature branch; hosted review remains before merge.
 
 ## Next recommended action
 
-Plan NR-020's testable audio-recording boundary, including permission, lifecycle, interruption, failure, and the two-minute soft-ceiling behavior behind the accepted **Start Daily Rep** action.
+Open NR-020A for review, verify hosted CI, and merge it. Then plan NR-020B's injected timing and interruption policies without changing NR-020A's locked tests.
 
 ## Journal
+
+### 2026-11-20 — NR-020A Recording screen foundation
+
+- **Work completed:** Safely inspected and preserved the owner-provided `recordScreen.zip`; adapted its close action, red status, large circular control, whitespace, and borders into native SwiftUI while honoring the newer no-prompt/no-timer requirement; connected a selected prompt to **Start Daily Rep**; added explicit permission, preparing, recording, denied, captured, and failure states; implemented real mono AAC `.m4a` capture with `AVAudioApplication`, `AVAudioSession`, and `AVAudioRecorder`; kept files temporary and deleted them on cancel or captured-route dismissal.
+- **Tests added:** Ten `RecordingViewModel` permission/lifecycle/failure/idempotency tests and one assembled UI journey covering selection, start, distraction-free recording state, stop, captured state, and return to the picker. All were written and observed failing before production implementation and are now locked.
+- **Verification:** Red—the relevant unit command exited 65 because the new recording boundary types did not exist. Green—36 unit and 3 UI tests pass with 0 failures on iPhone 17 Pro / iOS 26.2. App coverage is 79.44% (935/1177); test bundles report 99.28% and 100%. The built app contains the microphone purpose string, XcodeGen regeneration is byte-identical, and the native UI journey verifies the prompt screen and visible timer are absent during recording. A separate manual computer-control visual pass could not attach to Simulator because that automation service timed out; no unverified visual claim is made.
+- **Decisions:** Split recording into NR-020A foundation and NR-020B timing/interruption policy. The later recording HTML is visual reference only: its prompt, visible timer, 60-second ready state, and stop-square behavior are intentionally excluded. The captured artifact stays in a UUID-named temporary file and is not uploaded, logged, or retained after leaving this seam.
+- **Problems or blockers:** Hosted CI and review remain. Timing, haptic warning/grace behavior, interruptions, route changes, and background transitions are deliberately deferred to NR-020B.
+- **Immediate next action:** Open the NR-020A pull request, verify GitHub Actions, and merge after review.
 
 ### 2026-11-20 — NR-011 Prompt library and daily rotation
 
